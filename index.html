@@ -1,0 +1,1056 @@
+<!DOCTYPE html><html lang="bn"><head><meta charset="utf-8">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1f9d55">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="mobile-web-app-capable" content="yes"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>ItaParliamo – চলুন ইতালিয়ান বলি</title>
+<style>
+:root{--bg:#fbf8f1;--g1:#d6f1e0;--g2:#fde0dc;--card:#fff;--tx:#1d1d1b;--mu:#6b6b66;--ac:#1f9d55;--bd:#eadfcf;--bad:#d9453a;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#14161a;--g1:#15382a;--g2:#3a2022;--card:#1f2228;--tx:#f0ede6;--mu:#a3a199;--ac:#4cc783;--bd:#32353d;--bad:#ef7a6c;color-scheme:dark}}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:system-ui,"Noto Sans Bengali",sans-serif;max-width:560px;margin:auto;padding:16px}
+h1{font-size:20px;margin:4px 0 12px}
+.tabs{display:flex;gap:8px;margin-bottom:12px}
+button{font:inherit;color:inherit;cursor:pointer}
+.tab{flex:1;padding:10px;border:1px solid var(--bd);background:var(--card);border-radius:10px}
+.tab.on{background:var(--ac);color:#fff;border-color:var(--ac)}
+input{width:100%;padding:10px 12px;border:1px solid var(--bd);border-radius:10px;background:var(--card);color:var(--tx);font:inherit;margin-bottom:10px}
+.w{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:10px 12px;margin-bottom:8px}
+.w div{flex:1}.it{font-size:18px;font-weight:600}.bn{font-size:15px}.pr{font-size:13px;color:var(--mu)}
+.sp{width:40px;height:40px;border-radius:50%;border:1px solid var(--ac);background:none;color:var(--ac);font-size:18px}
+.q{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:18px;text-align:center}
+.q .it{font-size:28px;margin:8px 0}
+.o{display:block;width:100%;margin-top:8px;padding:12px;border:1px solid var(--bd);border-radius:10px;background:var(--bg);font-size:16px}
+.o.ok{background:var(--ac);color:#fff;border-color:var(--ac)}.o.no{background:var(--bad);color:#fff;border-color:var(--bad)}
+.nx{margin-top:12px;padding:10px 20px;border-radius:10px;border:0;background:var(--ac);color:#fff}
+.sc{color:var(--mu);font-size:14px}
+.em{font-size:36px;line-height:1;animation:pop .6s both;display:inline-block}
+.w{animation:up .35s both}.o.ok{animation:pulse .5s}.sp:active{transform:scale(.88)}
+@keyframes pop{0%{transform:scale(.3) rotate(-25deg);opacity:0}65%{transform:scale(1.25) rotate(8deg)}100%{transform:scale(1);opacity:1}}
+@keyframes up{from{opacity:0;transform:translateY(12px)}}
+@keyframes pulse{50%{transform:scale(1.04)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+body{background:radial-gradient(circle at 0 0,var(--g1),transparent 45%),radial-gradient(circle at 100% 0,var(--g2),transparent 40%),var(--bg);background-attachment:fixed;min-height:100vh}
+h1{font-size:26px;text-align:center;margin:6px 0 14px;background:linear-gradient(90deg,#1f9d55,#e0483e);-webkit-background-clip:text;background-clip:text;color:transparent}
+.tab{border-radius:999px;font-weight:600;padding:11px}.tab.on{background:linear-gradient(135deg,#1f9d55,#17b26a);box-shadow:0 4px 12px rgba(31,157,85,.35)}
+.w{border-radius:18px;box-shadow:0 3px 10px rgba(0,0,0,.07)}
+.w>.em{flex:none;width:58px;height:58px;display:flex;align-items:center;justify-content:center;font-size:32px;background:var(--bg);border-radius:50%}
+.w .it{color:var(--ac)}
+.sp{background:var(--ac);color:#fff;border:0;box-shadow:0 3px 8px rgba(0,0,0,.2);flex:none}
+.q{border-radius:24px;padding:24px 18px;box-shadow:0 10px 28px rgba(0,0,0,.1)}
+.q .it{color:var(--tx)}
+.o{border-radius:14px;font-weight:600;transition:transform .15s}.o:active{transform:scale(.98)}
+.nx{border-radius:999px;background:linear-gradient(135deg,#1f9d55,#17b26a);padding:12px 24px;font-weight:600;box-shadow:0 4px 12px rgba(31,157,85,.3)}
+.em{filter:drop-shadow(0 3px 4px rgba(0,0,0,.2))}
+.ms{display:flex;align-items:center;gap:10px;margin:8px 0;text-align:left}.ms .em{font-size:40px}.bb{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:8px 12px;font-size:14px}
+.pg{height:10px;background:var(--bd);border-radius:99px;overflow:hidden;margin:6px 0 12px}.pg i{display:block;height:100%;background:linear-gradient(90deg,#1f9d55,#f2c14e);border-radius:99px;transition:width .4s}
+.pt{display:flex;flex-direction:column;align-items:center;gap:16px;padding:12px 0 24px}
+.nd{position:relative;width:76px;height:76px;border-radius:50%;border:0;background:linear-gradient(135deg,#1f9d55,#17b26a);color:#fff;font-size:26px;font-weight:700;box-shadow:0 6px 0 #14783f,0 10px 18px rgba(0,0,0,.2);display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
+.nd small{font-size:13px;margin-top:4px;letter-spacing:1px}
+.nd{width:150px;height:68px;border-radius:34px;font-size:19px}.nd:disabled{background:#9aa5a0;box-shadow:0 6px 0 #78827e;opacity:.75}.nd.cur{animation:pulse 1.4s infinite}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:10px}.fc{position:relative;height:160px;perspective:700px;cursor:pointer}
+.ff{position:absolute;inset:0;backface-visibility:hidden;transition:transform .5s;background:var(--card);border:1px solid var(--bd);border-radius:18px;box-shadow:0 3px 10px rgba(0,0,0,.07);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:8px;text-align:center}
+.fb{transform:rotateY(180deg)}.fc.fl .ff{transform:rotateY(180deg)}.fc.fl .fb{transform:none}.fc .sp{width:34px;height:34px;font-size:15px}.fb b{font-size:18px}
+.ring{width:120px;height:120px;border-radius:50%;margin:0 auto 8px;display:grid;place-items:center;background:conic-gradient(var(--ac) calc(var(--p)*1%),var(--bd) 0)}.ring b{background:var(--card);width:92px;height:92px;border-radius:50%;display:grid;place-items:center;font-size:24px}
+.cf{position:fixed;top:-40px;z-index:99;pointer-events:none;animation:fall 2.4s linear forwards}@keyframes fall{to{transform:translateY(110vh) rotate(540deg)}}
+#nt:not(:empty){background:#fff3cd;color:#5c4400;border-radius:12px;padding:10px 12px;white-space:pre-line;line-height:1.6}
+.tab{font-size:13px;padding:10px 2px}
+.w .ac{flex:none;display:grid;grid-template-columns:1fr 1fr;gap:4px}.w .ac .sp{width:34px;height:34px;font-size:15px}
+.fv{position:absolute;top:6px;right:8px;z-index:2;background:none;border:0;font-size:20px}
+.md{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:98;display:flex;align-items:center;justify-content:center;padding:16px}
+.mc{position:relative;background:var(--card);border-radius:22px;padding:22px;width:100%;max-width:380px;text-align:center;display:flex;flex-direction:column;gap:6px;animation:up .3s both}.mc .x{position:absolute;top:8px;right:12px;background:none;border:0;font-size:20px}.mc .em{font-size:52px}.mc .it{font-size:30px}.exs{background:var(--bg);border-radius:12px;padding:10px;text-align:left;margin-top:6px}.bt{margin-top:8px}
+.fbk{border-radius:14px;padding:10px;margin-top:10px;font-size:14px;text-align:left;line-height:1.6}.fbk.g{background:rgba(31,157,85,.14);border:1px solid var(--ac)}.fbk.r{background:rgba(217,69,58,.14);border:1px solid var(--bad)}
+.rv{text-align:left;margin:10px 0}.mr{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:6px 0;border-bottom:1px solid var(--bd)}.mr .sp{width:30px;height:30px;font-size:13px}
+.tabs{flex-wrap:wrap}.tab{font-size:12px}
+.cc{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:14px;margin-bottom:10px;box-shadow:0 3px 10px rgba(0,0,0,.07);animation:up .35s both}.ch{display:flex;align-items:center;gap:10px;font-size:17px;margin-bottom:6px}.ch .em{font-size:28px}.cb{font-size:14px;line-height:1.7}
+.cp{display:flex;align-items:center;justify-content:space-between;gap:8px;background:var(--bg);border-radius:12px;padding:8px 10px;margin-top:8px}.cp .sp{flex:none;width:36px;height:36px}
+.hb{position:fixed;top:calc(env(safe-area-inset-top,0px) + 10px);right:12px;width:38px;height:38px;border-radius:50%;border:1px solid var(--bd);background:var(--card);z-index:50;font-size:18px;box-shadow:0 2px 8px rgba(0,0,0,.12)}
+small.it2{display:block;font-size:11px;font-weight:400;opacity:.85;line-height:1.3}
+.tab small{display:block;font-size:10px;font-weight:400;opacity:.8}
+</style></head><body>
+<h1>🇮🇹 ItaParliamo</h1><div class="sc" style="text-align:center;margin:-8px 0 12px">চলুন ইতালিয়ান বলি</div>
+<div class="tabs"><button class="tab on" id="t1">শিখুন</button><button class="tab" id="t2">কুইজ</button></div>
+<div id="nt" class="sc" style="margin-bottom:8px"></div><div id="app"></div>
+<script>
+let C="";const D=`#মৌলিক
+ciao|হ্যালো / বিদায়|চাও
+grazie|ধন্যবাদ|গ্রাৎসিয়ে
+prego|স্বাগতম|প্রেগো
+per favore|দয়া করে|পের ফাভোরে
+scusi|মাফ করবেন|স্কুজি
+sì|হ্যাঁ|সি
+no|না|নো
+buongiorno|শুভ সকাল|বুওনজোর্নো
+buonasera|শুভ সন্ধ্যা|বুওনাসেরা
+buonanotte|শুভ রাত্রি|বুওনানত্তে
+arrivederci|আবার দেখা হবে|আররিভেদের্চি
+come stai|কেমন আছেন|কোমে স্তাই
+bene|ভালো|বেনে
+male|খারাপ|মালে
+acqua|পানি|আক্কুয়া
+pane|রুটি|পানে
+latte|দুধ|লাত্তে
+caffè|কফি|কাফ্ফে
+cibo|খাবার|চিবো
+mangiare|খাওয়া|মাঞ্জারে
+bere|পান করা|বেরে
+casa|বাড়ি|কাজা
+famiglia|পরিবার|ফামিলিয়া
+madre|মা|মাদ্রে
+padre|বাবা|পাদ্রে
+fratello|ভাই|ফ্রাতেল্লো
+sorella|বোন|সোরেল্লা
+amico|বন্ধু|আমিকো
+uomo|পুরুষ|উওমো
+donna|নারী|দোন্না
+bambino|শিশু|বাম্বিনো
+io|আমি|ইও
+tu|তুমি|তু
+noi|আমরা|নোই
+essere|হওয়া|এস্সেরে
+avere|থাকা|আভেরে
+andare|যাওয়া|আন্দারে
+venire|আসা|ভেনিরে
+vedere|দেখা|ভেদেরে
+parlare|কথা বলা|পার্লারে
+amore|ভালোবাসা|আমোরে
+oggi|আজ|অজ্জি
+domani|আগামীকাল|দোমানি
+ieri|গতকাল|ইয়েরি
+tempo|সময়|তেম্পো
+giorno|দিন|জোর্নো
+notte|রাত|নত্তে
+uno|এক|উনো
+due|দুই|দুয়ে
+tre|তিন|ত্রে
+quattro|চার|কুয়াত্রো
+cinque|পাঁচ|চিঙ্কুয়ে
+dieci|দশ|দিয়েচি
+grande|বড়|গ্রান্দে
+piccolo|ছোট|পিক্কোলো
+bello|সুন্দর|বেল্লো
+dove|কোথায়|দোভে
+quanto costa|কত দাম|কুয়ান্তো কোস্তা
+aiuto|সাহায্য|আইউতো
+non capisco|বুঝতে পারছি না|নোন কাপিস্কো
+mi chiamo|আমার নাম|মি কিয়ামো
+scuola|স্কুল|স্কুওলা
+lavoro|কাজ|লাভোরো
+#খাবার ও পানীয়
+riso|ভাত|রিজো
+pasta|পাস্তা|পাস্তা
+pizza|পিৎজা|পিৎজা
+carne|মাংস|কার্নে
+pesce|মাছ|পেশে
+pollo|মুরগি|পোল্লো
+uovo|ডিম|উওভো
+formaggio|পনির|ফর্মাজ্জো
+frutta|ফল|ফ্রুত্তা
+verdura|সবজি|ভের্দুরা
+mela|আপেল|মেলা
+zucchero|চিনি|জুক্কেরো
+sale|লবণ|সালে
+vino|ওয়াইন|ভিনো
+tè|চা|তে
+conto|বিল|কন্তো
+#ভ্রমণ
+aeroporto|বিমানবন্দর|আয়েরোপোর্তো
+treno|ট্রেন|ত্রেনো
+autobus|বাস|আউতোবুস
+taxi|ট্যাক্সি|ট্যাক্সি
+stazione|স্টেশন|স্তাৎসিওনে
+biglietto|টিকিট|বিল্লিয়েত্তো
+hotel|হোটেল|ওতেল
+camera|ঘর|কামেরা
+passaporto|পাসপোর্ট|পাস্সাপোর্তো
+strada|রাস্তা|স্ত্রাদা
+città|শহর|চিত্তা
+destra|ডান|দেস্ত্রা
+sinistra|বাম|সিনিস্ত্রা
+dritto|সোজা|দ্রিত্তো
+vicino|কাছে|ভিচিনো
+lontano|দূরে|লন্তানো
+bagno|বাথরুম|বান্যো
+#সংখ্যা ও সময়
+sei|ছয়|সেই
+sette|সাত|সেত্তে
+otto|আট|ওত্তো
+nove|নয়|নোভে
+venti|বিশ|ভেন্তি
+cento|একশো|চেন্তো
+mille|হাজার|মিল্লে
+mattina|সকাল|মাত্তিনা
+sera|সন্ধ্যা|সেরা
+settimana|সপ্তাহ|সেত্তিমানা
+mese|মাস|মেজে
+anno|বছর|আন্নো
+adesso|এখন|আদেস্সো
+presto|তাড়াতাড়ি|প্রেস্তো
+tardi|দেরি|তার্দি
+#রং ও বিশেষণ
+rosso|লাল|রোস্সো
+blu|নীল|ব্লু
+verde|সবুজ|ভের্দে
+giallo|হলুদ|জাল্লো
+bianco|সাদা|বিয়ানকো
+nero|কালো|নেরো
+caldo|গরম|কাল্দো
+freddo|ঠান্ডা|ফ্রেদ্দো
+nuovo|নতুন|নুওভো
+vecchio|পুরনো|ভেক্কিও
+#ক্রিয়া
+volere|চাওয়া|ভোলেরে
+potere|পারা|পোতেরে
+sapere|জানা|সাপেরে
+fare|করা|ফারে
+dare|দেওয়া|দারে
+prendere|নেওয়া|প্রেন্দেরে
+comprare|কেনা|কম্প্রারে
+pagare|টাকা দেওয়া|পাগারে
+dormire|ঘুমানো|দোর্মিরে
+lavorare|কাজ করা|লাভোরারে
+studiare|পড়াশোনা করা|স্তুদিয়ারে
+capire|বোঝা|কাপিরে
+aspettare|অপেক্ষা করা|আস্পেত্তারে
+ascoltare|শোনা|আসকোলতারে
+#শরীর ও অনুভূতি
+testa|মাথা|তেস্তা
+mano|হাত|মানো
+occhio|চোখ|ওক্কিও
+cuore|হৃদয়|কুওরে
+felice|খুশি|ফেলিচে
+triste|দুঃখিত|ত্রিস্তে
+stanco|ক্লান্ত|স্তাঙ্কো
+fame|ক্ষুধা|ফামে
+sete|তৃষ্ণা|সেতে
+medico|ডাক্তার|মেদিকো
+#প্রাণী ও প্রকৃতি
+cane|কুকুর|কানে|🐶
+gatto|বিড়াল|গাত্তো|🐱
+uccello|পাখি|উচ্চেল্লো|🐦
+cavallo|ঘোড়া|কাভাল্লো|🐴
+mucca|গরু|মুক্কা|🐮
+leone|সিংহ|লেওনে|🦁
+elefante|হাতি|এলেফান্তে|🐘
+sole|সূর্য|সোলে|☀️
+luna|চাঁদ|লুনা|🌙
+stella|তারা|স্তেল্লা|⭐
+fiore|ফুল|ফিওরে|🌸
+albero|গাছ|আলবেরো|🌳
+mare|সমুদ্র|মারে|🌊
+montagna|পাহাড়|মন্তান্যা|⛰️
+fuoco|আগুন|ফুওকো|🔥
+#বাড়ি ও জিনিস
+porta|দরজা|পোর্তা|🚪
+letto|বিছানা|লেত্তো|🛏️
+sedia|চেয়ার|সেদিয়া|🪑
+libro|বই|লিব্রো|📖
+penna|কলম|পেন্না|🖊️
+telefono|ফোন|তেলেফোনো|📱
+chiave|চাবি|কিয়াভে|🔑
+borsa|ব্যাগ|বোর্সা|👜
+orologio|ঘড়ি|ওরোলজো|⌚
+luce|আলো|লুচে|💡
+macchina|গাড়ি|মাক্কিনা|🚗
+bicicletta|সাইকেল|বিচিক্লেত্তা|🚲
+soldi|টাকা|সোল্দি|💰
+#পোশাক ও কেনাকাটা
+vestito|পোশাক|ভেস্তিতো|👗
+camicia|শার্ট|কামিচা|👕
+scarpe|জুতা|স্কার্পে|👟
+cappello|টুপি|কাপ্পেল্লো|🎩
+negozio|দোকান|নেগোৎসিও|🏪
+mercato|বাজার|মেরকাতো|🛒
+prezzo|দাম|প্রেৎসো|🏷️
+sconto|ছাড়|স্কোন্তো|💸
+regalo|উপহার|রেগালো|🎁
+taglia|সাইজ|তাল্লিয়া|📏
+#শহর ও কাজ
+ospedale|হাসপাতাল|ওস্পেদালে|🏥
+farmacia|ওষুধের দোকান|ফার্মাচিয়া|💊
+banca|ব্যাংক|বাঙ্কা|🏦
+chiesa|গির্জা|কিয়েজা|⛪
+parco|পার্ক|পার্কো|🏞️
+ufficio|অফিস|উফ্ফিচো|🏢
+insegnante|শিক্ষক|ইনসেন্যান্তে|👩‍🏫
+studente|ছাত্র|স্তুদেন্তে|🎓
+cuoco|বাবুর্চি|কুওকো|👨‍🍳
+#আবহাওয়া ও ঋতু
+pioggia|বৃষ্টি|পিওজ্জা|🌧️
+neve|তুষার|নেভে|❄️
+vento|বাতাস|ভেন্তো|💨
+nuvola|মেঘ|নুভোলা|☁️
+estate|গ্রীষ্ম|এস্তাতে|🏖️
+inverno|শীত|ইনভের্নো|🧣
+primavera|বসন্ত|প্রিমাভেরা|🌷
+autunno|শরৎ|আউতুন্নো|🍂
+#দৈনন্দিন বাক্য
+ho fame|আমার খিদে পেয়েছে|ও ফামে|🍴
+parli inglese|আপনি ইংরেজি বলেন|পার্লি ইংলেজে|🗣️
+sono del Bangladesh|আমি বাংলাদেশের|সোনো দেল বাঙ্গালাদেশ|🇧🇩
+piacere|পরিচিত হয়ে খুশি|পিয়াচেরে|🤝
+mi dispiace|আমি দুঃখিত|মি দিস্পিয়াচে|😔
+va bene|ঠিক আছে|ভা বেনে|👌
+non lo so|আমি জানি না|নোন লো সো|🤷
+ripeta|আবার বলুন|রিপেতা|🔁
+più piano|আরও আস্তে|পিউ পিয়ানো|🐢
+ti amo|আমি তোমাকে ভালোবাসি|তি আমো|❤️
+salute|চিয়ার্স|সালুতে|🥂
+buon viaggio|শুভ যাত্রা|বুওন ভিয়াজ্জো|🧳
+buon appetito|ভালোভাবে খান|বুওন আপ্পেতিতো|😋
+ottimo|চমৎকার|অত্তিমো|🌟
+ecco|এই যে|এক্কো|👉
+#পরিবার ও সম্পর্ক
+nonno|দাদা / নানা|নন্নো|👴
+nonna|দাদি / নানি|নন্না|👵
+zio|চাচা / মামা|ৎজিও|👨
+zia|চাচি / মাসি|ৎজিয়া|👩
+figlio|ছেলে|ফিল্যো|👦
+figlia|মেয়ে|ফিল্যা|👧
+marito|স্বামী|মারিতো|🤵
+moglie|স্ত্রী|মোল্যে|👰
+nipote|নাতি / ভাতিজা|নিপোতে|🧒
+ragazzo|তরুণ|রাগাজ্জো|👨‍🦱
+ragazza|তরুণী|রাগাজ্জা|👩‍🦱
+persone|মানুষ|পেরসোনে|👥
+#রান্নাঘর ও খাবার
+colazione|সকালের নাস্তা|কোলাৎসিওনে|🥐
+pranzo|দুপুরের খাবার|প্রান্জো|🥗
+cena|রাতের খাবার|চেনা|🍛
+gelato|আইসক্রিম|জেলাতো|🍦
+torta|কেক|তোর্তা|🎂
+cioccolato|চকলেট|চোক্কোলাতো|🍫
+zuppa|স্যুপ|জুপ্পা|🍜
+insalata|সালাদ|ইনসালাতা|🥬
+patata|আলু|পাতাতা|🥔
+pomodoro|টমেটো|পোমোদোরো|🍅
+cipolla|পেঁয়াজ|চিপোল্লা|🧅
+limone|লেবু|লিমোনে|🍋
+succo|জুস|সুক্কো|🧃
+cucchiaio|চামচ|কুক্কিয়াইও|🥄
+#শরীর ও স্বাস্থ্য
+naso|নাক|নাজো|👃
+bocca|মুখ|বোক্কা|👄
+orecchio|কান|ওরেক্কিও|🦻
+piede|পা|পিয়েদে|🦶
+braccio|বাহু|ব্রাচ্চো|🦾
+dente|দাঁত|দেন্তে|🦷
+capelli|চুল|কাপেল্লি|💇
+pancia|পেট|পানচা|🫃
+febbre|জ্বর|ফেব্ব্রে|🤒
+dolore|ব্যথা|দোলোরে|😣
+medicina|ওষুধ|মেদিচিনা|💊
+tosse|কাশি|তোস্সে|🤧
+#সপ্তাহ ও সময়
+lunedì|সোমবার|লুনেদি|📘
+martedì|মঙ্গলবার|মার্তেদি|📗
+mercoledì|বুধবার|মেরকোলেদি|📙
+giovedì|বৃহস্পতিবার|জোভেদি|📕
+venerdì|শুক্রবার|ভেনেরদি|🕌
+sabato|শনিবার|সাবাতো|🎉
+domenica|রবিবার|দোমেনিকা|🛌
+ora|ঘণ্টা|অরা|🕐
+minuto|মিনিট|মিনুতো|⏱️
+stagione|ঋতু|স্তাজোনে|🍃
+#জায়গা ও দিক
+qui|এখানে|কুই|📌
+là|ওখানে|লা|👈
+dentro|ভেতরে|দেন্ত্রো|📥
+fuori|বাইরে|ফুওরি|📤
+sopra|উপরে|সোপ্রা|🔝
+sotto|নিচে|সোত্তো|⬇️
+davanti|সামনে|দাভান্তি|⏩
+dietro|পেছনে|দিয়েত্রো|⏪
+centro|কেন্দ্র|চেন্ত্রো|🎯
+angolo|কোণ|আঙ্গোলো|📐
+ponte|সেতু|পোন্তে|🌉
+piazza|চত্বর|পিয়াৎসা|⛲
+#প্রশ্ন ও সাধারণ শব্দ
+chi|কে|কি|❓
+che cosa|কী|কে কোজা|🤔
+perché|কেন|পেরকে|🧐
+quando|কখন|কুয়ান্দো|🕒
+come|কীভাবে|কোমে|🛠️
+quale|কোনটি|কুয়ালে|👆
+e|এবং|এ|➕
+ma|কিন্তু|মা|↔️
+con|সাথে|কন|🫶
+senza|ছাড়া|সেন্ৎসা|🚫
+molto|অনেক|মোলতো|📈
+poco|অল্প|পোকো|📉
+tutto|সব|তুত্তো|🌐
+#আরও ক্রিয়া
+chiamare|ডাকা|কিয়ামারে|📞
+aprire|খোলা|আপ্রিরে|🔓
+chiudere|বন্ধ করা|কিউদেরে|🔒
+trovare|খুঁজে পাওয়া|ত্রোভারে|🔎
+cercare|খোঁজা|চের্কারে|🕵️
+scrivere|লেখা|স্ক্রিভেরে|✍️
+leggere|পড়া|লেজ্জেরে|📰
+giocare|খেলা|জোকারে|🎮
+cantare|গান গাওয়া|কান্তারে|🎤
+ballare|নাচা|বাল্লারে|💃
+camminare|হাঁটা|কাম্মিনারে|🥾
+imparare|শেখা|ইম্পারারে|🎒
+#অফিস ও কাগজপত্র
+documento|নথি / পরিচয়পত্র|দোকুমেন্তো|📄|Ho dimenticato il documento.|আমি নথিটা ভুলে গেছি।
+modulo|ফর্ম|মোদুলো|📝|Devo compilare il modulo.|আমাকে ফর্মটা পূরণ করতে হবে।
+appuntamento|অ্যাপয়েন্টমেন্ট|আপ্পুন্তামেন্তো|📅|Vorrei prendere un appuntamento.|আমি একটি অ্যাপয়েন্টমেন্ট নিতে চাই।
+residenza|বসবাসের ঠিকানা|রেজিদেন্ৎসা|🏘️|Ho la residenza a Venezia.|ভেনিসে আমার বসবাসের ঠিকানা আছে।
+comune|পৌরসভা|কোমুনে|🏛️|Vado al comune domani.|আমি কাল পৌরসভায় যাব।
+firma|স্বাক্ষর|ফির্মা|🖋️|Serve la sua firma qui.|এখানে আপনার স্বাক্ষর লাগবে।
+domanda|আবেদন|দোমান্দা|📨|Faccio la domanda oggi.|আমি আজ আবেদন করছি।
+indirizzo|ঠিকানা|ইন্দিরিৎসো|📮|Qual è il suo indirizzo?|আপনার ঠিকানা কী?
+carta d'identità|পরিচয়পত্র|কার্তা দিদেন্তিতা|🪪|Ecco la mia carta d'identità.|এই যে আমার পরিচয়পত্র।
+fotocopia|ফটোকপি|ফোতোকোপিয়া|🖨️|Serve una fotocopia.|একটি ফটোকপি লাগবে।
+sportello|কাউন্টার|স্পোর্তেল্লো|🪟|Quale sportello devo usare?|আমাকে কোন কাউন্টারে যেতে হবে?
+numero|নম্বর|নুমেরো|🔢|Prendo il numero.|আমি নম্বরের টিকিট নিই।
+attesa|অপেক্ষা|আত্তেজা|🕰️|L'attesa è lunga.|অপেক্ষা অনেক লম্বা।
+ritirare|সংগ্রহ করা|রিতিরারে|📥|Devo ritirare un documento.|আমাকে একটি নথি সংগ্রহ করতে হবে।
+consegnare|জমা দেওয়া|কোনসেন্যারে|📤|Posso consegnare i documenti qui?|আমি কি এখানে নথি জমা দিতে পারি?
+informazioni|তথ্য|ইনফোরমাৎসিওনি|ℹ️|Vorrei delle informazioni.|আমি কিছু তথ্য চাই।
+orario|সময়সূচি|ওরারিও|🕘|Qual è l'orario di apertura?|খোলার সময়সূচি কী?
+chiuso|বন্ধ|কিউজো|⛔|L'ufficio è chiuso oggi.|অফিস আজ বন্ধ।
+aperto|উন্মুক্ত / খোলা আছে|আপেরতো|🟩|Il negozio è aperto.|দোকানটা খোলা আছে।
+scadenza|মেয়াদ / শেষ তারিখ|স্কাদেন্ৎসা|⌛|Qual è la scadenza?|শেষ তারিখ কবে?
+#ভেনিস ও যাতায়াত
+vaporetto|ওয়াটার বাস|ভাপোরেত্তো|⛴️|Prendo il vaporetto per Rialto.|আমি রিয়ালতোর জন্য ভাপোরেত্তো নিই।
+fermata|স্টপ|ফেরমাতা|🚏|Dov'è la fermata?|স্টপটা কোথায়?
+canale|খাল|কানালে|🛶|Il canale è molto largo.|খালটা অনেক চওড়া।
+isola|দ্বীপ|ইজোলা|🏝️|Vado sull'isola di Murano.|আমি মুরানো দ্বীপে যাচ্ছি।
+abbonamento|মাসিক / বার্ষিক পাস|আব্বোনামেন্তো|🎟️|Vorrei un abbonamento mensile.|আমি একটি মাসিক পাস চাই।
+corsa|এক যাত্রা|কোর্সা|🚍|Una corsa, per favore.|একটি যাত্রার টিকিট দিন, দয়া করে।
+partenza|যাত্রা শুরু|পার্তেন্ৎসা|🛫|La partenza è alle sette.|যাত্রা সাতটায় শুরু।
+arrivo|পৌঁছানো|আররিভো|🛬|L'arrivo è alle nove.|পৌঁছানো নয়টায়।
+binario|প্ল্যাটফর্ম|বিনারিও|🛤️|Da quale binario parte?|কোন প্ল্যাটফর্ম থেকে ছাড়ে?
+ritardo|বিলম্ব|রিতার্দো|🕑|Il treno è in ritardo.|ট্রেন বিলম্বে চলছে।
+cambio|বদল|কাম্বিও|🔄|Faccio il cambio a Mestre.|আমি মেস্ত্রেতে বদল করি।
+direzione|দিক|দিরেৎসিওনে|🧭|In che direzione devo andare?|আমাকে কোন দিকে যেতে হবে?
+mappa|মানচিত্র|মাপ্পা|🗺️|Ho una mappa della città.|আমার কাছে শহরের মানচিত্র আছে।
+biglietteria|টিকিট কাউন্টার|বিল্লিয়েত্তেরিয়া|🏷️|Dov'è la biglietteria?|টিকিট কাউন্টার কোথায়?
+fermare|থামা|ফেরমারে|🛑|Il treno non si ferma qui.|ট্রেনটা এখানে থামে না।
+#কাজ ও বাসা
+contratto|চুক্তি|কন্ত্রাত্তো|📃|Devo leggere il contratto.|আমাকে চুক্তিটা পড়তে হবে।
+affitto|ভাড়া|আফ্ফিত্তো|🏘️|L'affitto è alto.|ভাড়া বেশি।
+stipendio|বেতন|স্তিপেন্দিও|💵|Lo stipendio arriva il ventisette.|বেতন সাতাশ তারিখে আসে।
+padrone di casa|বাড়িওয়ালা|পাদ্রোনে দি কাজা|🧑‍💼|Parlo con il padrone di casa.|আমি বাড়িওয়ালার সাথে কথা বলছি।
+condominio|অ্যাপার্টমেন্ট ভবন|কন্দোমিনিও|🏢|Abito in un condominio.|আমি একটি অ্যাপার্টমেন্ট ভবনে থাকি।
+bolletta|বিদ্যুৎ-গ্যাসের বিল|বোল্লেত্তা|🧾|La bolletta della luce è arrivata.|বিদ্যুতের বিল এসেছে।
+riscaldamento|হিটিং|রিস্কালদামেন্তো|♨️|Il riscaldamento non funziona.|হিটিং কাজ করছে না।
+datore di lavoro|নিয়োগকর্তা|দাতোরে দি লাভোরো|👔|Il mio datore di lavoro è gentile.|আমার নিয়োগকর্তা ভদ্র।
+colloquio|সাক্ষাৎকার|কোল্লোকুইও|🗣️|Domani ho un colloquio.|কাল আমার একটি সাক্ষাৎকার আছে।
+turno|শিফট|তুর্নো|🔁|Il mio turno inizia alle sei.|আমার শিফট ছয়টায় শুরু হয়।
+ferie|ছুটি|ফেরিয়ে|🏖️|Sono in ferie la prossima settimana.|আমি আগামী সপ্তাহে ছুটিতে।
+riunione|সভা|রিউনিওনে|👥|La riunione è alle tre.|সভা তিনটায়।
+collega|সহকর্মী|কোল্লেগা|🧑‍🤝‍🧑|Un collega mi aiuta.|একজন সহকর্মী আমাকে সাহায্য করেন।
+richiesta|অনুরোধ|রিকিয়েস্তা|🙋|Faccio una richiesta.|আমি একটি অনুরোধ করছি।
+#জরুরি ও স্বাস্থ্য
+emergenza|জরুরি অবস্থা|এমেরজেন্ৎসা|🚨|È un'emergenza!|এটা জরুরি অবস্থা!
+ambulanza|অ্যাম্বুলেন্স|আম্বুলান্ৎসা|🚑|Chiamate un'ambulanza!|একটি অ্যাম্বুলেন্স ডাকুন!
+pronto soccorso|জরুরি বিভাগ|প্রন্তো সোক্কোর্সো|🏥|Dov'è il pronto soccorso?|জরুরি বিভাগ কোথায়?
+ricetta|প্রেসক্রিপশন|রিচেত্তা|📋|Ho bisogno della ricetta.|আমার প্রেসক্রিপশন লাগবে।
+allergia|অ্যালার্জি|আল্লের্জিয়া|🌼|Ho un'allergia.|আমার অ্যালার্জি আছে।
+esame|চিকিৎসা পরীক্ষা|এজামে|🔬|Devo fare un esame del sangue.|আমাকে রক্তের পরীক্ষা করাতে হবে।
+visita|ডাক্তার দেখানো|ভিজিতা|🩺|Ho una visita domani.|কাল আমার ডাক্তার দেখানোর সময় আছে।
+assicurazione|বিমা|আস্সিকুরাৎসিওনে|🛡️|Ho l'assicurazione sanitaria.|আমার স্বাস্থ্যবিমা আছে।
+vigili del fuoco|ফায়ার সার্ভিস|ভিজিলি দেল ফুওকো|🚒|Chiamo i vigili del fuoco.|আমি ফায়ার সার্ভিসকে ডাকছি।
+guardia medica|বন্ধের সময়ের ডাক্তার|গুয়ার্দিয়া মেদিকা|🌙|Chiamo la guardia medica.|আমি বন্ধের সময়ের ডাক্তারকে ডাকছি।
+#ব্যাংক ও ডাকঘর
+conto corrente|ব্যাংক অ্যাকাউন্ট|কন্তো কোররেন্তে|🏦|Vorrei aprire un conto corrente.|আমি একটি ব্যাংক অ্যাকাউন্ট খুলতে চাই।
+carta|কার্ড|কার্তা|💳|Ho una carta di credito.|আমার একটি ক্রেডিট কার্ড আছে।
+bancomat|এটিএম|বাংকোমাত|🏧|Cerco un bancomat.|আমি একটি এটিএম খুঁজছি।
+prelievo|টাকা তোলা|প্রেলিয়েভো|💸|Devo fare un prelievo.|আমাকে টাকা তুলতে হবে।
+bonifico|ব্যাংক ট্রান্সফার|বোনিফিকো|🔁|Faccio un bonifico oggi.|আমি আজ ব্যাংক ট্রান্সফার করছি।
+posta|ডাকঘর|পোস্তা|📬|La posta è chiusa.|ডাকঘর বন্ধ।
+pacco|পার্সেল|পাক্কো|📦|Aspetto un pacco.|আমি একটি পার্সেলের অপেক্ষায় আছি।
+lettera|চিঠি|লেত্তেরা|✉️|Ho ricevuto una lettera.|আমি একটি চিঠি পেয়েছি।
+francobollo|ডাকটিকিট|ফ্রাঙ্কোবোল্লো|📮|Un francobollo, per favore.|একটি ডাকটিকিট দিন, দয়া করে।
+spedire|পাঠানো|স্পেদিরে|📤|Devo spedire un pacco.|আমাকে একটি পার্সেল পাঠাতে হবে।
+#ফোন ও ইন্টারনেট
+cellulare|মোবাইল ফোন|চেল্লুলারে|📱|Il mio cellulare è scarico.|আমার মোবাইলের চার্জ শেষ।
+internet|ইন্টারনেট|ইন্তেরনেত|🌐|Non c'è internet qui.|এখানে ইন্টারনেট নেই।
+password|পাসওয়ার্ড|পাসওয়ার্দ|🔐|Ho dimenticato la password.|আমি পাসওয়ার্ড ভুলে গেছি।
+messaggio|বার্তা|মেস্সাজ্জো|💬|Ti mando un messaggio.|আমি তোমাকে একটি বার্তা পাঠাই।
+chiamata|ফোনকল|কিয়ামাতা|📞|Aspetto una chiamata.|আমি একটি ফোনকলের অপেক্ষায় আছি।
+wifi|ওয়াইফাই|উইফাই|📶|Qual è la password del wifi?|ওয়াইফাইয়ের পাসওয়ার্ড কী?
+ricaricare|রিচার্জ করা|রিকারিকারে|🔋|Devo ricaricare il telefono.|আমাকে ফোন রিচার্জ করতে হবে।
+#স্কুল ও শিশু
+classe|ক্লাস / শ্রেণি|ক্লাস্সে|🏫|Mio figlio è in prima classe.|আমার ছেলে প্রথম শ্রেণিতে।
+compiti|হোমওয়ার্ক|কোম্পিতি|📚|Faccio i compiti.|আমি হোমওয়ার্ক করছি।
+maestra|প্রাথমিকের শিক্ষিকা|মাএস্ত্রা|👩‍🏫|La maestra è molto brava.|শিক্ষিকা অনেক ভালো।
+lezione|পাঠ|লেৎসিওনে|📖|La lezione inizia alle otto.|পাঠ আটটায় শুরু হয়।
+iscrizione|ভর্তি / নিবন্ধন|ইস্ক্রিৎসিওনে|📝|L'iscrizione è aperta.|নিবন্ধন চলছে।
+mensa|স্কুলের ক্যান্টিন|মেনজা|🍱|Mangio alla mensa.|আমি ক্যান্টিনে খাই।
+zaino|স্কুলব্যাগ|জাইনো|🎒|Lo zaino è pesante.|স্কুলব্যাগ ভারী।
+vacanza|ভ্রমণের ছুটি|ভাকান্ৎসা|🏖️|Siamo in vacanza.|আমরা ভ্রমণের ছুটিতে আছি।
+#অনুভূতি ও বিশেষণ
+contento|সন্তুষ্ট|কন্তেন্তো|🙂|Sono contento di vederti.|তোমাকে দেখে আমি খুশি।
+arrabbiato|রাগান্বিত|আররাব্বিয়াতো|😠|Non sono arrabbiato.|আমি রাগ করিনি।
+preoccupato|চিন্তিত|প্রেওক্কুপাতো|😟|Sono preoccupato per il lavoro.|আমি কাজ নিয়ে চিন্তিত।
+nervoso|নার্ভাস|নের্ভোজো|😬|Sono nervoso per il colloquio.|সাক্ষাৎকার নিয়ে আমি নার্ভাস।
+sicuro|নিশ্চিত|সিকুরো|🛡️|Sei sicuro?|তুমি কি নিশ্চিত?
+difficile|কঠিন|দিফ্ফিচিলে|🧗|L'italiano è difficile.|ইতালিয়ান কঠিন।
+facile|সহজ|ফাচিলে|👍|Questa parola è facile.|এই শব্দটা সহজ।
+importante|গুরুত্বপূর্ণ|ইম্পোর্তান্তে|❗|È molto importante.|এটা খুব গুরুত্বপূর্ণ।
+gentile|ভদ্র|জেন্তিলে|😇|Lei è molto gentile.|আপনি খুব ভদ্র।
+lungo|লম্বা|লুঙ্গো|📏|Il viaggio è lungo.|যাত্রা লম্বা।
+corto|খাটো|কোর্তো|✂️|Il percorso è corto.|পথটা খাটো।
+pronto|প্রস্তুত|প্রন্তো|✅|Sono pronto.|আমি প্রস্তুত।
+libero|খালি / মুক্ত|লিবেরো|🕊️|Questo posto è libero?|এই জায়গাটা কি খালি?
+occupato|ব্যস্ত|অক্কুপাতো|⏱️|Sono occupato adesso.|আমি এখন ব্যস্ত।
+#সামাজিক ও দৈনন্দিন ক্রিয়া
+conoscere|চেনা / পরিচিত হওয়া|কোনোশেরে|🤝|Piacere di conoscerla.|আপনার সাথে পরিচিত হয়ে খুশি।
+invitare|আমন্ত্রণ জানানো|ইনভিতারে|💌|Ti invito a cena.|আমি তোমাকে রাতের খাবারে আমন্ত্রণ জানাই।
+incontrare|দেখা করা|ইনকন্ত্রারে|🫂|Ci incontriamo domani.|আমরা কাল দেখা করি।
+ringraziare|ধন্যবাদ জানানো|রিংগ্রাৎসিয়ারে|🙏|Voglio ringraziare tutti.|আমি সবাইকে ধন্যবাদ জানাতে চাই।
+chiedere|জিজ্ঞেস করা|কিয়েদেরে|🙋|Posso chiedere una cosa?|আমি কি একটা কথা জিজ্ঞেস করতে পারি?
+rispondere|উত্তর দেওয়া|রিস্পন্দেরে|💬|Devo rispondere alla mail.|আমাকে ইমেইলের উত্তর দিতে হবে।
+aiutare|সাহায্য করা|আইউতারে|🤲|Puoi aiutarmi, per favore?|তুমি কি আমাকে সাহায্য করতে পারবে, দয়া করে?
+cucinare|রান্না করা|কুচিনারে|🍳|Mi piace cucinare.|আমি রান্না করতে পছন্দ করি।
+pulire|পরিষ্কার করা|পুলিরে|🧹|Devo pulire la casa.|আমাকে বাড়ি পরিষ্কার করতে হবে।
+abitare|বাস করা|আবিতারে|🏠|Abito a Venezia.|আমি ভেনিসে বাস করি।
+viaggiare|ভ্রমণ করা|ভিয়াজ্জারে|🧳|Mi piace viaggiare.|আমি ভ্রমণ করতে পছন্দ করি।
+ricordare|মনে রাখা|রিকোর্দারে|🧠|Non riesco a ricordare.|আমি মনে করতে পারছি না।
+dimenticare|ভুলে যাওয়া|দিমেন্তিকারে|🙈|Non voglio dimenticare.|আমি ভুলে যেতে চাই না।
+#খাবার ও রান্নাঘর
+panino|স্যান্ডউইচ|পানিনো|🥪|Un panino con il formaggio.|পনির দিয়ে একটি স্যান্ডউইচ।
+biscotto|বিস্কুট|বিস্কোত্তো|🍪|Un biscotto con il caffè.|কফির সাথে একটি বিস্কুট।
+miele|মধু|মিয়েলে|🍯|Il tè con il miele.|মধু দিয়ে চা।
+burro|মাখন|বুর্রো|🧈|Pane e burro.|রুটি আর মাখন।
+olio|তেল|ওলিও|🫒|Olio d'oliva, per favore.|জলপাইয়ের তেল দিন, দয়া করে।
+spezie|মসলা|স্পেৎসিয়ে|🌶️|Mi piacciono le spezie.|আমি মসলা পছন্দ করি।
+manzo|গরুর মাংস|মান্ৎসো|🥩|Non mangio manzo.|আমি গরুর মাংস খাই না।
+fagioli|শিম|ফাজোলি|🫘|I fagioli sono buoni.|শিম সুস্বাদু।
+lenticchie|মসুর ডাল|লেন্তিক্কিয়ে|🥣|Cucino le lenticchie.|আমি মসুর ডাল রান্না করি।
+banana|কলা|বানানা|🍌|Una banana, per favore.|একটি কলা দিন, দয়া করে।
+arancia|কমলা|আরানচা|🍊|L'arancia è dolce.|কমলাটা মিষ্টি।
+bicchiere|গ্লাস|বিক্কিয়েরে|🥛|Il bicchiere è pulito.|গ্লাসটা পরিষ্কার।
+piatto|প্লেট|পিয়াত্তো|🍽️|Il piatto è caldo.|প্লেটটা গরম।
+forchetta|কাঁটা চামচ|ফোরকেত্তা|🍴|Mi serve una forchetta.|আমার একটি কাঁটা চামচ দরকার।
+#ঘর ও আসবাব
+cucina|রান্নাঘর|কুচিনা|🍳|La cucina è pulita.|রান্নাঘর পরিষ্কার।
+salotto|বসার ঘর|সালোত্তো|🛋️|Siamo nel salotto.|আমরা বসার ঘরে আছি।
+camera da letto|শোবার ঘর|কামেরা দা লেত্তো|🛏️|La camera da letto è piccola.|শোবার ঘর ছোট।
+tavolo|টেবিল|তাভোলো|🪑|Il tavolo è libero.|টেবিলটা খালি।
+armadio|আলমারি|আরমাদিও|🚪|I vestiti sono nell'armadio.|কাপড় আলমারিতে আছে।
+finestra|জানালা|ফিনেস্ত্রা|🪟|La finestra è aperta.|জানালা খোলা আছে।
+frigorifero|ফ্রিজ|ফ্রিজোরিফেরো|🧊|Il latte è nel frigorifero.|দুধ ফ্রিজে আছে।
+lavatrice|ওয়াশিং মেশিন|লাভাত্রিচে|🧺|La lavatrice non funziona.|ওয়াশিং মেশিন কাজ করছে না।
+televisione|টিভি|তেলেভিজিওনে|📺|Guardo la televisione la sera.|আমি সন্ধ্যায় টিভি দেখি।
+coperta|কম্বল|কোপের্তা|🛌|Mi serve una coperta.|আমার একটি কম্বল দরকার।
+specchio|আয়না|স্পেক্কিও|🪞|Lo specchio è grande.|আয়নাটা বড়।
+scala|সিঁড়ি|স্কালা|🪜|Salgo le scale.|আমি সিঁড়ি দিয়ে উঠি।
+balcone|বারান্দা|বালকোনে|🌇|Prendo il caffè sul balcone.|আমি বারান্দায় কফি খাই।
+#কেনাকাটা ও দোকান
+supermercato|সুপারমার্কেট|সুপেরমেরকাতো|🛒|Vado al supermercato.|আমি সুপারমার্কেটে যাই।
+panetteria|রুটির দোকান|পানেত্তেরিয়া|🥖|La panetteria apre presto.|রুটির দোকান তাড়াতাড়ি খোলে।
+macelleria|মাংসের দোকান|মাচেল্লেরিয়া|🥩|Compro la carne in macelleria.|আমি মাংসের দোকান থেকে মাংস কিনি।
+carrello|ট্রলি|কার্রেল্লো|🛒|Prendo un carrello.|আমি একটি ট্রলি নিই।
+cassa|ক্যাশ কাউন্টার|কাস্সা|💵|La cassa è là.|ক্যাশ কাউন্টার ওখানে।
+scontrino|রসিদ|স্কন্ত্রিনো|🧾|Posso avere lo scontrino?|আমি কি রসিদটা পেতে পারি?
+contanti|নগদ টাকা|কন্তান্তি|💶|Pago in contanti.|আমি নগদে টাকা দিই।
+resto|ফেরত খুচরা|রেস্তো|🪙|Ecco il resto.|এই যে খুচরা ফেরত।
+offerta|অফার|অফ্ফেরতা|🏷️|Oggi c'è un'offerta.|আজ একটি অফার আছে।
+sacchetto|প্লাস্টিক ব্যাগ|সাক্কেত্তো|🛍️|Mi serve un sacchetto.|আমার একটি ব্যাগ লাগবে।
+#সংখ্যা, সময় ও উৎসব
+trenta|ত্রিশ|ত্রেন্তা|🔢|Costa trenta euro.|এর দাম ত্রিশ ইউরো।
+quaranta|চল্লিশ|কুয়ারান্তা|🔢|Aspetto quaranta minuti.|আমি চল্লিশ মিনিট অপেক্ষা করছি।
+cinquanta|পঞ্চাশ|চিঙ্কুয়ান্তা|🔢|Ci sono cinquanta persone.|এখানে পঞ্চাশজন মানুষ আছে।
+primo|প্রথম|প্রিমো|🥇|Il primo giorno è difficile.|প্রথম দিনটা কঠিন।
+secondo|দ্বিতীয়|সেকোন্দো|🥈|Il secondo piano.|দ্বিতীয় তলা।
+ultimo|শেষ|উল্তিমো|🏁|L'ultimo treno parte alle undici.|শেষ ট্রেন এগারোটায় ছাড়ে।
+mezzogiorno|দুপুর বারোটা|মেজ্জোজোর্নো|🕛|Mangiamo a mezzogiorno.|আমরা দুপুর বারোটায় খাই।
+mezzanotte|মধ্যরাত|মেজ্জানোত্তে|🌌|Il negozio chiude a mezzanotte.|দোকান মধ্যরাতে বন্ধ হয়।
+compleanno|জন্মদিন|কম্প্লেয়ানো|🎂|Oggi è il mio compleanno.|আজ আমার জন্মদিন।
+festa|উৎসব / পার্টি|ফেস্তা|🎉|C'è una festa sabato.|শনিবার একটি অনুষ্ঠান আছে।
+Natale|বড়দিন|নাতালে|🎄|Buon Natale!|শুভ বড়দিন!
+Pasqua|ঈস্টার|পাস্কুয়া|🐣|A Pasqua andiamo in famiglia.|ঈস্টারে আমরা পরিবারের কাছে যাই।
+#পরিবহন ও গাড়ি
+benzina|পেট্রল|বেন্জিনা|⛽|Faccio benzina.|আমি পেট্রল ভরি।
+parcheggio|পার্কিং|পার্কেজ্জো|🅿️|Il parcheggio è pieno.|পার্কিং ভরা।
+patente|ড্রাইভিং লাইসেন্স|পাতেন্তে|🪪|Ho la patente.|আমার ড্রাইভিং লাইসেন্স আছে।
+semaforo|ট্রাফিক সিগন্যাল|সেমাফোরো|🚦|Il semaforo è rosso.|সিগন্যাল লাল।
+incidente|দুর্ঘটনা|ইনচিদেন্তে|💥|C'è stato un incidente.|একটি দুর্ঘটনা হয়েছে।
+multa|জরিমানা|মুল্তা|📑|Ho preso una multa.|আমি জরিমানা পেয়েছি।
+autostrada|হাইওয়ে|আউতোস্ত্রাদা|🛣️|Prendo l'autostrada.|আমি হাইওয়ে ধরি।
+traghetto|ফেরি|ত্রাগেত্তো|⛴️|Il traghetto parte alle otto.|ফেরি আটটায় ছাড়ে।
+#প্রকৃতি ও প্রাণী
+fiume|নদী|ফিউমে|🏞️|Il fiume è lungo.|নদীটা লম্বা।
+lago|হ্রদ|লাগো|🌅|Andiamo al lago.|আমরা হ্রদে যাই।
+spiaggia|সৈকত|স্পিয়াজ্জা|🏖️|La spiaggia è pulita.|সৈকতটা পরিষ্কার।
+foresta|বন|ফোরেস্তা|🌲|Camminiamo nella foresta.|আমরা বনে হাঁটি।
+pecora|ভেড়া|পেকোরা|🐑|La pecora mangia l'erba.|ভেড়া ঘাস খায়।
+maiale|শূকর|মাইয়ালে|🐖|Non mangio carne di maiale.|আমি শূকরের মাংস খাই না।
+halal|হালাল|হালাল|✅|Avete carne halal?|আপনাদের কাছে হালাল মাংস আছে?
+#শরীর ও যত্ন
+gola|গলা|গোলা|🗣️|Mi fa male la gola.|আমার গলা ব্যথা করছে।
+ginocchio|হাঁটু|জিনোক্কিও|🦵|Mi fa male il ginocchio.|আমার হাঁটুতে ব্যথা।
+schiena|পিঠ|স্কিয়েনা|🧍|Ho mal di schiena.|আমার পিঠ ব্যথা করছে।
+dito|আঙুল|দিতো|☝️|Mi fa male un dito.|আমার একটি আঙুলে ব্যথা।
+viso|মুখমণ্ডল|ভিজো|🙂|Mi lavo il viso.|আমি মুখ ধুই।
+sangue|রক্ত|সাঙ্গুয়ে|🩸|Devo fare le analisi del sangue.|আমাকে রক্ত পরীক্ষা করাতে হবে।
+#চলাফেরার ক্রিয়া
+partire|রওনা হওয়া|পার্তিরে|🚀|Parto domani mattina.|আমি কাল সকালে রওনা হই।
+arrivare|পৌঁছে যাওয়া|আররিভারে|🏁|Arrivo tra dieci minuti.|আমি দশ মিনিটে পৌঁছাব।
+tornare|ফিরে আসা|তোর্নারে|↩️|Torno a casa alle sei.|আমি ছয়টায় বাড়ি ফিরি।
+entrare|ভেতরে ঢোকা|এন্ত্রারে|➡️|Entro nell'ufficio.|আমি অফিসে ঢুকি।
+uscire|বের হওয়া|উশিরে|🚪|Esco alle otto.|আমি আটটায় বের হই।
+salire|উপরে ওঠা|সালিরে|⬆️|Salgo sul vaporetto.|আমি ভাপোরেত্তোতে উঠি।
+scendere|নিচে নামা|শেন্দেরে|⬇️|Scendo alla prossima fermata.|আমি পরের স্টপে নামি।
+sedersi|বসা|সেদের্সি|🪑|Posso sedermi qui?|আমি কি এখানে বসতে পারি?
+mettere|রাখা|মেত্তেরে|📌|Metto la borsa qui.|আমি ব্যাগটা এখানে রাখি।
+portare|নিয়ে যাওয়া|পোর্তারে|🎒|Porto la spesa a casa.|আমি বাজার বাড়িতে নিয়ে যাই।
+#দৈনন্দিন কথার শব্দ
+sempre|সবসময়|সেম্প্রে|♾️|Studio sempre la sera.|আমি সবসময় সন্ধ্যায় পড়ি।
+mai|কখনো না|মাই|🙅|Non sono mai in ritardo.|আমি কখনো দেরি করি না।
+spesso|প্রায়ই|স্পেস্সো|🔂|Vado spesso al parco.|আমি প্রায়ই পার্কে যাই।
+già|ইতিমধ্যে|জা|✔️|Ho già mangiato.|আমি ইতিমধ্যে খেয়েছি।
+forse|হয়তো|ফোরসে|🤔|Forse domani.|হয়তো কাল।
+subito|এখনই|সুবিতো|⚡|Vengo subito.|আমি এখনই আসছি।
+insieme|একসাথে|ইনসিয়েমে|👫|Andiamo insieme.|আমরা একসাথে যাই।
+solo|শুধু / একা|সোলো|☝️|Voglio solo un caffè.|আমি শুধু একটি কফি চাই।
+benvenuto|স্বাগত জানাই|বেনভেনুতো|🤗|Benvenuto in Italia!|ইতালিতে স্বাগত!`.split("\n").map(l=>{if(l[0]=="#"){C=l.slice(1);return null}const[a,b,c,e,xi,xb]=l.split("|");return{it:a,bn:b,pr:c,cat:C,em:e,xi,xb}}).filter(Boolean);
+const CE={"মৌলিক":"💬","খাবার ও পানীয়":"🍽️","ভ্রমণ":"✈️","সংখ্যা ও সময়":"⏰","রং ও বিশেষণ":"🎨","ক্রিয়া":"🏃","শরীর ও অনুভূতি":"🧍"},EX=Object.fromEntries("ciao=👋,grazie=🙏,prego=😊,per favore=🥺,scusi=🙇,sì=✅,no=❌,buongiorno=🌅,buonasera=🌇,buonanotte=🌜,arrivederci=🚶,come stai=🤗,bene=👍,male=👎,acqua=💧,pane=🍞,latte=🥛,caffè=☕,cibo=🍲,mangiare=🍽️,bere=🥤,casa=🏠,famiglia=👨‍👩‍👧,madre=👩,padre=👨,fratello=👦,sorella=👧,amico=🧑‍🤝‍🧑,uomo=🧔,donna=👩‍🦰,bambino=👶,io=🙋,tu=🫵,noi=👫,essere=🧍,avere=🤲,andare=🚶‍♂️,venire=🏃,vedere=👀,parlare=💬,amore=💕,oggi=📅,domani=🔜,ieri=🔙,tempo=⏳,giorno=🌞,notte=🌃,uno=1️⃣,due=2️⃣,tre=3️⃣,quattro=4️⃣,cinque=5️⃣,dieci=🔟,grande=🏔️,piccolo=🐜,bello=😍,dove=📍,quanto costa=💶,aiuto=🆘,non capisco=😕,mi chiamo=🪪,scuola=🏫,lavoro=💼,riso=🍚,pasta=🍝,pizza=🍕,carne=🥩,pesce=🐟,pollo=🍗,uovo=🥚,formaggio=🧀,frutta=🍎,verdura=🥦,mela=🍏,zucchero=🍬,sale=🧂,vino=🍷,tè=🍵,conto=🧾,aeroporto=🛫,treno=🚆,autobus=🚌,taxi=🚕,stazione=🚉,biglietto=🎫,hotel=🏨,camera=🛌,passaporto=🛂,strada=🛣️,città=🏙️,destra=➡️,sinistra=⬅️,dritto=⬆️,vicino=🤏,lontano=🔭,bagno=🚽,sei=6️⃣,sette=7️⃣,otto=8️⃣,nove=9️⃣,venti=🧮,cento=💯,mille=🔢,mattina=🌄,sera=🌆,settimana=🗓️,mese=📆,anno=🎆,adesso=⏰,presto=🐇,tardi=🐌,rosso=🔴,blu=🔵,verde=🟢,giallo=🟡,bianco=⚪,nero=⚫,caldo=🥵,freddo=🥶,nuovo=✨,vecchio=👴,volere=🤩,potere=💪,sapere=🧠,fare=🔨,dare=🫴,prendere=🧲,comprare=🛍️,pagare=💳,dormire=😴,lavorare=👷,studiare=📚,capire=🧐,aspettare=⌛,ascoltare=👂,testa=🧑,mano=✋,occhio=👁️,cuore=🫀,felice=😄,triste=😢,stanco=😫,fame=🤤,sete=🚰,medico=🩺".split(",").map(s=>s.split("="))),EM=w=>w.em||EX[w.it]||CE[w.cat]||"🇮🇹";
+const app=document.getElementById("app");let voice=null;
+function note(m){document.getElementById("nt").textContent=m}
+function say(t){try{const s=window.speechSynthesis;if(!s){note("এই ব্রাউজারে শব্দ চালানো সম্ভব নয়। অন্য ব্রাউজারে (Chrome/Safari) খুলুন।");return}if(s.speaking||s.pending)s.cancel();setTimeout(()=>{const u=new SpeechSynthesisUtterance(t);u.lang="it-IT";u.rate=.85;u.volume=1;const v=s.getVoices().find(v=>/^it/i.test(v.lang.replace("_","-")));if(v)u.voice=v;u.onstart=()=>note("");u.onerror=()=>note("শব্দ চালানো যায়নি। ফোনের ভলিউম এবং Text-to-speech সেটিংসে ইতালিয়ান ভাষা আছে কি না দেখুন।");s.resume();s.speak(u)},80)}catch(e){note("শব্দ চালানো যায়নি।")}}
+try{speechSynthesis.getVoices()}catch(e){}
+function learn(){app.innerHTML='<input id="s" placeholder="খুঁজুন…"><div id="l"></div>';const l=document.getElementById("l");
+const draw=q=>{l.innerHTML="";D.filter(w=>(w.it+w.bn+w.pr).toLowerCase().includes(q)).forEach(w=>{const d=document.createElement("div");d.className="w";d.innerHTML=`<div><div class="it">${w.it}</div><div class="bn">${w.bn}</div><div class="pr">উচ্চারণ: ${w.pr}</div></div><button class="sp" aria-label="শুনুন">🔊</button>`;d.querySelector("button").onclick=()=>say(w.it);l.appendChild(d)})};
+draw("");document.getElementById("s").oninput=e=>draw(e.target.value.toLowerCase())}
+let sc=0,n=0;
+function quiz(){const w=D[Math.random()*D.length|0];const opts=[w];while(opts.length<4){const x=D[Math.random()*D.length|0];if(!opts.includes(x)&&x.bn!==w.bn)opts.push(x)}
+opts.sort(()=>Math.random()-.5);
+app.innerHTML=`<div class="q"><div class="sc">স্কোর: ${sc}/${n}</div><div class="it">${w.it}</div><button class="sp" id="p" aria-label="শুনুন">🔊</button><div class="pr">এর বাংলা অর্থ কী?</div><div id="o"></div><div id="x"></div></div>`;
+document.getElementById("p").onclick=()=>say(w.it);say(w.it);
+const o=document.getElementById("o");let done=false;
+opts.forEach(x=>{const b=document.createElement("button");b.className="o";b.textContent=x.bn;b.onclick=()=>{if(done)return;done=true;n++;if(x===w){sc++;b.classList.add("ok")}else{b.classList.add("no");[...o.children].find(c=>c.textContent===w.bn).classList.add("ok")}
+document.getElementById("x").innerHTML=`<div class="pr" style="margin-top:10px">উচ্চারণ: ${w.pr}</div><button class="nx">পরের প্রশ্ন → <small class=it2>Prossima</small></button>`;document.querySelector(".nx").onclick=quiz};o.appendChild(b)})}
+const t1=document.getElementById("t1"),t2=document.getElementById("t2");
+t1.onclick=()=>{t1.classList.add("on");t2.classList.remove("on");learn()};
+t2.onclick=()=>{t2.classList.add("on");t1.classList.remove("on");sc=0;n=0;quiz()};
+const SZ=20,NS=Math.ceil(D.length/SZ),$=id=>document.getElementById(id),sh=a=>[...a].sort(()=>Math.random()-.5);
+let U=0,best={};try{U=+localStorage.getItem("itU")||0;best=JSON.parse(localStorage.getItem("itB")||"{}")}catch(e){}
+function sv(){try{localStorage.setItem("itU",U);localStorage.setItem("itB",JSON.stringify(best))}catch(e){}}
+function setTab(i){t1.classList.toggle("on",i==1);t2.classList.toggle("on",i==2)}
+t1.textContent="লেভেল";t2.textContent="সব শব্দ";
+t1.onclick=()=>{setTab(1);levels()};t2.onclick=()=>{setTab(2);learn()};
+const GH="margin:0 0 10px;background:var(--card);color:var(--tx);border:1px solid var(--bd)";
+function levels(){note("");app.innerHTML=`<div class="sc" style="margin-bottom:10px">প্রতি লেভেলে (Livello)  ${SZ}টি শব্দ শিখুন, তারপর ১৫টি প্রশ্নের কুইজ। কমপক্ষে ১২টি সঠিক হলে পরের লেভেল খুলবে।</div>`;
+for(let i=0;i<NS;i++){const b=document.createElement("button"),lock=i>U;b.className="w";b.style.cssText="width:100%;text-align:left;opacity:"+(lock?.5:1);b.disabled=lock;
+b.innerHTML=`<div><div class="it">${lock?"🔒":i<U?"✅":"▶️"} লেভেল ${i+1}</div><div class="pr">${D.slice(i*SZ,i*SZ+3).map(w=>w.it).join(", ")}…${best[i]!=null?" · সেরা স্কোর "+best[i]+"/15":""}</div></div>`;b.onclick=()=>stage(i);app.appendChild(b)}}
+function stage(i){app.innerHTML=`<button class="nx" id="bk" style="${GH}">← লেভেল তালিকা <small class=it2>Livelli</small></button><div class="it" style="margin-bottom:8px">লেভেল ${i+1}: শব্দ শিখুন</div><div id="l"></div><button class="nx" id="go" style="width:100%">কুইজ শুরু করুন → <small class=it2>Inizia il quiz</small></button>`;
+D.slice(i*SZ,i*SZ+SZ).forEach(w=>{const d=document.createElement("div");d.className="w";d.innerHTML=`<span class="em">${EM(w)}</span><div><div class="it">${w.it}</div><div class="bn">${w.bn}</div><div class="pr">উচ্চারণ: ${w.pr}</div></div><button class="sp" aria-label="শুনুন">🔊</button>`;d.querySelector("button").onclick=()=>say(w.it);$("l").appendChild(d)});
+$("bk").onclick=levels;$("go").onclick=()=>startQ(i)}
+function startQ(i){let pool=sh(D.slice(i*SZ,i*SZ+SZ));if(pool.length<15)pool=pool.concat(sh(D.slice(0,i*SZ)).slice(0,15-pool.length));pool=pool.slice(0,15);
+const T=sh(pool.map((_,k)=>k%4)),AS=["এর বাংলা অর্থ কী?","ইতালিয়ানে কী হবে?","যা শুনলেন তার বাংলা অর্থ কী?","যা শুনলেন তার সঠিক ইতালিয়ান শব্দ কোনটি?"];
+let k=0,ok=0;
+function step(){if(k==pool.length)return fin();const w=pool[k],t=T[k],f=t%2?"it":"bn";
+const opts=sh([w,...sh(D.filter(x=>x.it!==w.it&&x.bn!==w.bn)).slice(0,3)]);
+app.innerHTML=`<div class="q"><div class="sc">প্রশ্ন ${k+1}/${pool.length} · সঠিক ${ok}</div><div class="it">${t==0?w.it:t==1?w.bn:"🎧 শুনুন"}</div>${t!=1?'<button class="sp" id="p" aria-label="শুনুন">🔊</button>':""}<div class="pr">${AS[t]}</div><div id="o"></div><div id="x"></div></div>`;
+if(t!=1){$("p").onclick=()=>say(w.it);if(t>1)say(w.it)}
+let done=false;opts.forEach(x=>{const b=document.createElement("button");b.className="o";b.textContent=x[f];b.onclick=()=>{if(done)return;done=true;if(x===w){ok++;b.classList.add("ok")}else{b.classList.add("no");[...$("o").children].find(c=>c.textContent===w[f]).classList.add("ok")}
+if(t==1)say(w.it);k++;$("x").innerHTML=`<div class="pr" style="margin-top:10px"><span class="em">${EM(w)}</span><br>${w.it} = ${w.bn} (${w.pr})</div><button class="nx" id="nx">${k==pool.length?"ফলাফল দেখুন <small class=it2>Risultato</small>":"পরের প্রশ্ন → <small class=it2>Prossima</small>"}</button>`;$("nx").onclick=step};$("o").appendChild(b)})}
+function fin(){const n=pool.length,need=Math.min(12,n),pass=ok>=need,more=i<NS-1;if(best[i]==null||ok>best[i])best[i]=ok;if(pass&&U==i&&more)U=i+1;sv();
+app.innerHTML=`<div class="q"><div class="it">${ok}/${n}</div><div style="margin:8px 0">${pass?(more?"🎉 অভিনন্দন! পরের লেভেল খুলে গেছে।":"🎉 অভিনন্দন! সব লেভেল শেষ।"):"আরও একটু অনুশীলন করুন। "+need+"টি সঠিক হলে পরের লেভেল খুলবে।"}</div><button class="nx" id="a">${pass&&more?"পরের লেভেল শিখুন → <small class=it2>Prossimo livello</small>":"আবার শিখুন <small class=it2>Ripeti</small>"}</button> <button class="nx" id="r" style="${GH}">লেভেল তালিকা <small class=it2>Livelli</small></button></div>`;
+$("a").onclick=()=>stage(pass&&more?i+1:i);$("r").onclick=levels}
+step()}
+let W=[],ST={d:'',n:0};try{W=JSON.parse(localStorage.getItem('itW')||'[]');ST=JSON.parse(localStorage.getItem('itS')||'{"d":"","n":0}')}catch(e){}
+function sv2(){try{localStorage.setItem('itW',JSON.stringify(W));localStorage.setItem('itS',JSON.stringify(ST))}catch(e){}}
+(function(){const f=d=>d.toISOString().slice(0,10),t=f(new Date());if(ST.d!=t){ST={d:t,n:ST.d==f(new Date(Date.now()-864e5))?ST.n+1:1};sv2()}})();
+let AC;function tone(f,d,t){try{AC=AC||new(window.AudioContext||window.webkitAudioContext)();const o=AC.createOscillator(),g=AC.createGain(),s=AC.currentTime+(t||0);o.frequency.value=f;g.gain.value=.15;o.connect(g);g.connect(AC.destination);o.start(s);o.stop(s+d)}catch(e){}}
+const good=()=>{tone(660,.12);tone(880,.2,.12)},bad=()=>tone(170,.3),rnd=a=>a[Math.random()*a.length|0],mas=m=>`<div class='ms'><span class='em'>👨‍🍳</span><div class='bb'>${m}</div></div>`;
+function say(t,r,l){l=l||'it-IT';try{const s=speechSynthesis;if(s.speaking||s.pending)s.cancel();setTimeout(()=>{const u=new SpeechSynthesisUtterance(t);u.lang=l;u.rate=r||.85;const v=s.getVoices().find(v=>v.lang.replace('_','-').toLowerCase().startsWith(l.slice(0,2)));if(v)u.voice=v;u.onerror=()=>note('শব্দ চালানো যায়নি। ফোনের Text-to-speech সেটিং দেখুন।');s.resume();s.speak(u)},80)}catch(e){}}
+function boom(){const es=['🎉','⭐','🍕','🇮🇹','✨','🎊'];for(let j=0;j<36;j++){const s=document.createElement('span');s.className='cf';s.textContent=es[j%6];s.style.cssText=`left:${Math.random()*100}vw;animation-delay:${Math.random()*.6}s;font-size:${18+Math.random()*16}px`;document.body.appendChild(s);setTimeout(()=>s.remove(),3200)}}
+function levels(){note('');const L=Math.min(D.length,U*SZ);
+app.innerHTML=`${mas(rnd(['স্বাগতম! আজ কয়টি শব্দ শিখবেন?','চলুন, আরেকটি লেভেল জয় করি! 💪','ইতালিয়ান শেখা আপনার জন্য সহজ!']))}<div class='sc'>${L}/${D.length} শব্দ শিখেছেন · 🔥 ${ST.n} দিন</div><div class='pg'><i style='width:${L/D.length*100}%'></i></div>${W.length>=4?`<button class='nx' id='rv' style='width:100%'>🔁 ভুল শব্দের অনুশীলন (${W.length})</button>`:''}<div class='pt' id='pt'></div>`;
+if($('rv'))$('rv').onclick=()=>startQ(0,1);
+for(let i=0;i<NS;i++){const lock=i>U,b=document.createElement('button'),s=best[i]>=15?3:best[i]>=14?2:best[i]>=12?1:0;b.className='nd'+(i==U?' cur':'');b.disabled=lock;b.style.left=Math.round(Math.sin(i*1.2)*50)+'px';b.innerHTML=`${lock?'🔒 ':''}লেভেল ${String(i+1).replace(/\d/g,d=>'০১২৩৪৫৬৭৮৯'[d])}<small>${lock?'':'⭐'.repeat(s)+'☆'.repeat(3-s)}</small>`;b.onclick=()=>stage(i);$('pt').appendChild(b)}}
+function stage(i){app.innerHTML=`<button class='nx' id='bk' style='${GH}'>← পথ <small class=it2>Indietro</small></button><div class='it'>লেভেল ${i+1} <span class='pr'>· Livello ${i+1}</span></div><div class='sc' style='margin:4px 0 10px'>কার্ডে চাপ দিয়ে উল্টান · 🔊 শুনুন · 🐢 ধীরে শুনুন</div><div class='fg' id='l'></div><button class='nx' id='go' style='width:100%;margin-top:14px'>কুইজ শুরু করুন → <small class=it2>Inizia il quiz</small></button>`;
+D.slice(i*SZ,i*SZ+SZ).forEach(w=>{const c=document.createElement('div');c.className='fc';c.innerHTML=`<div class='ff'><span class='em'>${EM(w)}</span><b class='it'>${w.it}</b><span><button class='sp s1'>🔊</button> <button class='sp s2'>🐢</button></span></div><div class='ff fb'><b>${w.bn}</b><span class='pr'>${w.pr}</span></div>`;
+c.onclick=()=>{c.classList.toggle('fl');say(w.it)};c.querySelector('.s1').onclick=e=>{e.stopPropagation();say(w.it)};c.querySelector('.s2').onclick=e=>{e.stopPropagation();say(w.it,.4)};$('l').appendChild(c)});
+$('bk').onclick=levels;$('go').onclick=()=>startQ(i)}
+function startQ(i,rv){let pool=rv?sh(D.filter(w=>W.includes(w.it))).slice(0,15):sh(D.slice(i*SZ,i*SZ+SZ));if(!rv){if(pool.length<15)pool=pool.concat(sh(D.slice(0,i*SZ)).slice(0,15-pool.length));pool=pool.slice(0,15)}
+const n=pool.length;if(!n)return levels();const T=sh(pool.map((_,k)=>k%4)),AS=['এর বাংলা অর্থ কী?','ইতালিয়ানে কী হবে?','যা শুনলেন তার বাংলা অর্থ কী?','যা শুনলেন তার সঠিক ইতালিয়ান শব্দ কোনটি?'];let k=0,ok=0;
+function step(){if(k==n)return fin();const w=pool[k],t=T[k],f=t%2?'it':'bn',opts=sh([w,...sh(D.filter(x=>x.it!==w.it&&x.bn!==w.bn)).slice(0,3)]);
+app.innerHTML=`<div class='q'><div class='pg'><i style='width:${k/n*100}%'></i></div><div class='sc'>প্রশ্ন ${k+1}/${n} · সঠিক ${ok}</div><div class='it'>${t==0?w.it:t==1?w.bn:'🎧 শুনুন'}</div><div><button class='sp' id='p'>🔊</button> ${t!=1?`<button class='sp' id='p2'>🐢</button>`:''}</div><div class='pr'>${AS[t]}</div><div id='o'></div><div id='x'></div></div>`;
+$('p').onclick=()=>t==1?say(w.bn,.85,'bn-BD'):say(w.it);if($('p2'))$('p2').onclick=()=>say(w.it,.4);if(t>1)say(w.it);
+let done=false;opts.forEach(x=>{const b=document.createElement('button');b.className='o';b.textContent=x[f];b.onclick=()=>{if(done)return;done=true;const right=x===w;
+if(right){ok++;b.classList.add('ok');good();if(rv)W=W.filter(z=>z!==w.it)}else{b.classList.add('no');bad();[...$('o').children].find(c=>c.textContent===w[f]).classList.add('ok');if(!W.includes(w.it))W.push(w.it)}
+sv2();if(t==1)say(w.it);k++;$('x').innerHTML=`${mas(right?rnd(['দারুণ! 🎉','একদম ঠিক!','চমৎকার!','সাবাশ! 👏']):'কোনো ব্যাপার না, আবার চেষ্টা! 💪')}<div class='pr'><span class='em'>${EM(w)}</span> ${w.it} = ${w.bn} (${w.pr})</div><button class='nx' id='nx'>${k==n?'ফলাফল দেখুন <small class=it2>Risultato</small>':'পরের প্রশ্ন → <small class=it2>Prossima</small>'}</button>`;$('nx').onclick=step};$('o').appendChild(b)})}
+function fin(){const need=Math.min(12,n),pass=ok>=need,more=!rv&&i<NS-1;if(!rv){if(best[i]==null||ok>best[i])best[i]=ok;if(pass&&U==i&&more)U=i+1;sv()}
+app.innerHTML=`<div class='q'><div class='ring' style='--p:${Math.round(ok/n*100)}'><b>${ok}/${n}</b></div>${mas(pass?'অসাধারণ! আপনি পাস করেছেন! 🎉':'আরেকটু অনুশীলন করলেই হবে! 💪')}<div class='pr' style='margin:8px 0'>${pass?(more?'পরের লেভেল খুলে গেছে।':''):'পরের লেভেল খুলতে '+need+'টি সঠিক লাগবে।'}</div><button class='nx' id='a'>${rv?'আবার':pass&&more?'পরের লেভেল শিখুন → <small class=it2>Prossimo livello</small>':'আবার শিখুন <small class=it2>Ripeti</small>'}</button> <button class='nx' id='r' style='${GH}'>পথে ফিরুন <small class=it2>Indietro</small></button></div>`;
+if(pass)boom();$('a').onclick=()=>rv?startQ(0,1):stage(pass&&more?i+1:i);$('r').onclick=levels}
+step()}
+const EXS=Object.fromEntries(`ciao|Ciao, come stai?|হ্যালো, কেমন আছেন?
+grazie|Grazie mille!|অনেক ধন্যবাদ!
+prego|Prego, si accomodi.|স্বাগতম, বসুন।
+scusi|Scusi, dov'è il bagno?|মাফ করবেন, বাথরুম কোথায়?
+buongiorno|Buongiorno, signora!|শুভ সকাল, ম্যাডাম!
+acqua|Vorrei un bicchiere d'acqua.|আমি এক গ্লাস পানি চাই।
+pane|Il pane è fresco.|রুটিটা তাজা।
+caffè|Un caffè, per favore.|একটি কফি দিন, দয়া করে।
+casa|La mia casa è grande.|আমার বাড়ি বড়।
+amico|Marco è un mio amico.|মার্কো আমার বন্ধু।
+mangiare|Voglio mangiare la pizza.|আমি পিৎজা খেতে চাই।
+bere|Vuoi bere qualcosa?|তুমি কি কিছু পান করবে?
+andare|Vado a scuola.|আমি স্কুলে যাই।
+parlare|Parlo un po' di italiano.|আমি একটু ইতালিয়ান বলি।
+amore|Ti mando tanto amore.|আমি তোমাকে অনেক ভালোবাসা পাঠাই।
+oggi|Oggi fa caldo.|আজ গরম।
+domani|A domani!|কাল দেখা হবে!
+dove|Dove sei?|তুমি কোথায়?
+aiuto|Ho bisogno di aiuto.|আমার সাহায্য দরকার।
+scuola|La scuola è vicina.|স্কুল কাছে।
+lavoro|Vado al lavoro.|আমি কাজে যাই।
+treno|Il treno parte alle otto.|ট্রেন আটটায় ছাড়ে।
+biglietto|Un biglietto, per favore.|একটি টিকিট দিন, দয়া করে।
+bagno|Dov'è il bagno?|বাথরুম কোথায়?
+pizza|La pizza è buona.|পিৎজাটা সুস্বাদু।
+gelato|Mi piace il gelato.|আমি আইসক্রিম পছন্দ করি।
+medico|Chiamo il medico.|আমি ডাক্তারকে ডাকি।
+felice|Sono molto felice.|আমি খুব খুশি।
+stanco|Sono stanco oggi.|আজ আমি ক্লান্ত।
+dormire|Voglio dormire.|আমি ঘুমাতে চাই।`.split('\n').map(l=>{const p=l.split('|');return[p[0],[p[1],p[2]]]}));
+let FV=[],VO=[];try{FV=JSON.parse(localStorage.getItem('itF')||'[]')}catch(e){}
+const isF=w=>FV.includes(w.it),tgF=w=>{FV=isF(w)?FV.filter(z=>z!==w.it):[...FV,w.it];try{localStorage.setItem('itF',JSON.stringify(FV))}catch(e){}};
+function vl(){try{VO=speechSynthesis.getVoices()||[]}catch(e){VO=[]}}vl();try{speechSynthesis.addEventListener('voiceschanged',vl)}catch(e){}
+const GUIDE=['ইতালিয়ান ভয়েস পাওয়া যায়নি। ঠিক করতে:','১. ফোনের সেটিংস → ভাষা ও ইনপুট → Text-to-speech','২. Google ইঞ্জিনের ⚙️ → Install voice data → Italiano (Italia) ডাউনলোড করুন','৩. Chrome-এ পেজটি আবার খুলে 🔊 চাপুন'].join('\n');
+function say(t,r,l,cb){l=l||'it-IT';try{const s=window.speechSynthesis;if(!s||!window.SpeechSynthesisUtterance){note('এই ব্রাউজারে অডিও সমর্থিত নয়। Chrome বা Safari-তে খুলুন।');return}
+const go=()=>{vl();const nl=x=>x.lang.replace('_','-').toLowerCase(),v=VO.find(x=>nl(x)==l.toLowerCase())||VO.find(x=>nl(x).startsWith(l.slice(0,2)));
+if(!v&&VO.length)note(l=='it-IT'?GUIDE:'এই ভাষার ভয়েস পাওয়া যায়নি।');else note('');
+const u=new SpeechSynthesisUtterance(t);u.lang=l;u.rate=r||.85;u.onend=cb;if(v)u.voice=v;
+u.onerror=e=>{if(e.error=='interrupted'||e.error=='canceled')return;note(e.error=='not-allowed'?'অডিও চালাতে 🔊 বোতামে আবার চাপ দিন।':l=='it-IT'?GUIDE:'শব্দ চালানো যায়নি।')};
+if(s.speaking||s.pending)s.cancel();s.resume();setTimeout(()=>s.speak(u),60)};
+if(!VO.length)setTimeout(go,400);else go()}catch(e){note('অডিও চালানো যায়নি।')}}
+function detail(w){const m=document.createElement('div'),e=EXS[w.it];m.className='md';
+m.innerHTML=`<div class='mc'><button class='x'>✕</button><div class='em'>${EM(w)}</div><div class='it'>${w.it}</div><div class='bn'>${w.bn}</div><div class='pr'>উচ্চারণ: ${w.pr}</div><div class='pr'>ক্যাটাগরি: ${w.cat}</div>${e?`<div class='exs'><b>উদাহরণ:</b> ${e[0]}<br><span class='pr'>${e[1]}</span> <button class='sp' id='d4' style='width:30px;height:30px;font-size:13px'>🔊</button></div>`:''}<div class='bt'><button class='sp' id='d1'>🔊</button> <button class='sp' id='d2'>🐢</button> <button class='sp' id='d3'>${isF(w)?'⭐':'☆'}</button></div></div>`;
+document.body.appendChild(m);m.onclick=ev=>{if(ev.target==m||ev.target.className=='x')m.remove()};
+$('d1').onclick=()=>sayBoth(w);$('d2').onclick=()=>sayBoth(w,.45);if($('d4'))$('d4').onclick=()=>sayEx(w);$('d3').onclick=ev=>{tgF(w);ev.target.textContent=isF(w)?'⭐':'☆'}}
+function row(w){const d=document.createElement('div');d.className='w';
+d.innerHTML=`<span class='em'>${EM(w)}</span><div><div class='it'>${w.it}</div><div class='bn'>${w.bn}</div><div class='pr'>উচ্চারণ: ${w.pr}</div></div><div class='ac'><button class='sp r1'>🔊</button><button class='sp r2'>🐢</button><button class='sp r3'>${isF(w)?'⭐':'☆'}</button><button class='sp r4'>ℹ️</button></div>`;
+d.querySelector('.r1').onclick=()=>sayBoth(w);d.querySelector('.r2').onclick=()=>sayBoth(w,.45);d.querySelector('.r3').onclick=ev=>{tgF(w);ev.target.textContent=isF(w)?'⭐':'☆'};d.querySelector('.r4').onclick=()=>detail(w);return d}
+function learn(){note('');app.innerHTML=`<input id='s' placeholder='খুঁজুন…'><div id='l'></div>`;const draw=q=>{$('l').innerHTML='';D.filter(w=>(w.it+w.bn+w.pr+w.cat).toLowerCase().includes(q)).forEach(w=>$('l').appendChild(row(w)))};draw('');$('s').oninput=e=>draw(e.target.value.toLowerCase())}
+function favs(){note('');app.innerHTML=`<div class='sc' style='margin-bottom:8px'>⭐ প্রিয় শব্দ · Preferiti (${FV.length})</div><div id='l'></div>`;D.filter(isF).forEach(w=>$('l').appendChild(row(w)));if(!FV.length)$('l').innerHTML=`<div class='bb'>কোনো শব্দ নেই। যেকোনো শব্দের ☆ চাপলে এখানে জমা হবে।</div>`}
+function revTab(){note('');const ws=D.filter(w=>W.includes(w.it));app.innerHTML=`${mas(ws.length?ws.length+'টি শব্দ আবার অনুশীলন করা দরকার।':'কোনো ভুল শব্দ নেই। দারুণ! 🎉')}${ws.length?`<button class='nx' id='rp' style='width:100%;margin-bottom:12px'>🔁 অনুশীলন শুরু করুন <small class=it2>Ripassa</small></button>`:''}<div id='l'></div>`;if($('rp'))$('rp').onclick=()=>startQ(0,1);ws.forEach(w=>$('l').appendChild(row(w)))}
+function stage(i){app.innerHTML=`<button class='nx' id='bk' style='${GH}'>← পথ <small class=it2>Indietro</small></button><div class='it'>লেভেল ${i+1} <span class='pr'>· Livello ${i+1}</span></div><div class='sc' style='margin:4px 0 10px'>কার্ডে চাপ দিয়ে উল্টান · ☆ প্রিয় · 🔊 শুনুন · 🐢 ধীরে</div><div class='fg' id='l'></div><button class='nx' id='go' style='width:100%;margin-top:14px'>কুইজ শুরু করুন → <small class=it2>Inizia il quiz</small></button>`;
+D.slice(i*SZ,i*SZ+SZ).forEach(w=>{const c=document.createElement('div');c.className='fc';c.innerHTML=`<button class='fv'>${isF(w)?'⭐':'☆'}</button><div class='ff'><span class='em'>${EM(w)}</span><b class='it'>${w.it}</b><span><button class='sp s1'>🔊</button> <button class='sp s2'>🐢</button></span></div><div class='ff fb'><b>${w.bn}</b><span class='pr'>${w.pr}</span><button class='nx i1' style='padding:6px 12px;font-size:13px'>ℹ️ বিস্তারিত</button></div>`;
+const st=(q,f)=>c.querySelector(q).onclick=e=>{e.stopPropagation();f(e)};c.onclick=()=>c.classList.toggle('fl');st('.s1',()=>sayBoth(w));st('.s2',()=>sayBoth(w,.45));st('.fv',e=>{tgF(w);e.target.textContent=isF(w)?'⭐':'☆'});st('.i1',()=>detail(w));$('l').appendChild(c)});
+$('bk').onclick=levels;$('go').onclick=()=>startQ(i)}
+const gp=w=>/ক্রিয়া/.test(w.cat)?'v':w.cat,dis=w=>{const k=x=>x.it!==w.it&&x.bn!==w.bn;return[...sh(D.filter(x=>k(x)&&gp(x)==gp(w))),...sh(D.filter(x=>k(x)&&gp(x)!=gp(w)))].slice(0,3)};
+function startQ(i,rv){let pool=rv?sh(D.filter(w=>W.includes(w.it))).slice(0,15):sh(D.slice(i*SZ,i*SZ+SZ));if(!rv){if(pool.length<15)pool=pool.concat(sh(D.slice(0,i*SZ)).slice(0,15-pool.length));pool=pool.slice(0,15)}
+const n=pool.length;if(!n)return levels();const T=sh(pool.map((_,k)=>k%4)),AS=['এর বাংলা অর্থ কী?','ইতালিয়ানে কী হবে?','যা শুনলেন তার বাংলা অর্থ কী?','যা শুনলেন তার সঠিক ইতালিয়ান শব্দ কোনটি?'],miss=[];let k=0,ok=0;
+function step(){if(k==n)return fin();const w=pool[k],t=T[k],f=t%2?'it':'bn',opts=sh([w,...dis(w)]);
+app.innerHTML=`<div class='q'><div class='pg'><i style='width:${k/n*100}%'></i></div><div class='sc'>প্রশ্ন ${k+1}/${n} · সঠিক ${ok}</div><div class='it'>${t==0?w.it:t==1?w.bn:'🎧 শুনুন'}</div><div><button class='sp' id='p'>🔊</button> ${t!=1?`<button class='sp' id='p2'>🐢</button>`:''}</div><div class='pr'>${AS[t]}</div><div id='o'></div><div id='x'></div></div>`;
+$('p').onclick=()=>t==1?say(w.bn,.85,'bn-BD'):say(w.it);if($('p2'))$('p2').onclick=()=>say(w.it,.45);if(t>1)say(w.it);
+let done=false;opts.forEach(x=>{const b=document.createElement('button');b.className='o';b.textContent=x[f];b.onclick=()=>{if(done)return;done=true;const right=x===w;
+if(right){ok++;b.classList.add('ok');good();if(rv)W=W.filter(z=>z!==w.it)}else{b.classList.add('no');bad();[...$('o').children].find(c=>c.textContent===w[f]).classList.add('ok');miss.push(w);if(!W.includes(w.it))W.push(w.it)}
+sv2();sayBoth(w);k++;const e=EXS[w.it],why=right?`✅ সঠিক! ‘${w.it}’ মানে ‘${w.bn}’।`:`❌ ভুল। সঠিক উত্তর: ${w[f]}। ‘${w.it}’ মানে ‘${w.bn}’ (উচ্চারণ: ${w.pr})। আপনার বেছে নেওয়া ‘${x.it}’ মানে ‘${x.bn}’।`;
+$('x').innerHTML=`<div class='fbk ${right?'g':'r'}'><span class='em'>${EM(w)}</span><br>${why}${e?`<br><b>উদাহরণ:</b> ${e[0]} — ${e[1]} <button class='sp ex1' data-w='${w.it}' style='width:30px;height:30px;font-size:13px'>🔊</button>`:''}</div><button class='nx' id='nx' style='margin-top:12px'>${k==n?'ফলাফল দেখুন <small class=it2>Risultato</small>':'পরের প্রশ্ন → <small class=it2>Prossima</small>'}</button>`;$('nx').onclick=step};$('o').appendChild(b)})}
+function fin(){const need=Math.min(12,n),pass=ok>=need,more=!rv&&i<NS-1,pc=Math.round(ok/n*100);if(!rv){if(best[i]==null||ok>best[i])best[i]=ok;if(pass&&U==i&&more)U=i+1;sv()}
+app.innerHTML=`<div class='q'><div class='ring' style='--p:${pc}'><b>${ok}/${n}</b></div><div class='it'>${pc}%</div>${mas(pass?'অসাধারণ! আপনি পাস করেছেন! 🎉':'আরেকটু অনুশীলন করলেই হবে! 💪')}<div class='pr'>${pass?(more?'পরের লেভেল খুলে গেছে।':''):'পরের লেভেল খুলতে '+need+'টি সঠিক লাগবে।'}</div>${miss.length?`<div class='rv'><b>❌ ভুল উত্তরের রিভিউ · Risposte sbagliate (${miss.length})</b>${miss.map((w,j)=>`<div class='mr'><span>${EM(w)} ${w.it} = ${w.bn}</span><button class='sp mq' data-j='${j}'>🔊</button></div>`).join('')}</div>`:''}<button class='nx' id='a'>${rv?'আবার':pass&&more?'পরের লেভেল শিখুন → <small class=it2>Prossimo livello</small>':'আবার শিখুন <small class=it2>Ripeti</small>'}</button> ${miss.length&&!rv?`<button class='nx' id='mp' style='${GH}'>ভুলগুলো অনুশীলন <small class=it2>Ripassa errori</small></button> `:''}<button class='nx' id='r' style='${GH}'>পথে ফিরুন <small class=it2>Indietro</small></button></div>`;
+if(pass)boom();document.querySelectorAll('.mq').forEach(b=>b.onclick=()=>say(miss[+b.dataset.j].it));if($('mp'))$('mp').onclick=()=>startQ(0,1);$('a').onclick=()=>rv?startQ(0,1):stage(pass&&more?i+1:i);$('r').onclick=levels}
+step()}
+const sayBoth=(w,r)=>say(w.it,r,'it-IT',()=>say(w.bn,.9,'bn-BD')),sayEx=w=>{const e=EXS[w.it];if(e)say(e[0],.8,'it-IT',()=>say(e[1],.9,'bn-BD'))};
+document.addEventListener('click',ev=>{const b=ev.target.closest&&ev.target.closest('.ex1');if(b)sayEx(D.find(w=>w.it==b.dataset.w))});
+Object.assign(EXS,Object.fromEntries(`buonasera|Buonasera, come va?|শুভ সন্ধ্যা, কেমন চলছে?
+arrivederci|Arrivederci a presto!|শীঘ্রই আবার দেখা হবে!
+per favore|Un tè, per favore.|একটি চা দিন, দয়া করে।
+latte|Bevo il latte la mattina.|আমি সকালে দুধ পান করি।
+famiglia|Ho una grande famiglia.|আমার একটি বড় পরিবার আছে।
+madre|Mia madre cucina bene.|আমার মা ভালো রান্না করেন।
+padre|Mio padre lavora in banca.|আমার বাবা ব্যাংকে কাজ করেন।
+fratello|Mio fratello è alto.|আমার ভাই লম্বা।
+sorella|Mia sorella studia molto.|আমার বোন অনেক পড়াশোনা করে।
+bambino|Il bambino dorme.|শিশুটি ঘুমাচ্ছে।
+vedere|Voglio vedere il mare.|আমি সমুদ্র দেখতে চাই।
+venire|Vieni con me?|তুমি কি আমার সাথে আসবে?
+tempo|Non ho tempo oggi.|আজ আমার সময় নেই।
+quanto costa|Quanto costa questo libro?|এই বইটার দাম কত?
+mi chiamo|Mi chiamo Rahim.|আমার নাম রহিম।
+non capisco|Non capisco, parli piano.|আমি বুঝতে পারছি না, আস্তে বলুন।
+pasta|Mangio la pasta a pranzo.|আমি দুপুরে পাস্তা খাই।
+pesce|Il pesce è fresco.|মাছটা তাজা।
+pollo|Preferisco il pollo.|আমি মুরগি বেশি পছন্দ করি।
+uovo|Un uovo per colazione.|সকালের নাস্তায় একটি ডিম।
+formaggio|Mi piace il formaggio.|আমি পনির পছন্দ করি।
+frutta|Mangio molta frutta.|আমি অনেক ফল খাই।
+vino|Un bicchiere di vino rosso.|এক গ্লাস লাল ওয়াইন।
+conto|Il conto, per favore.|বিলটা দিন, দয়া করে।
+aeroporto|L'aeroporto è lontano.|বিমানবন্দর দূরে।
+autobus|L'autobus arriva presto.|বাসটা তাড়াতাড়ি আসে।
+stazione|Dov'è la stazione?|স্টেশন কোথায়?
+passaporto|Ecco il mio passaporto.|এই যে আমার পাসপোর্ট।
+strada|Questa strada è lunga.|এই রাস্তাটা লম্বা।
+città|Roma è una bella città.|রোম একটি সুন্দর শহর।
+destra|Giri a destra.|ডানে ঘুরুন।
+sinistra|Poi a sinistra.|তারপর বামে।
+dritto|Vada sempre dritto.|সোজা চলে যান।
+vicino|Il bar è vicino.|বারটা কাছে।
+mattina|Di mattina bevo il caffè.|সকালে আমি কফি পান করি।
+sera|La sera guardo la TV.|সন্ধ্যায় আমি টিভি দেখি।
+settimana|Una settimana a Roma.|এক সপ্তাহ রোমে।
+anno|Quest'anno vado in Italia.|এ বছর আমি ইতালি যাব।
+adesso|Adesso ho fame.|এখন আমার খিদে পেয়েছে।
+rosso|Una macchina rossa.|একটি লাল গাড়ি।
+caldo|Fa molto caldo.|অনেক গরম পড়েছে।
+freddo|Oggi fa freddo.|আজ ঠান্ডা।
+nuovo|Ho un telefono nuovo.|আমার একটি নতুন ফোন আছে।
+volere|Voglio imparare l'italiano.|আমি ইতালিয়ান শিখতে চাই।
+potere|Posso entrare?|আমি কি ভেতরে আসতে পারি?
+sapere|Non so la risposta.|আমি উত্তরটা জানি না।
+comprare|Voglio comprare una borsa.|আমি একটি ব্যাগ কিনতে চাই।
+studiare|Studio italiano ogni giorno.|আমি প্রতিদিন ইতালিয়ান পড়ি।
+cane|Il cane corre nel parco.|কুকুরটি পার্কে দৌড়ায়।
+gatto|Il gatto dorme sul letto.|বিড়ালটি বিছানায় ঘুমায়।
+sole|Oggi c'è il sole.|আজ রোদ উঠেছে।
+mare|Il mare è bellissimo.|সমুদ্রটা অসাধারণ সুন্দর।
+libro|Leggo un libro.|আমি একটি বই পড়ি।
+telefono|Dov'è il mio telefono?|আমার ফোনটা কোথায়?
+chiave|Ho perso la chiave.|আমি চাবি হারিয়ে ফেলেছি।
+macchina|La macchina è nel garage.|গাড়িটা গ্যারাজে।
+soldi|Non ho soldi.|আমার টাকা নেই।
+negozio|Il negozio è chiuso.|দোকানটা বন্ধ।
+prezzo|Qual è il prezzo?|দাম কত?
+regalo|Questo regalo è per te.|এই উপহারটা তোমার জন্য।
+ospedale|L'ospedale è qui vicino.|হাসপাতালটা এখানে কাছেই।
+farmacia|Cerco una farmacia.|আমি একটি ওষুধের দোকান খুঁজছি।
+banca|La banca apre alle nove.|ব্যাংক নয়টায় খোলে।
+pioggia|Che pioggia oggi!|আজ কী বৃষ্টি!
+neve|In inverno c'è la neve.|শীতে তুষার পড়ে।
+estate|In estate vado al mare.|গ্রীষ্মে আমি সমুদ্রে যাই।
+mi dispiace|Mi dispiace molto.|আমি খুব দুঃখিত।
+va bene|Va bene, grazie.|ঠিক আছে, ধন্যবাদ।
+non lo so|Non lo so, scusa.|আমি জানি না, দুঃখিত।
+buon viaggio|Buon viaggio, amici!|শুভ যাত্রা, বন্ধুরা!
+buon appetito|Buon appetito a tutti!|সবাইকে খাওয়ার আনন্দ!
+ti amo|Ti amo tanto.|আমি তোমাকে অনেক ভালোবাসি।
+ho fame|Ho fame, andiamo a mangiare.|আমার খিদে পেয়েছে, চলো খাই।
+ecco|Ecco il tuo caffè.|এই যে তোমার কফি।
+nonno|Il nonno racconta storie.|দাদা/নানা গল্প বলেন।
+colazione|La colazione è alle sette.|সকালের নাস্তা সাতটায়।
+cena|La cena è pronta.|রাতের খাবার তৈরি।
+dente|Mi fa male il dente.|আমার দাঁতে ব্যথা।
+febbre|Ho la febbre.|আমার জ্বর আছে।
+lunedì|Lunedì lavoro.|সোমবার আমি কাজ করি।
+sabato|Sabato vado al parco.|শনিবার আমি পার্কে যাই।
+qui|Sono qui.|আমি এখানে আছি।
+perché|Perché studi italiano?|তুমি কেন ইতালিয়ান পড়ো?
+quando|Quando parti?|তুমি কখন রওনা হচ্ছ?
+cantare|Mi piace cantare.|আমি গান গাইতে পছন্দ করি।
+scrivere|Scrivo una lettera.|আমি একটি চিঠি লিখি।
+aprire|Apro la porta.|আমি দরজা খুলি।`.split('\n').map(l=>{const p=l.split('|');return[p[0],[p[1],p[2]]]})));
+Object.assign(EXS,Object.fromEntries(`sì|Sì, grazie.|হ্যাঁ, ধন্যবাদ।
+no|No, non voglio.|না, আমি চাই না।
+buonanotte|Buonanotte, a domani!|শুভ রাত্রি, কাল দেখা হবে!
+come stai|Ciao Anna, come stai?|হ্যালো আনা, কেমন আছ?
+bene|Sto bene, grazie.|আমি ভালো আছি, ধন্যবাদ।
+male|Sto male oggi.|আজ আমার শরীর খারাপ।
+cibo|Il cibo italiano è buono.|ইতালিয়ান খাবার সুস্বাদু।
+uomo|Un uomo cammina nel parco.|একজন পুরুষ পার্কে হাঁটছে।
+donna|La donna legge un libro.|নারীটি একটি বই পড়ছে।
+io|Io sono Rahim.|আমি রহিম।
+tu|Tu sei mio amico.|তুমি আমার বন্ধু।
+noi|Noi andiamo al mare.|আমরা সমুদ্রে যাচ্ছি।
+essere|Voglio essere felice.|আমি সুখী হতে চাই।
+avere|Devo avere pazienza.|আমাকে ধৈর্য রাখতে হবে।
+ieri|Ieri ho studiato molto.|গতকাল আমি অনেক পড়েছি।
+giorno|Che bel giorno!|কী সুন্দর দিন!
+notte|La notte è tranquilla.|রাতটা শান্ত।
+uno|Ho uno zaino.|আমার একটি ব্যাগ আছে।
+due|Ho due fratelli.|আমার দুই ভাই আছে।
+tre|Tre caffè, per favore.|তিনটি কফি দিন, দয়া করে।
+quattro|Siamo in quattro.|আমরা চারজন।
+cinque|Sono le cinque.|এখন পাঁচটা বাজে।
+dieci|Costa dieci euro.|এর দাম দশ ইউরো।
+grande|Roma è una città grande.|রোম একটি বড় শহর।
+piccolo|Ho una casa piccola.|আমার একটি ছোট বাড়ি আছে।
+bello|Che bello!|কী সুন্দর!
+riso|Mangio il riso con il pollo.|আমি মুরগির সাথে ভাত খাই।
+carne|Non mangio carne.|আমি মাংস খাই না।
+verdura|Mangio la verdura ogni giorno.|আমি প্রতিদিন সবজি খাই।
+mela|Una mela al giorno.|দিনে একটি আপেল।
+zucchero|Senza zucchero, grazie.|চিনি ছাড়া, ধন্যবাদ।
+sale|Manca il sale.|লবণ কম হয়েছে।
+tè|Preferisco il tè caldo.|আমি গরম চা পছন্দ করি।
+taxi|Chiamo un taxi.|আমি একটি ট্যাক্সি ডাকি।
+hotel|L'hotel è in centro.|হোটেলটি কেন্দ্রে।
+camera|Vorrei una camera doppia.|আমি একটি ডাবল রুম চাই।
+lontano|Abito lontano da qui.|আমি এখান থেকে দূরে থাকি।
+sei|Ho sei libri.|আমার ছয়টি বই আছে।
+sette|Sette giorni in una settimana.|এক সপ্তাহে সাত দিন।
+otto|Sono le otto.|এখন আটটা বাজে।
+nove|Il treno parte alle nove.|ট্রেন নয়টায় ছাড়ে।
+venti|Ho venti euro.|আমার কাছে বিশ ইউরো আছে।
+cento|Cento grazie!|একশোবার ধন্যবাদ!
+mille|Mille grazie!|হাজার ধন্যবাদ!
+mese|Questo mese lavoro molto.|এই মাসে আমি অনেক কাজ করি।
+presto|Mi alzo presto.|আমি তাড়াতাড়ি উঠি।
+tardi|È tardi, andiamo a dormire.|দেরি হয়েছে, চলো ঘুমাই।
+blu|Il cielo è blu.|আকাশ নীল।
+verde|L'erba è verde.|ঘাস সবুজ।
+giallo|Il sole è giallo.|সূর্য হলুদ।
+bianco|Il latte è bianco.|দুধ সাদা।
+nero|Un caffè nero, per favore.|একটি কালো কফি দিন, দয়া করে।
+vecchio|Questo libro è vecchio.|এই বইটা পুরনো।
+fare|Che cosa fai oggi?|আজ তুমি কী করছ?
+dare|Mi dai una mano?|তুমি কি আমাকে সাহায্য করবে?
+prendere|Prendo un caffè.|আমি একটি কফি নিই।
+pagare|Posso pagare con la carta?|আমি কি কার্ড দিয়ে টাকা দিতে পারি?
+lavorare|Devo lavorare domani.|আমাকে কাল কাজ করতে হবে।
+capire|Capisco un po' l'italiano.|আমি একটু ইতালিয়ান বুঝি।
+aspettare|Aspetto l'autobus.|আমি বাসের অপেক্ষা করছি।
+ascoltare|Mi piace ascoltare la musica.|আমি গান শুনতে পছন্দ করি।
+testa|Ho mal di testa.|আমার মাথা ব্যথা করছে।
+mano|Dammi la mano.|আমাকে তোমার হাত দাও।
+occhio|Ho male a un occhio.|আমার একটি চোখে ব্যথা।
+cuore|Ti amo con tutto il cuore.|আমি তোমাকে মন থেকে ভালোবাসি।
+triste|Oggi sono triste.|আজ আমি দুঃখিত।
+fame|Ho tanta fame.|আমার খুব খিদে পেয়েছে।
+sete|Ho sete.|আমার তেষ্টা পেয়েছে।
+uccello|Un uccello canta.|একটি পাখি গান গায়।
+cavallo|Il cavallo corre veloce.|ঘোড়াটি দ্রুত দৌড়ায়।
+mucca|La mucca dà il latte.|গরুটি দুধ দেয়।
+leone|Il leone è forte.|সিংহ শক্তিশালী।
+elefante|L'elefante è grande.|হাতিটি বড়।
+luna|La luna è bella stasera.|আজ সন্ধ্যায় চাঁদটি সুন্দর।
+stella|Una stella brilla.|একটি তারা জ্বলছে।
+fiore|Un fiore per te.|তোমার জন্য একটি ফুল।
+albero|Un albero alto.|একটি উঁচু গাছ।
+montagna|Vado in montagna.|আমি পাহাড়ে যাই।
+fuoco|Il fuoco è caldo.|আগুন গরম।
+porta|La porta è chiusa.|দরজা বন্ধ।
+letto|Vado a letto.|আমি শুতে যাই।
+sedia|Una sedia, per favore.|একটি চেয়ার দিন, দয়া করে।
+penna|Hai una penna?|তোমার কাছে কলম আছে?
+borsa|La borsa è nuova.|ব্যাগটি নতুন।
+orologio|Il mio orologio è nuovo.|আমার ঘড়িটা নতুন।
+luce|Accendo la luce.|আমি আলো জ্বালাই।
+bicicletta|Vado in bicicletta.|আমি সাইকেলে যাই।
+vestito|Un vestito rosso.|একটি লাল পোশাক।
+camicia|Una camicia bianca.|একটি সাদা শার্ট।
+scarpe|Le scarpe sono comode.|জুতাগুলো আরামদায়ক।`.split('\n').map(l=>{const p=l.split('|');return[p[0],[p[1],p[2]]]})));
+const CU=`🤝|অভিবাদন|সাধারণত হ্যান্ডশেক করা হয়। বন্ধুদের মধ্যে গালে গাল ছোঁয়ানোর ভঙ্গিও চলে। দোকান, অফিস বা লিফটে ঢুকে «Buongiorno» বলা ভদ্রতা।|Buongiorno, come sta?|শুভ সকাল, আপনি কেমন আছেন?
+🎩|«Lei» বনাম «tu»|অপরিচিত, বয়স্ক, ডাক্তার বা সরকারি কর্মকর্তাকে সাধারণত সম্মানসূচক «Lei» বলা হয়। বন্ধু ও সমবয়সীদের «tu»। দ্বিধা থাকলে «Lei» দিয়ে শুরু করা নিরাপদ।|Mi scusi, può aiutarmi?|মাফ করবেন, আপনি কি সাহায্য করতে পারেন?
+⏰|সময়নিষ্ঠা|অফিস, ডাক্তার ও অ্যাপয়েন্টমেন্টে সময়মতো পৌঁছানো গুরুত্বপূর্ণ। দেরি হলে আগে ফোন করে জানান। বন্ধুদের আড্ডায় কিছুটা নমনীয়তা থাকতে পারে, নিশ্চিত না হলে জিজ্ঞেস করুন।|Ho un appuntamento alle dieci.|আমার দশটায় অ্যাপয়েন্টমেন্ট আছে।
+☕|কফি ও খাওয়ার সময়|দুপুরের খাবার সাধারণত ১২:৩০–২টা, রাতের খাবার সাধারণত রাত ৮টার দিকে। বারে অনেকে কফি দাঁড়িয়ে (al banco) খান, দ্রুত ও সস্তা। কাপুচিনো সাধারণত সকালে খাওয়া হয়।|Un cappuccino, per favore.|একটি কাপুচিনো দিন, দয়া করে।
+🍝|রেস্তোরাঁ|বসার পর অর্ডার করতে হয়, আর শেষে বিল চাইতে হয়, ওয়েটার সাধারণত নিজে থেকে আনেন না। «coperto» নামে সামান্য আসন চার্জ থাকতে পারে। টিপ বাধ্যতামূলক নয়।|Posso avere il conto?|বিলটা পেতে পারি?
+🏪|দোকানের সময়|ছোট শহরে দুপুরে অনেক দোকান বন্ধ থাকতে পারে, আর রবিবারে বেশিরভাগ দোকান বন্ধ। কেনাকাটা আগে থেকে পরিকল্পনা করুন।|A che ora aprite?|আপনারা কয়টায় খোলেন?
+🎫|লাইন ও নম্বরের টিকিট|অফিস, ডাকঘর ও ফার্মেসিতে অনেক সময় নম্বরের টিকিট (numeretto) নিতে হয়। লাইনে দাঁড়ানো ও নিজের পালার অপেক্ষা করাকে সম্মান দেখানো বলে ধরা হয়।|Chi è l'ultimo?|শেষ জন কে?
+🚌|যাতায়াত ও টিকিট|ট্রেন, বাস বা ভাপোরেত্তোর টিকিট অনেক ক্ষেত্রে উঠার আগে কিনে ভ্যালিডেট (convalidare) করতে হয়। না করলে জরিমানা হতে পারে। নিয়ম বদলাতে পারে, তাই স্থানীয় পরিবহনের তথ্য দেখে নিন।|Dove posso convalidare il biglietto?|টিকিট কোথায় ভ্যালিডেট করব?
+♻️|আবর্জনা ও প্রতিবেশী|আবর্জনা আলাদা করার (raccolta differenziata) নিয়ম কড়া, এলাকাভেদে দিন ও রং আলাদা। অনেক এলাকায় দুপুরে ও রাতে শব্দ কম রাখা ভদ্রতা বলে গণ্য।|Quando passano a ritirare la plastica?|প্লাস্টিক কখন নিতে আসে?
+🗣️|কথা বলার ধরন|ইতালিয়ানরা অনেক সময় হাত নাড়িয়ে ও আবেগ নিয়ে কথা বলেন, এটা সাধারণত রাগ নয়। বুঝতে না পারলে লজ্জা না পেয়ে আবার বলতে বলা বুদ্ধিমানের কাজ।|Può ripetere, per favore?|আবার বলতে পারেন, দয়া করে?
+💪|কনফিডেন্স|ভুল হলেও বলার চেষ্টা করুন। সাধারণত মানুষ বিদেশির ইতালিয়ান বলার চেষ্টাকে ভালো চোখে দেখে। শুরুতেই জানিয়ে দিন আপনি শিখছেন।|Sto imparando l'italiano.|আমি ইতালিয়ান শিখছি।`;
+function cult(){note('');app.innerHTML=`${mas('ইতালির সমাজে মিশতে কিছু কাজের টিপ!')}<div class='sc' style='margin-bottom:10px'>এগুলো সাধারণ প্রবণতা। শহর ও মানুষভেদে ভিন্ন হতে পারে।</div><div id='l'></div>`;
+CU.split('\n').forEach(l=>{const[e,t,b,it,bn]=l.split('|'),d=document.createElement('div');d.className='cc';d.innerHTML=`<div class='ch'><span class='em'>${e}</span><b>${t}</b></div><div class='cb'>${b}</div><div class='cp'><div><b>${it}</b><br><span class='pr'>${bn}</span></div><button class='sp'>🔊</button></div>`;d.querySelector('.sp').onclick=()=>say(it,.85,'it-IT',()=>say(bn,.9,'bn-BD'));$('l').appendChild(d)})}
+Object.assign(EXS,Object.fromEntries(`cappello|Porto un cappello nero.|আমি একটি কালো টুপি পরি।
+mercato|Compro la frutta al mercato.|আমি বাজারে ফল কিনি।
+sconto|C'è uno sconto oggi?|আজ কি কোনো ছাড় আছে?
+taglia|Che taglia porta?|আপনি কোন সাইজ পরেন?
+chiesa|La chiesa è in piazza.|গির্জাটি চত্বরে।
+parco|Il parco è molto bello.|পার্কটি খুব সুন্দর।
+ufficio|L'ufficio apre alle nove.|অফিস নয়টায় খোলে।
+insegnante|La mia insegnante è gentile.|আমার শিক্ষিকা ভদ্র।
+studente|Sono uno studente.|আমি একজন ছাত্র।
+cuoco|Il cuoco prepara la cena.|বাবুর্চি রাতের খাবার তৈরি করছেন।
+vento|Oggi c'è molto vento.|আজ অনেক বাতাস।
+nuvola|Una nuvola copre il sole.|একটি মেঘ সূর্য ঢেকে দিয়েছে।
+inverno|In inverno fa freddo.|শীতে ঠান্ডা পড়ে।
+primavera|La primavera è bellissima.|বসন্ত অসাধারণ সুন্দর।
+autunno|In autunno cadono le foglie.|শরৎকালে পাতা ঝরে।
+parli inglese|Scusa, parli inglese?|দুঃখিত, তুমি কি ইংরেজি বলো?
+sono del Bangladesh|Sono del Bangladesh, vivo a Venezia.|আমি বাংলাদেশের, ভেনিসে থাকি।
+piacere|Piacere, mi chiamo Karim.|পরিচিত হয়ে খুশি, আমার নাম করিম।
+ripeta|Ripeta, per favore.|আবার বলুন, দয়া করে।
+più piano|Parli più piano, per favore.|আরও আস্তে বলুন, দয়া করে।
+salute|Salute! Alla nostra amicizia.|চিয়ার্স! আমাদের বন্ধুত্বের জন্য।
+ottimo|Il cibo è ottimo.|খাবারটা চমৎকার।
+nonna|Mia nonna cucina bene.|আমার দাদি/নানি ভালো রান্না করেন।
+zio|Mio zio vive a Roma.|আমার চাচা/মামা রোমে থাকেন।
+zia|Mia zia ha un negozio.|আমার চাচি/মাসির একটি দোকান আছে।
+figlio|Mio figlio ha cinque anni.|আমার ছেলের বয়স পাঁচ বছর।
+figlia|Mia figlia va a scuola.|আমার মেয়ে স্কুলে যায়।
+marito|Mio marito lavora qui.|আমার স্বামী এখানে কাজ করেন।
+moglie|Mia moglie parla italiano.|আমার স্ত্রী ইতালিয়ান বলেন।
+nipote|Mio nipote gioca a calcio.|আমার নাতি/ভাতিজা ফুটবল খেলে।
+ragazzo|Il ragazzo aspetta l'autobus.|ছেলেটি বাসের অপেক্ষা করছে।
+ragazza|La ragazza legge un libro.|মেয়েটি একটি বই পড়ছে।
+persone|Ci sono molte persone qui.|এখানে অনেক মানুষ আছে।
+pranzo|Il pranzo è all'una.|দুপুরের খাবার একটায়।
+torta|Una fetta di torta, per favore.|এক টুকরো কেক দিন, দয়া করে।
+cioccolato|Mi piace il cioccolato.|আমি চকলেট পছন্দ করি।
+zuppa|La zuppa è calda.|স্যুপটা গরম।
+insalata|Prendo un'insalata.|আমি একটি সালাদ নিই।
+patata|Vorrei delle patate.|আমি কিছু আলু চাই।
+pomodoro|Il pomodoro è rosso.|টমেটোটা লাল।
+cipolla|Taglio la cipolla.|আমি পেঁয়াজ কাটি।
+limone|Un tè con limone.|লেবু দিয়ে একটি চা।
+succo|Un succo d'arancia, per favore.|একটি কমলার জুস দিন, দয়া করে।
+cucchiaio|Mi serve un cucchiaio.|আমার একটি চামচ দরকার।
+naso|Ho il naso chiuso.|আমার নাক বন্ধ।
+bocca|Apra la bocca, per favore.|মুখ খুলুন, দয়া করে।
+orecchio|Mi fa male l'orecchio.|আমার কানে ব্যথা।
+piede|Mi fa male il piede.|আমার পায়ে ব্যথা।
+braccio|Ho male al braccio.|আমার বাহুতে ব্যথা।
+capelli|Ha i capelli lunghi.|তার চুল লম্বা।
+pancia|Mi fa male la pancia.|আমার পেটে ব্যথা।
+dolore|Ho un dolore qui.|আমার এখানে ব্যথা আছে।
+medicina|Devo prendere la medicina.|আমাকে ওষুধ খেতে হবে।
+tosse|Ho la tosse da due giorni.|আমার দুই দিন ধরে কাশি।
+martedì|Martedì ho un appuntamento.|মঙ্গলবার আমার একটি অ্যাপয়েন্টমেন্ট আছে।
+mercoledì|Mercoledì vado al mercato.|বুধবার আমি বাজারে যাই।
+giovedì|Giovedì studio italiano.|বৃহস্পতিবার আমি ইতালিয়ান পড়ি।
+venerdì|Venerdì sera esco con gli amici.|শুক্রবার সন্ধ্যায় আমি বন্ধুদের সাথে বের হই।
+domenica|La domenica riposo.|রবিবার আমি বিশ্রাম নিই।
+ora|Che ora è?|এখন কয়টা বাজে?
+minuto|Aspetto un minuto.|আমি এক মিনিট অপেক্ষা করি।
+stagione|La mia stagione preferita è l'estate.|আমার প্রিয় ঋতু গ্রীষ্ম।
+là|Il bagno è là.|বাথরুম ওখানে।
+dentro|Il telefono è dentro la borsa.|ফোনটা ব্যাগের ভেতরে।
+fuori|Fuori piove.|বাইরে বৃষ্টি হচ্ছে।
+sopra|Il libro è sopra il tavolo.|বইটা টেবিলের উপরে।
+sotto|Il gatto è sotto la sedia.|বিড়ালটা চেয়ারের নিচে।
+davanti|Aspetto davanti alla stazione.|আমি স্টেশনের সামনে অপেক্ষা করছি।
+dietro|Il parco è dietro la chiesa.|পার্কটি গির্জার পেছনে।
+centro|Vado in centro.|আমি শহরের কেন্দ্রে যাই।
+angolo|La farmacia è all'angolo.|ওষুধের দোকানটি কোণায়।
+ponte|Attraversi il ponte.|সেতুটি পার হোন।
+piazza|Ci vediamo in piazza.|চত্বরে দেখা হবে।
+chi|Chi è questo?|এটা কে?
+che cosa|Che cosa significa?|এর মানে কী?
+come|Come si dice in italiano?|ইতালিয়ানে কীভাবে বলে?
+quale|Quale preferisci?|তুমি কোনটি পছন্দ করো?
+e|Pane e latte.|রুটি এবং দুধ।
+ma|Voglio venire, ma non posso.|আমি আসতে চাই, কিন্তু পারছি না।
+con|Vengo con te.|আমি তোমার সাথে আসি।
+senza|Un caffè senza zucchero.|চিনি ছাড়া একটি কফি।
+molto|Mi piace molto.|আমার খুব ভালো লাগে।
+poco|Parlo poco italiano.|আমি অল্প ইতালিয়ান বলি।
+tutto|Va tutto bene.|সব ঠিক আছে।
+chiamare|Devo chiamare il medico.|আমাকে ডাক্তারকে ডাকতে হবে।
+chiudere|Chiudo la finestra.|আমি জানালা বন্ধ করি।
+trovare|Non riesco a trovare la chiave.|আমি চাবিটা খুঁজে পাচ্ছি না।
+cercare|Cerco un lavoro.|আমি একটি কাজ খুঁজছি।
+leggere|Mi piace leggere.|আমি পড়তে পছন্দ করি।
+giocare|I bambini giocano nel parco.|শিশুরা পার্কে খেলে।
+ballare|Vuoi ballare con me?|তুমি কি আমার সাথে নাচবে?
+camminare|Mi piace camminare.|আমি হাঁটতে পছন্দ করি।
+imparare|Imparo cinque parole nuove ogni giorno.|আমি প্রতিদিন পাঁচটি নতুন শব্দ শিখি।`.split('\n').map(l=>{const p=l.split('|');return[p[0],[p[1],p[2]]]})));
+D.forEach(w=>{if(w.xi&&w.xb)EXS[w.it]=[w.xi,w.xb]});
+const tb=document.querySelector('.tabs'),mk=(id,tx)=>{const b=document.createElement('button');b.className='tab';b.id=id;b.textContent=tx;tb.appendChild(b);return b},tabs=[t1,t2,mk('t3','রিভিশন'),mk('t4','⭐ প্রিয়'),mk('t5','🇮🇹 সংস্কৃতি')],fns=[levels,learn,revTab,favs,cult];
+tabs.forEach((b,j)=>b.onclick=()=>{tabs.forEach(x=>x.classList.remove('on'));b.classList.add('on');fns[j]()});
+function welcome(f){let seen=0;try{seen=localStorage.getItem('itWel')}catch(e){}if(seen&&!f)return;document.querySelectorAll('.md').forEach(x=>x.remove());
+const h=new Date().getHours(),g=h<13?['Buongiorno!','শুভ সকাল!']:h<18?['Buon pomeriggio!','শুভ অপরাহ্ণ!']:['Buonasera!','শুভ সন্ধ্যা!'],m=document.createElement('div');m.className='md';
+m.innerHTML=`<div class='mc' style='text-align:left;max-height:90vh;overflow:auto'><button class='x'>✕</button><div style='text-align:center'><span class='em'>👨‍🍳</span><div class='it'>${g[0]}</div><div class='bn'>${g[1]} ItaParliamo-এ স্বাগতম 🇮🇹</div><button class='sp' id='wg'>🔊</button></div><div class='cb'><b>কীভাবে ব্যবহার করবেন · Come si usa</b><br>১। <b>লেভেল</b> ট্যাবে প্রথম বৃত্তে চাপ দিন। ২০টি শব্দ কার্ডে দেখবেন, কার্ডে চাপলে বাংলা অর্থ ও উচ্চারণ দেখা যায়।<br>২। যেকোনো শব্দ বা বাক্যে আঙুল চাপলেই ইতালিয়ান ও বাংলা শুনবেন। 🐢 চাপলে ধীরে শুনবেন।<br>৩। ☆ চাপলে শব্দ প্রিয় তালিকায় জমা হবে, ℹ️ চাপলে উদাহরণ বাক্য দেখবেন।<br>৪। শেখা শেষে ১৫টি প্রশ্নের কুইজ দিন। কমপক্ষে ১২টি সঠিক হলে পরের লেভেল খুলবে।<br>৫। ভুল শব্দ নিজে থেকে <b>রিভিশন</b> ট্যাবে জমা হয়, সেখানে আবার অনুশীলন করুন।<br>৬। <b>সংস্কৃতি</b> ট্যাবে ইতালির সমাজে মেলামেশার টিপ আছে।<br>🔈 শব্দ না এলে ফোনের Text-to-speech সেটিংসে ইতালিয়ান ও বাংলা ভয়েস ইনস্টল করুন।<br>❓ এই নির্দেশিকা আবার দেখতে ওপরের ডান কোণের ❓ চাপুন।</div><button class='nx' id='wk' style='width:100%;margin-top:12px'>শুরু করি → <small class=it2>Iniziamo</small></button></div>`;
+document.body.appendChild(m);try{localStorage.setItem('itWel','1')}catch(e){}
+const cl=()=>m.remove();m.onclick=ev=>{if(ev.target==m||ev.target.className=='x')cl()};$('wk').onclick=cl;$('wg').onclick=()=>say(g[0],.85,'it-IT',()=>say(g[1],.9,'bn-BD'))}
+const hb=document.createElement('button');hb.className='hb';hb.textContent='❓';hb.setAttribute('aria-label','নির্দেশিকা');hb.onclick=()=>welcome(1);document.body.appendChild(hb);
+document.addEventListener('click',ev=>{const t=ev.target;if(!t.closest||t.closest('button,input,.nd,.o,.x'))return;
+if(t.closest('.exs')){const b=$('d4');if(b)b.click();return}
+const el=t.closest('.w,.fc,.mc,.q,.cp');if(!el)return;
+if(el.matches('.cp')){const b=el.querySelector('.sp');if(b)b.click();return}
+if(el.matches('.q')){if(t.closest('.it')){const p=$('p');if(p)p.click()}return}
+const it=el.querySelector('.it'),w=it&&D.find(x=>x.it===it.textContent.trim());if(w)sayBoth(w)});
+const ITT=['Livelli','Parole','Ripasso','Preferiti','Cultura'];tabs.forEach((b,j)=>b.innerHTML=b.textContent+'<small>'+ITT[j]+'</small>');
+setTab(1);levels();welcome();
+if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+</script></body></html>
