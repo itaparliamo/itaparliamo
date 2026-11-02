@@ -1126,6 +1126,28 @@ ln.forEach((L,i)=>{const d=document.createElement('div');d.className='cc lc';d.d
 const bx=d.querySelector('.rb');d.querySelector('.a1').onclick=()=>{PITCH=PERS[SEL].p;say(L[0],.85)};d.querySelector('.a2').onclick=()=>{PITCH=PERS[SEL].p;say(L[0],.45)};d.querySelector('.a3').onclick=()=>practice(L,i,bx);$('ll').appendChild(d)});
 $('bk').onclick=frasi;$('pl').onclick=tell;$('gf').onclick=()=>{SEL='f';chapter()};$('gm').onclick=()=>{SEL='m';chapter()};updP()}
 
+/* ===== পুরোটা একবারে ===== */
+let FULL=0;try{FULL=+localStorage.getItem('itFull')||0}catch(e){}
+const chip=x=>`<span class='wd ${x[0]=='ok'?'wo':'wx'}'>${x[1]}</span>`,fmsg=o=>o.filter(x=>x[0]!='ok').map(x=>x[0]=='sub'?`• ‘${x[1]}’ বলার কথা, শোনা গেছে ‘${x[2]}’।${hint(x[1])}`:x[0]=='miss'?`• ‘${x[1]}’ বাদ পড়েছে।${hint(x[1])}`:`• বাড়তি শব্দ ‘${x[1]}’।`).join('<br>'),lineOk=(o,n)=>{const e=o.filter(x=>x[0]=='sub'||x[0]=='miss').length;return e==0||(n>=6&&e==1)};
+function updP(){const n=Object.keys(PR).length;if($('pp'))$('pp').textContent=bnd(n)+'/৭ বাক্য সঠিক';document.querySelectorAll('.lc').forEach(e=>e.classList.toggle('okl',!!PR[e.dataset.i]));
+const fb=$('fb');if(fb){fb.disabled=n<7;fb.style.opacity=n<7?.5:1;$('fm').innerHTML=n<7?`🔒 আগে ৭টি বাক্য আলাদা করে শুদ্ধ বলুন (${bnd(n)}/৭)।`:FULL?'🏆 আপনি আগে পুরোটা শুদ্ধ বলেছেন। আবার চেষ্টা করতে পারেন।':'এখন ৭টি বাক্য একটানা, একবারে বলুন।'}}
+function addFull(){const ln=LN(SEL),c=document.createElement('div');c.className='cc';c.id='fc';
+c.innerHTML=`<div class='ch'><span class='em'>🏆</span><b>পুরোটা একবারে বলুন<br><span class='pr'>Tutto insieme</span></b></div><div class='cb' id='ftx'>${ln.map(L=>L[0]).join(' ')}</div><div class='pr' id='fm' style='margin:6px 0'></div><div class='cp'><button class='sp' id='fl2'>🔊</button><button class='nx' id='fb' style='margin:0'>🎤 শুরু করুন</button></div><div id='fr'></div>`;
+$('ll').after(c);$('fl2').onclick=tell;$('fb').onclick=fullPractice;updP()}
+const _chapter=chapter;chapter=function(){_chapter();addFull()};
+function gradeFull(ln,text,box){const exp=ln.map(L=>nz(L[0])),o=align(exp.flat(),nz(text)),per=exp.map(()=>[]);let li=0,used=0;
+o.forEach(x=>{if(x[0]=='extra'){per[li].push(x);return}per[li].push(x);used++;if(used==exp[li].length&&li<exp.length-1){li++;used=0}});
+const oks=per.map((p,i)=>lineOk(p,exp[i].length)),n=oks.filter(Boolean).length,all=n==exp.length;
+box.innerHTML=`<div class='fbk ${all?'g':'r'}'><b>${all?'🏆 অসাধারণ! পুরোটা শুদ্ধ বলেছেন!':'প্রায় হয়ে গেছে: '+bnd(n)+'/৭ লাইন শুদ্ধ।'}</b><br>আপনি বলেছেন: <i>${text}</i></div>`+per.map((p,i)=>`<div class='fbk ${oks[i]?'g':'r'}' style='margin-top:6px'>${oks[i]?'✅':'❌'} লাইন ${bnd(i+1)}: ${p.filter(x=>x[0]!='extra').map(chip).join(' ')}${oks[i]?'':'<br>'+fmsg(p)}</div>`).join('')+(all?'':`<div class='pr' style='margin-top:6px'>টিপ: ❌ লাইনগুলো আলাদা করে আবার অনুশীলন করুন, তারপর পুরোটা বলুন।</div>`);
+if(all){applause();setTimeout(applause,1300);setTimeout(boom,400);FULL=1;try{localStorage.setItem('itFull','1')}catch(e){}}else bad()}
+function fullPractice(){const box=$('fr'),btn=$('fb'),ln=LN(SEL);if(!SR){box.innerHTML="<div class='fbk r'>এই ব্রাউজারে মাইক্রোফোন পরীক্ষা চলে না। Chrome ব্যবহার করুন।</div>";return}
+try{speechSynthesis.cancel()}catch(e){}playing++;let txt='',stopping=false,fatal=false;const t0=Date.now(),r=new SR();window._int='';
+r.lang='it-IT';r.continuous=true;r.interimResults=true;box.innerHTML="<div class='fbk g'>🎙️ শুনছি… পুরো অংশটি একটানা বলুন। শেষ হলে ⏹ চাপুন।<br><i id='live'></i></div>";btn.textContent='⏹ শেষ করি';btn.onclick=()=>{stopping=true;try{r.stop()}catch(e){}};
+r.onresult=e=>{let it='';for(let i=e.resultIndex;i<e.results.length;i++){const a=e.results[i];if(a.isFinal)txt+=' '+a[0].transcript;else it+=a[0].transcript}window._int=it;const lv=$('live');if(lv)lv.textContent=(txt+' '+it).trim()};
+r.onerror=e=>{if(e.error=='no-speech'||e.error=='aborted')return;fatal=true;box.innerHTML=`<div class='fbk r'>${{'not-allowed':'মাইক্রোফোনের অনুমতি দিন।','network':'স্পিচ চেনার জন্য ইন্টারনেট দরকার।','audio-capture':'মাইক্রোফোন পাওয়া যায়নি।'}[e.error]||'শোনা যায়নি। আবার চেষ্টা করুন।'}</div>`};
+r.onend=()=>{if(fatal){btn.textContent='🎤 আবার বলুন';btn.onclick=fullPractice;return}if(!stopping&&Date.now()-t0<9e4){try{r.start()}catch(e){stopping=true}return}
+btn.textContent='🎤 আবার বলুন';btn.onclick=fullPractice;const t=(txt+' '+window._int).trim();if(!t){box.innerHTML="<div class='fbk r'>কিছু শোনা যায়নি। আবার চেষ্টা করুন।</div>";return}gradeFull(ln,t,box)};try{r.start()}catch(e){}}
+
 const tb=document.querySelector('.tabs'),mk=(id,tx)=>{const b=document.createElement('button');b.className='tab';b.id=id;b.textContent=tx;tb.appendChild(b);return b},tabs=[t1,t2,mk('t3','রিভিশন'),mk('t4','⭐ প্রিয়'),mk('t5','🇮🇹 সংস্কৃতি'),mk('t6','💬 বাক্য')],fns=[levels,learn,revTab,favs,cult,frasi];
 tabs.forEach((b,j)=>b.onclick=()=>{tabs.forEach(x=>x.classList.remove('on'));b.classList.add('on');fns[j]()});
 function welcome(f){let seen=0;try{seen=localStorage.getItem('itWel')}catch(e){}if(seen&&!f)return;document.querySelectorAll('.md').forEach(x=>x.remove());
