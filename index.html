@@ -1,11 +1,11 @@
 <!DOCTYPE html><html lang="bn"><head><meta charset="utf-8">
 <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#1f9d55">
+<meta name="theme-color" content="#0e7a54">
 <link rel="apple-touch-icon" href="icon-192.png">
 <meta name="mobile-web-app-capable" content="yes"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>ItaParliamo – চলুন ইতালিয়ান বলি</title>
 <style>
-:root{--bg:#fbf8f1;--g1:#d6f1e0;--g2:#fde0dc;--card:#fff;--tx:#1d1d1b;--mu:#6b6b66;--ac:#1f9d55;--bd:#eadfcf;--bad:#d9453a;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
-@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#14161a;--g1:#15382a;--g2:#3a2022;--card:#1f2228;--tx:#f0ede6;--mu:#a3a199;--ac:#4cc783;--bd:#32353d;--bad:#ef7a6c;color-scheme:dark}}
+:root{--bg:#f6efdf;--g1:#e3efe3;--g2:#f7ddd3;--card:#fffdf7;--tx:#22303a;--mu:#6d6a5f;--ac:#0e7a54;--bd:#e5d9bd;--bad:#c4452f;--gold:#d9a441;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0f171b;--g1:#12302a;--g2:#33201d;--card:#18232a;--tx:#f1ead8;--mu:#a9a595;--ac:#3fbf8a;--bd:#2b3b44;--bad:#ef7a6c;--gold:#e3b559;color-scheme:dark}}
 *{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
 body{margin:0;background:var(--bg);color:var(--tx);font-family:system-ui,"Noto Sans Bengali",sans-serif;max-width:560px;margin:auto;padding:16px}
 h1{font-size:20px;margin:4px 0 12px}
@@ -66,6 +66,55 @@ h1{font-size:26px;text-align:center;margin:6px 0 14px;background:linear-gradient
 .hb{position:fixed;top:calc(env(safe-area-inset-top,0px) + 10px);right:12px;width:38px;height:38px;border-radius:50%;border:1px solid var(--bd);background:var(--card);z-index:50;font-size:18px;box-shadow:0 2px 8px rgba(0,0,0,.12)}
 small.it2{display:block;font-size:11px;font-weight:400;opacity:.85;line-height:1.3}
 .tab small{display:block;font-size:10px;font-weight:400;opacity:.8}
+
+/* ===== Venetian travel theme ===== */
+body{background:radial-gradient(circle at 0 0,var(--g1),transparent 42%),radial-gradient(circle at 100% 0,var(--g2),transparent 38%),repeating-linear-gradient(45deg,rgba(14,122,84,.04) 0 14px,transparent 14px 28px),var(--bg);background-attachment:fixed}
+h1{font-family:Georgia,'Noto Serif',serif;font-style:italic;font-weight:700;font-size:30px;letter-spacing:.3px;background:none;color:var(--tx);-webkit-text-fill-color:currentColor}
+h1::after{content:'';display:block;height:4px;width:110px;margin:8px auto 0;border-radius:4px;background:linear-gradient(90deg,#0e7a54 33%,#fff 33% 66%,#c4452f 66%);box-shadow:0 0 0 1px var(--bd)}
+.it,.q .it,.mc .it,b.it{font-family:Georgia,'Noto Serif','Times New Roman',serif}
+.tabs{background:var(--card);padding:4px;border-radius:16px;gap:2px;border:1px solid var(--bd);box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.tab{border:0;background:transparent;border-radius:12px;box-shadow:none;color:var(--mu)}
+.tab.on{background:var(--ac);color:#fff;box-shadow:0 2px 6px rgba(0,0,0,.18)}
+.nx{border-radius:14px;background:var(--ac);box-shadow:0 3px 10px rgba(0,0,0,.14);letter-spacing:.2px}
+.nx[style*=var\(--card\)]{background:var(--card);box-shadow:none}
+.sp{background:var(--card);color:var(--ac);border:1.5px solid var(--ac);box-shadow:none}
+.w{border:1px solid var(--bd);border-left:4px solid var(--gold);border-radius:16px;background:var(--card);box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.w>.em,.ch .em{background:linear-gradient(135deg,var(--g1),var(--g2))}
+.ff{outline:1px solid var(--gold);outline-offset:-7px;background:var(--card)}
+.cc,.q,.mc{background:var(--card);border:1px solid var(--bd);box-shadow:0 6px 20px rgba(0,0,0,.08)}
+.cc{border-top:4px solid var(--gold)}
+.q{border-radius:20px;position:relative}
+.q::before{content:'';position:absolute;left:0;right:0;top:0;height:5px;border-radius:20px 20px 0 0;background:linear-gradient(90deg,#0e7a54 33%,#fff 33% 66%,#c4452f 66%)}
+#o{counter-reset:o}
+.o{counter-increment:o;position:relative;text-align:left;padding:13px 14px 13px 52px;border-radius:14px;background:var(--card);border:1.5px solid var(--bd);font-weight:500}
+.o::before{content:counter(o,upper-alpha);position:absolute;left:12px;top:50%;transform:translateY(-50%);width:28px;height:28px;border-radius:50%;background:var(--bg);border:1.5px solid var(--bd);display:grid;place-items:center;font-size:13px;font-weight:700;color:var(--mu)}
+.o.ok{background:rgba(14,122,84,.12);border-color:var(--ac);color:var(--tx)}.o.ok::before{background:var(--ac);border-color:var(--ac);color:#fff;content:'✓'}
+.o.no{background:rgba(196,69,47,.12);border-color:var(--bad);color:var(--tx)}.o.no::before{background:var(--bad);border-color:var(--bad);color:#fff;content:'✕'}
+.pg{height:8px;background:var(--bd)}.pg i{background:linear-gradient(90deg,var(--ac),var(--gold))}
+.bb{background:var(--card);border:1px solid var(--bd);position:relative}
+.ms .em{background:var(--card);border:2px solid var(--gold);border-radius:50%;width:56px;height:56px;display:grid;place-items:center;font-size:32px}
+/* level path as tickets */
+.pt{align-items:stretch;gap:12px;position:relative;padding:8px 0 20px 30px}
+.pt::before{content:'';position:absolute;left:9px;top:14px;bottom:26px;border-left:3px dotted var(--gold)}
+.nd{position:relative;left:0!important;width:auto;height:66px;border-radius:14px;background:var(--card);color:var(--tx);border:1px solid var(--bd);border-left:5px solid var(--ac);box-shadow:0 3px 10px rgba(0,0,0,.07);flex-direction:row;justify-content:space-between;padding:0 14px 0 16px;font-size:17px;font-weight:700;text-align:left;animation:up .4s both}
+.nd:nth-child(2){animation-delay:.05s}.nd:nth-child(3){animation-delay:.1s}.nd:nth-child(4){animation-delay:.15s}.nd:nth-child(5){animation-delay:.2s}
+.nd::before{content:'';position:absolute;left:-27px;top:50%;width:13px;height:13px;border-radius:50%;transform:translateY(-50%);background:var(--gold);box-shadow:0 0 0 3px var(--bg)}
+.nd::after{content:'';position:absolute;right:84px;top:8px;bottom:8px;border-left:2px dashed var(--bd)}
+.nd span{flex:1}.nd i{display:block;font:italic 400 13px Georgia,serif;color:var(--mu);margin-top:2px}
+.nd small{width:72px;margin:0;text-align:center;color:var(--gold);font-size:17px;letter-spacing:1px;line-height:1.1}
+.nd.cur{border-left-color:var(--gold);box-shadow:0 0 0 2px var(--gold),0 6px 16px rgba(0,0,0,.12);animation:none}
+.nd:disabled{background:var(--card);border-left-color:var(--bd);opacity:.55;filter:grayscale(.7);box-shadow:none}
+.nd:disabled::before{background:var(--bd)}
+
+.stage{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--bd);border-radius:20px;padding:12px;border-top:4px solid var(--gold);margin:8px 0}
+.av{width:104px;height:112px;flex:none;animation:bob 2.6s ease-in-out infinite}.av.talk{animation:bob .5s ease-in-out infinite}
+.av .eye{transform-box:fill-box;transform-origin:center;animation:blk 4.5s infinite}.av .mouth{transform-box:fill-box;transform-origin:center;transform:scaleY(.35)}.av.talk .mouth{animation:mth .26s infinite alternate}
+.bubble{flex:1;background:var(--bg);border-radius:16px;padding:10px 12px;font-size:15px;line-height:1.5}.bubble b{font-size:17px}
+@keyframes bob{50%{transform:translateY(-4px)}}@keyframes blk{0%,92%,100%{transform:scaleY(1)}96%{transform:scaleY(.1)}}@keyframes mth{to{transform:scaleY(1.5)}}
+.wd{display:inline-block;padding:2px 9px;border-radius:99px;margin:2px;font-weight:600}.wo{background:rgba(14,122,84,.15);color:var(--ac)}.wx{background:rgba(196,69,47,.15);color:var(--bad);text-decoration:underline wavy}
+.sel{display:flex;gap:8px;margin:6px 0}.sel .nx{flex:1;margin:0}.nx.gh{background:var(--card);color:var(--tx);border:1.5px solid var(--bd);box-shadow:none}
+.lc.okl{border-top-color:var(--ac)}.lc.okl::after{content:'✓ শুদ্ধ';float:right;color:var(--ac);font-weight:700;font-size:13px}.rb .fbk{font-size:14px}
+.tab{padding:8px 1px;font-size:11.5px}
 </style></head><body>
 <h1>🇮🇹 ItaParliamo</h1><div class="sc" style="text-align:center;margin:-8px 0 12px">চলুন ইতালিয়ান বলি</div>
 <div class="tabs"><button class="tab on" id="t1">শিখুন</button><button class="tab" id="t2">কুইজ</button></div>
@@ -664,7 +713,7 @@ function boom(){const es=['🎉','⭐','🍕','🇮🇹','✨','🎊'];for(let j
 function levels(){note('');const L=Math.min(D.length,U*SZ);
 app.innerHTML=`${mas(rnd(['স্বাগতম! আজ কয়টি শব্দ শিখবেন?','চলুন, আরেকটি লেভেল জয় করি! 💪','ইতালিয়ান শেখা আপনার জন্য সহজ!']))}<div class='sc'>${L}/${D.length} শব্দ শিখেছেন · 🔥 ${ST.n} দিন</div><div class='pg'><i style='width:${L/D.length*100}%'></i></div>${W.length>=4?`<button class='nx' id='rv' style='width:100%'>🔁 ভুল শব্দের অনুশীলন (${W.length})</button>`:''}<div class='pt' id='pt'></div>`;
 if($('rv'))$('rv').onclick=()=>startQ(0,1);
-for(let i=0;i<NS;i++){const lock=i>U,b=document.createElement('button'),s=best[i]>=15?3:best[i]>=14?2:best[i]>=12?1:0;b.className='nd'+(i==U?' cur':'');b.disabled=lock;b.style.left=Math.round(Math.sin(i*1.2)*50)+'px';b.innerHTML=`${lock?'🔒 ':''}লেভেল ${String(i+1).replace(/\d/g,d=>'০১২৩৪৫৬৭৮৯'[d])}<small>${lock?'':'⭐'.repeat(s)+'☆'.repeat(3-s)}</small>`;b.onclick=()=>stage(i);$('pt').appendChild(b)}}
+for(let i=0;i<NS;i++){const lock=i>U,b=document.createElement('button'),s=best[i]>=15?3:best[i]>=14?2:best[i]>=12?1:0;b.className='nd'+(i==U?' cur':'');b.disabled=lock;b.style.left=Math.round(Math.sin(i*1.2)*50)+'px';b.innerHTML=`<span>${lock?'🔒 ':i<U?'✓ ':'▶ '}লেভেল ${String(i+1).replace(/\d/g,d=>'০১২৩৪৫৬৭৮৯'[d])}<i>Livello ${i+1}</i></span><small>${lock?'':'★'.repeat(s)+'☆'.repeat(3-s)}</small>`;b.onclick=()=>stage(i);$('pt').appendChild(b)}}
 function stage(i){app.innerHTML=`<button class='nx' id='bk' style='${GH}'>← পথ <small class=it2>Indietro</small></button><div class='it'>লেভেল ${i+1} <span class='pr'>· Livello ${i+1}</span></div><div class='sc' style='margin:4px 0 10px'>কার্ডে চাপ দিয়ে উল্টান · 🔊 শুনুন · 🐢 ধীরে শুনুন</div><div class='fg' id='l'></div><button class='nx' id='go' style='width:100%;margin-top:14px'>কুইজ শুরু করুন → <small class=it2>Inizia il quiz</small></button>`;
 D.slice(i*SZ,i*SZ+SZ).forEach(w=>{const c=document.createElement('div');c.className='fc';c.innerHTML=`<div class='ff'><span class='em'>${EM(w)}</span><b class='it'>${w.it}</b><span><button class='sp s1'>🔊</button> <button class='sp s2'>🐢</button></span></div><div class='ff fb'><b>${w.bn}</b><span class='pr'>${w.pr}</span></div>`;
 c.onclick=()=>{c.classList.toggle('fl');say(w.it)};c.querySelector('.s1').onclick=e=>{e.stopPropagation();say(w.it)};c.querySelector('.s2').onclick=e=>{e.stopPropagation();say(w.it,.4)};$('l').appendChild(c)});
@@ -715,13 +764,20 @@ let FV=[],VO=[];try{FV=JSON.parse(localStorage.getItem('itF')||'[]')}catch(e){}
 const isF=w=>FV.includes(w.it),tgF=w=>{FV=isF(w)?FV.filter(z=>z!==w.it):[...FV,w.it];try{localStorage.setItem('itF',JSON.stringify(FV))}catch(e){}};
 function vl(){try{VO=speechSynthesis.getVoices()||[]}catch(e){VO=[]}}vl();try{speechSynthesis.addEventListener('voiceschanged',vl)}catch(e){}
 const GUIDE=['ইতালিয়ান ভয়েস পাওয়া যায়নি। ঠিক করতে:','১. ফোনের সেটিংস → ভাষা ও ইনপুট → Text-to-speech','২. Google ইঞ্জিনের ⚙️ → Install voice data → Italiano (Italia) ডাউনলোড করুন','৩. Chrome-এ পেজটি আবার খুলে 🔊 চাপুন'].join('\n');
-function say(t,r,l,cb){l=l||'it-IT';try{const s=window.speechSynthesis;if(!s||!window.SpeechSynthesisUtterance){note('এই ব্রাউজারে অডিও সমর্থিত নয়। Chrome বা Safari-তে খুলুন।');return}
+const INAPP=/FBAN|FBAV|FB_IAB|Instagram|Messenger|TikTok|musical_ly|Snapchat|Line\/|; wv\)/i.test(navigator.userAgent);
+function say(t,r,l,cb){l=l||'it-IT';try{const s=window.speechSynthesis;
+if(!s||!window.SpeechSynthesisUtterance){note('এই ব্রাউজারে অডিও সমর্থিত নয়।\nChrome বা Safari-তে লিংকটি খুলুন।');return}
+if(INAPP)note('এটি অ্যাপের ভেতরের ব্রাউজার, এখানে শব্দ চলে না।\n⋮ বা ⋯ মেনু থেকে «Chrome-এ খুলুন» বেছে নিন।');
 const go=()=>{vl();const nl=x=>x.lang.replace('_','-').toLowerCase(),v=VO.find(x=>nl(x)==l.toLowerCase())||VO.find(x=>nl(x).startsWith(l.slice(0,2)));
-if(!v&&VO.length)note(l=='it-IT'?GUIDE:'এই ভাষার ভয়েস পাওয়া যায়নি।');else note('');
-const u=new SpeechSynthesisUtterance(t);u.lang=l;u.rate=r||.85;u.onend=cb;if(v)u.voice=v;
-u.onerror=e=>{if(e.error=='interrupted'||e.error=='canceled')return;note(e.error=='not-allowed'?'অডিও চালাতে 🔊 বোতামে আবার চাপ দিন।':l=='it-IT'?GUIDE:'শব্দ চালানো যায়নি।')};
-if(s.speaking||s.pending)s.cancel();s.resume();setTimeout(()=>s.speak(u),60)};
-if(!VO.length)setTimeout(go,400);else go()}catch(e){note('অডিও চালানো যায়নি।')}}
+if(!v&&VO.length)note(l=='it-IT'?GUIDE:'এই ভাষার ভয়েস পাওয়া যায়নি।');else if(!INAPP)note('');
+const u=new SpeechSynthesisUtterance(t);u.lang=l;u.rate=r||.85;u.volume=1;u.pitch=PITCH;if(v)u.voice=v;let started=false;
+u.onstart=()=>{started=true};u.onend=()=>{started=true;if(cb)cb()};
+u.onerror=e=>{if(e.error=='interrupted'||e.error=='canceled')return;started=true;note(e.error=='not-allowed'?'অডিও চালাতে 🔊 বোতামে আবার চাপ দিন।':l=='it-IT'?GUIDE:'শব্দ চালানো যায়নি।');if(cb)cb()};
+if(s.speaking||s.pending)s.cancel();s.resume();
+setTimeout(()=>{s.speak(u);setTimeout(()=>{if(!started&&!s.speaking)note(l=='it-IT'?'শব্দ চালু হয়নি। ফোনের মিডিয়া ভলিউম ও সাইলেন্ট মোড দেখুন।\n'+GUIDE:'বাংলা শব্দ চালু হয়নি। ফোনে বাংলা ভয়েস ইনস্টল না থাকতে পারে।')},2500)},100)};
+if(!VO.length){vl();setTimeout(go,500)}else go()}catch(e){note('অডিও চালানো যায়নি।')}}
+function diag(){vl();const nl=x=>x.lang.replace('_','-').toLowerCase(),it=VO.find(x=>nl(x).startsWith('it')),bn=VO.find(x=>nl(x).startsWith('bn')),d=$('dg');
+d.innerHTML=`ভয়েস সংখ্যা: ${VO.length}<br>ইতালিয়ান ভয়েস: ${it?'✅ '+it.name:'❌ নেই'}<br>বাংলা ভয়েস: ${bn?'✅ '+bn.name:'❌ নেই'}<br>অ্যাপের ভেতরের ব্রাউজার: ${INAPP?'⚠️ হ্যাঁ, Chrome-এ খুলুন':'না'}<br>এখন «Ciao» শুনতে পাচ্ছেন কি?`;say('Ciao, come stai?',.85,'it-IT')}
 function detail(w){const m=document.createElement('div'),e=EXS[w.it];m.className='md';
 m.innerHTML=`<div class='mc'><button class='x'>✕</button><div class='em'>${EM(w)}</div><div class='it'>${w.it}</div><div class='bn'>${w.bn}</div><div class='pr'>উচ্চারণ: ${w.pr}</div><div class='pr'>ক্যাটাগরি: ${w.cat}</div>${e?`<div class='exs'><b>উদাহরণ:</b> ${e[0]}<br><span class='pr'>${e[1]}</span> <button class='sp' id='d4' style='width:30px;height:30px;font-size:13px'>🔊</button></div>`:''}<div class='bt'><button class='sp' id='d1'>🔊</button> <button class='sp' id='d2'>🐢</button> <button class='sp' id='d3'>${isF(w)?'⭐':'☆'}</button></div></div>`;
 document.body.appendChild(m);m.onclick=ev=>{if(ev.target==m||ev.target.className=='x')m.remove()};
@@ -1036,13 +1092,47 @@ ballare|Vuoi ballare con me?|তুমি কি আমার সাথে ন�
 camminare|Mi piace camminare.|আমি হাঁটতে পছন্দ করি।
 imparare|Imparo cinque parole nuove ogni giorno.|আমি প্রতিদিন পাঁচটি নতুন শব্দ শিখি।`.split('\n').map(l=>{const p=l.split('|');return[p[0],[p[1],p[2]]]})));
 D.forEach(w=>{if(w.xi&&w.xb)EXS[w.it]=[w.xi,w.xb]});
-const tb=document.querySelector('.tabs'),mk=(id,tx)=>{const b=document.createElement('button');b.className='tab';b.id=id;b.textContent=tx;tb.appendChild(b);return b},tabs=[t1,t2,mk('t3','রিভিশন'),mk('t4','⭐ প্রিয়'),mk('t5','🇮🇹 সংস্কৃতি')],fns=[levels,learn,revTab,favs,cult];
+/* ===== বাক্য: Chapter 1 ===== */
+let PITCH=1,PR={},SEL='f',playing=0;try{PR=JSON.parse(localStorage.getItem('itPR')||'{}')}catch(e){}
+const savePR=()=>{try{localStorage.setItem('itPR',JSON.stringify(PR))}catch(e){}},bnd=n=>String(n).replace(/\d/g,d=>'০১২৩৪৫৬৭৮৯'[d]),SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+const PERS={f:{N:'Nadia',n:'নাদিয়া',p:1.25,job:['Sono una studentessa.','আমি একজন ছাত্রী।','সোনো উনা স্তুদেন্তেস্সা।']},m:{N:'Rahim',n:'রহিম',p:.8,job:['Sono uno studente.','আমি একজন ছাত্র।','সোনো উনো স্তুদেন্তে।']}};
+const LN=g=>{const P=PERS[g];return[['Ciao! Mi chiamo '+P.N+'.','হ্যালো! আমার নাম '+P.n+'।','চাও! মি কিয়ামো '+P.n+'।'],['Ho venticinque anni.','আমার বয়স পঁচিশ বছর।','ও ভেন্তিচিঙ্কুয়ে আন্নি।'],['Sono del Bangladesh.','আমি বাংলাদেশের।','সোনো দেল বাংলাদেশ।'],['Abito a Venezia.','আমি ভেনিসে থাকি।','আবিতো আ ভেনেৎসিয়া।'],P.job,["Parlo un po' di italiano.",'আমি একটু ইতালিয়ান বলি।','পার্লো উন পো দি ইতালিয়ানো।'],['Piacere di conoscerti!','তোমার সাথে পরিচিত হয়ে খুশি!','পিয়াচেরে দি কোনোশের্তি!']]};
+const NUMW={25:'venticinque'},nz=t=>t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\d+/g,m=>NUMW[m]||m).replace(/[^a-z\s]/g,' ').split(/\s+/).filter(Boolean);
+function align(a,b){const n=a.length,m=b.length,d=Array.from({length:n+1},(_,i)=>[i].concat(Array(m).fill(0)));for(let j=1;j<=m;j++)d[0][j]=j;
+for(let i=1;i<=n;i++)for(let j=1;j<=m;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]==b[j-1]?0:1));
+const o=[];let i=n,j=m;while(i>0||j>0){if(i>0&&j>0&&d[i][j]==d[i-1][j-1]+(a[i-1]==b[j-1]?0:1)){o.push(a[i-1]==b[j-1]?['ok',a[i-1]]:['sub',a[i-1],b[j-1]]);i--;j--}else if(i>0&&d[i][j]==d[i-1][j]+1){o.push(['miss',a[i-1]]);i--}else{o.push(['extra',b[j-1]]);j--}}return o.reverse()}
+const hint=w=>{const x=D.find(z=>nz(z.it).join(' ')==w);return x?' (উচ্চারণ: '+x.pr+')':''};
+function applause(){try{AC=AC||new(window.AudioContext||window.webkitAudioContext)();const sr=AC.sampleRate,buf=AC.createBuffer(1,(sr*2.4)|0,sr),c=buf.getChannelData(0);
+for(let k=0;k<150;k++){const st=(Math.random()*1.9*sr)|0,L=(.035*sr)|0,a=.3+Math.random()*.7;for(let j=0;j<L&&st+j<c.length;j++)c[st+j]+=(Math.random()*2-1)*a*Math.exp(-j/(L/4))}
+const src=AC.createBufferSource(),f=AC.createBiquadFilter(),g=AC.createGain();f.type='highpass';f.frequency.value=700;g.gain.value=.35;src.buffer=buf;src.connect(f);f.connect(g);g.connect(AC.destination);src.start()}catch(e){}}
+const avatar=g=>`<svg class='av' viewBox='0 0 120 130'><circle cx='60' cy='60' r='58' fill='#e9d9a8'/><path d='M18 126c0-26 18-38 42-38s42 12 42 38z' fill='${g=='f'?'#c4452f':'#0e7a54'}'/><rect x='51' y='74' width='18' height='18' rx='6' fill='#b9825a'/>${g=='f'?"<path d='M26 62c-4-34 20-48 36-48s40 12 34 48c0 16 4 30-6 40l-10-26H42l-10 26c-10-10-6-24-6-40z' fill='#2b1b14'/>":''}<ellipse cx='60' cy='56' rx='25' ry='29' fill='#c89368'/><path d='${g=='f'?'M35 50c4-20 18-24 26-24s22 4 26 24c-8-8-18-12-26-12s-18 4-26 12z':'M34 48c0-18 12-26 26-26s28 8 26 26c-6-10-16-14-26-14s-20 4-26 14z'}' fill='#2b1b14'/><circle class='eye' cx='50' cy='56' r='3.2' fill='#22303a'/><circle class='eye' cx='70' cy='56' r='3.2' fill='#22303a'/><path d='M44 48q6-4 12 0M64 48q6-4 12 0' stroke='#2b1b14' stroke-width='2' fill='none' stroke-linecap='round'/><ellipse class='mouth' cx='60' cy='72' rx='7' ry='4' fill='#7a2a22'/></svg>`;
+function tell(){const ln=LN(SEL);PITCH=PERS[SEL].p;const av=document.querySelector('.av'),bb=$('bub'),my=++playing;let k=0;
+const next=()=>{if(my!=playing)return;if(k>=ln.length){av&&av.classList.remove('talk');PITCH=1;return}const L=ln[k++];bb.innerHTML=`<b class='it'>${L[0]}</b><br>${L[1]}`;av&&av.classList.add('talk');say(L[0],.85,'it-IT',()=>{av&&av.classList.remove('talk');setTimeout(next,350)})};next()}
+function updP(){const d=ln=>Object.keys(PR).length;if($('pp'))$('pp').textContent=bnd(Object.keys(PR).length)+'/৭ বাক্য সঠিক';document.querySelectorAll('.lc').forEach(e=>e.classList.toggle('okl',!!PR[e.dataset.i]))}
+function grade(L,alts,box,idx){const exp=nz(L[0]);let best=null;alts.forEach(t=>{const o=align(exp,nz(t)),ok=o.filter(x=>x[0]=='ok').length;if(!best||ok>best.ok)best={o,ok,t}});
+const bad=best.o.filter(x=>x[0]!='ok'),err=bad.filter(x=>x[0]!='extra').length,pass=err==0||(exp.length>=6&&err==1),chips=best.o.filter(x=>x[0]!='extra').map(x=>`<span class='wd ${x[0]=='ok'?'wo':'wx'}'>${x[1]}</span>`).join(' ');
+if(pass){PR[idx]=1;savePR();applause();updP();box.innerHTML=`<div class='fbk g'>👏 শুদ্ধ হয়েছে! সাবাশ!<br>${chips}</div>`;if(Object.keys(PR).length>=7)setTimeout(boom,600)}
+else{bad2();const msg=bad.map(x=>x[0]=='sub'?`• ‘${x[1]}’ বলার কথা, কিন্তু শোনা গেছে ‘${x[2]}’।${hint(x[1])}`:x[0]=='miss'?`• ‘${x[1]}’ বাদ পড়েছে।${hint(x[1])}`:`• বাড়তি শব্দ ‘${x[1]}’ শোনা গেছে।`).join('<br>');
+box.innerHTML=`<div class='fbk r'><b>আবার চেষ্টা করুন।</b><br>আপনি বলেছেন: <i>${best.t}</i><br>${chips}<br>${msg}<br>টিপ: 🐢 চাপলে ধীরে শুনে আবার বলুন।</div>`}}
+const bad2=()=>bad();
+function practice(L,idx,box){if(!SR){box.innerHTML="<div class='fbk r'>এই ব্রাউজারে মাইক্রোফোন পরীক্ষা চলে না। Android Chrome বা iPhone Safari ব্যবহার করুন।</div>";return}
+try{speechSynthesis.cancel()}catch(e){}playing++;box.innerHTML="<div class='fbk g'>🎙️ শুনছি… এখন ইতালিয়ানে বলুন।</div>";
+const r=new SR(),E={'not-allowed':'মাইক্রোফোনের অনুমতি দিন (ঠিকানার পাশে তালা চিহ্ন → অনুমতি)।','no-speech':'কিছু শোনা যায়নি। আবার চেষ্টা করুন।','network':'স্পিচ চেনার জন্য ইন্টারনেট দরকার।','audio-capture':'মাইক্রোফোন পাওয়া যায়নি।'};let got=false;
+r.lang='it-IT';r.maxAlternatives=3;r.interimResults=false;
+r.onresult=e=>{got=true;grade(L,[...e.results[0]].map(a=>a.transcript),box,idx)};r.onerror=e=>{got=true;box.innerHTML=`<div class='fbk r'>${E[e.error]||'শোনা যায়নি। আবার চেষ্টা করুন।'}</div>`};r.onend=()=>{if(!got)box.innerHTML=''};try{r.start()}catch(e){}}
+function frasi(){note('');playing++;app.innerHTML=`${mas('এবার বাক্যে কথা বলা শিখি! 🎤')}<div class='cc' id='c1' style='cursor:pointer'><div class='ch'><span class='em'>🙋</span><b>চ্যাপ্টার ১: নিজের সম্পর্কে বলি<br><span class='pr'>Presentarsi</span></b></div><div class='cb'>নাম, বয়স, দেশ, শহর ও পেশা বলা শিখুন। আগে শুনুন, তারপর নিজে বলুন।</div><div class='pg'><i style='width:${Object.keys(PR).length/7*100}%'></i></div><div class='pr'>${bnd(Object.keys(PR).length)}/৭ বাক্য সঠিক</div></div>${['২. পরিবার ও বন্ধু','৩. দোকানে ও বাজারে','৪. ডাক্তারের কাছে','৫. অফিস ও কাগজপত্র'].map(t=>`<div class='cc' style='opacity:.55'>🔒 চ্যাপ্টার ${t} <small class=it2>শীঘ্রই</small></div>`).join('')}`;$('c1').onclick=chapter}
+function chapter(){note('');playing++;const ln=LN(SEL);app.innerHTML=`<button class='nx' id='bk' style='${GH}'>← চ্যাপ্টার <small class=it2>Indietro</small></button><div class='it' style='margin:6px 0'>নিজের সম্পর্কে বলি <span class='pr'>· Presentarsi</span></div><div class='sel'><button class='nx${SEL=='f'?'':' gh'}' id='gf'>👧 নাদিয়া</button><button class='nx${SEL=='m'?'':' gh'}' id='gm'>👦 রহিম</button></div><div class='stage'>${avatar(SEL)}<div class='bubble' id='bub'><b class='it'>${ln[0][0]}</b><br>${ln[0][1]}</div></div><button class='nx' id='pl' style='width:100%;margin:10px 0'>▶ শুনি <small class=it2>Ascolta</small></button><div class='sc' id='pp'></div><div id='ll'></div>`;
+ln.forEach((L,i)=>{const d=document.createElement('div');d.className='cc lc';d.dataset.i=i;d.innerHTML=`<div class='cb'><b class='it' style='font-size:18px'>${L[0]}</b><br>${L[1]}<br><span class='pr'>উচ্চারণ: ${L[2]}</span></div><div class='cp'><div><button class='sp a1'>🔊</button> <button class='sp a2'>🐢</button></div><button class='nx a3' style='margin:0'>🎤 আমি বলি</button></div><div class='rb'></div>`;
+const bx=d.querySelector('.rb');d.querySelector('.a1').onclick=()=>{PITCH=PERS[SEL].p;say(L[0],.85)};d.querySelector('.a2').onclick=()=>{PITCH=PERS[SEL].p;say(L[0],.45)};d.querySelector('.a3').onclick=()=>practice(L,i,bx);$('ll').appendChild(d)});
+$('bk').onclick=frasi;$('pl').onclick=tell;$('gf').onclick=()=>{SEL='f';chapter()};$('gm').onclick=()=>{SEL='m';chapter()};updP()}
+
+const tb=document.querySelector('.tabs'),mk=(id,tx)=>{const b=document.createElement('button');b.className='tab';b.id=id;b.textContent=tx;tb.appendChild(b);return b},tabs=[t1,t2,mk('t3','রিভিশন'),mk('t4','⭐ প্রিয়'),mk('t5','🇮🇹 সংস্কৃতি'),mk('t6','💬 বাক্য')],fns=[levels,learn,revTab,favs,cult,frasi];
 tabs.forEach((b,j)=>b.onclick=()=>{tabs.forEach(x=>x.classList.remove('on'));b.classList.add('on');fns[j]()});
 function welcome(f){let seen=0;try{seen=localStorage.getItem('itWel')}catch(e){}if(seen&&!f)return;document.querySelectorAll('.md').forEach(x=>x.remove());
 const h=new Date().getHours(),g=h<13?['Buongiorno!','শুভ সকাল!']:h<18?['Buon pomeriggio!','শুভ অপরাহ্ণ!']:['Buonasera!','শুভ সন্ধ্যা!'],m=document.createElement('div');m.className='md';
-m.innerHTML=`<div class='mc' style='text-align:left;max-height:90vh;overflow:auto'><button class='x'>✕</button><div style='text-align:center'><span class='em'>👨‍🍳</span><div class='it'>${g[0]}</div><div class='bn'>${g[1]} ItaParliamo-এ স্বাগতম 🇮🇹</div><button class='sp' id='wg'>🔊</button></div><div class='cb'><b>কীভাবে ব্যবহার করবেন · Come si usa</b><br>১। <b>লেভেল</b> ট্যাবে প্রথম বৃত্তে চাপ দিন। ২০টি শব্দ কার্ডে দেখবেন, কার্ডে চাপলে বাংলা অর্থ ও উচ্চারণ দেখা যায়।<br>২। যেকোনো শব্দ বা বাক্যে আঙুল চাপলেই ইতালিয়ান ও বাংলা শুনবেন। 🐢 চাপলে ধীরে শুনবেন।<br>৩। ☆ চাপলে শব্দ প্রিয় তালিকায় জমা হবে, ℹ️ চাপলে উদাহরণ বাক্য দেখবেন।<br>৪। শেখা শেষে ১৫টি প্রশ্নের কুইজ দিন। কমপক্ষে ১২টি সঠিক হলে পরের লেভেল খুলবে।<br>৫। ভুল শব্দ নিজে থেকে <b>রিভিশন</b> ট্যাবে জমা হয়, সেখানে আবার অনুশীলন করুন।<br>৬। <b>সংস্কৃতি</b> ট্যাবে ইতালির সমাজে মেলামেশার টিপ আছে।<br>🔈 শব্দ না এলে ফোনের Text-to-speech সেটিংসে ইতালিয়ান ও বাংলা ভয়েস ইনস্টল করুন।<br>❓ এই নির্দেশিকা আবার দেখতে ওপরের ডান কোণের ❓ চাপুন।</div><button class='nx' id='wk' style='width:100%;margin-top:12px'>শুরু করি → <small class=it2>Iniziamo</small></button></div>`;
+m.innerHTML=`<div class='mc' style='text-align:left;max-height:90vh;overflow:auto'><button class='x'>✕</button><div style='text-align:center'><span class='em'>👨‍🍳</span><div class='it'>${g[0]}</div><div class='bn'>${g[1]} ItaParliamo-এ স্বাগতম 🇮🇹</div><button class='sp' id='wg'>🔊</button></div><div class='cb'><b>কীভাবে ব্যবহার করবেন · Come si usa</b><br>১। <b>লেভেল</b> ট্যাবে প্রথম বৃত্তে চাপ দিন। ২০টি শব্দ কার্ডে দেখবেন, কার্ডে চাপলে বাংলা অর্থ ও উচ্চারণ দেখা যায়।<br>২। যেকোনো শব্দ বা বাক্যে আঙুল চাপলেই ইতালিয়ান ও বাংলা শুনবেন। 🐢 চাপলে ধীরে শুনবেন।<br>৩। ☆ চাপলে শব্দ প্রিয় তালিকায় জমা হবে, ℹ️ চাপলে উদাহরণ বাক্য দেখবেন।<br>৪। শেখা শেষে ১৫টি প্রশ্নের কুইজ দিন। কমপক্ষে ১২টি সঠিক হলে পরের লেভেল খুলবে।<br>৫। ভুল শব্দ নিজে থেকে <b>রিভিশন</b> ট্যাবে জমা হয়, সেখানে আবার অনুশীলন করুন।<br>৬। <b>সংস্কৃতি</b> ট্যাবে ইতালির সমাজে মেলামেশার টিপ আছে।<br>🔈 শব্দ না এলে ফোনের Text-to-speech সেটিংসে ইতালিয়ান ও বাংলা ভয়েস ইনস্টল করুন।<br>❓ এই নির্দেশিকা আবার দেখতে ওপরের ডান কোণের ❓ চাপুন।</div><button class='nx' id='dgb' style='width:100%;margin-top:12px;background:var(--card);color:var(--tx);border:1.5px solid var(--ac)'>🔧 সাউন্ড পরীক্ষা <small class=it2>Test audio</small></button><div id='dg' class='cb' style='margin-top:8px'></div><button class='nx' id='wk' style='width:100%;margin-top:12px'>শুরু করি → <small class=it2>Iniziamo</small></button></div>`;
 document.body.appendChild(m);try{localStorage.setItem('itWel','1')}catch(e){}
-const cl=()=>m.remove();m.onclick=ev=>{if(ev.target==m||ev.target.className=='x')cl()};$('wk').onclick=cl;$('wg').onclick=()=>say(g[0],.85,'it-IT',()=>say(g[1],.9,'bn-BD'))}
+const cl=()=>m.remove();m.onclick=ev=>{if(ev.target==m||ev.target.className=='x')cl()};$('wk').onclick=cl;$('dgb').onclick=diag;$('wg').onclick=()=>say(g[0],.85,'it-IT',()=>say(g[1],.9,'bn-BD'))}
 const hb=document.createElement('button');hb.className='hb';hb.textContent='❓';hb.setAttribute('aria-label','নির্দেশিকা');hb.onclick=()=>welcome(1);document.body.appendChild(hb);
 document.addEventListener('click',ev=>{const t=ev.target;if(!t.closest||t.closest('button,input,.nd,.o,.x'))return;
 if(t.closest('.exs')){const b=$('d4');if(b)b.click();return}
@@ -1050,7 +1140,7 @@ const el=t.closest('.w,.fc,.mc,.q,.cp');if(!el)return;
 if(el.matches('.cp')){const b=el.querySelector('.sp');if(b)b.click();return}
 if(el.matches('.q')){if(t.closest('.it')){const p=$('p');if(p)p.click()}return}
 const it=el.querySelector('.it'),w=it&&D.find(x=>x.it===it.textContent.trim());if(w)sayBoth(w)});
-const ITT=['Livelli','Parole','Ripasso','Preferiti','Cultura'];tabs.forEach((b,j)=>b.innerHTML=b.textContent+'<small>'+ITT[j]+'</small>');
+const ITT=['Livelli','Parole','Ripasso','Preferiti','Cultura','Frasi'];tabs.forEach((b,j)=>b.innerHTML=b.textContent+'<small>'+ITT[j]+'</small>');
 setTab(1);levels();welcome();
 if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
 </script></body></html>
