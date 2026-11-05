@@ -1097,7 +1097,7 @@ let PITCH=1,PR={},SEL='f',playing=0;try{PR=JSON.parse(localStorage.getItem('itPR
 const savePR=()=>{try{localStorage.setItem('itPR',JSON.stringify(PR))}catch(e){}},bnd=n=>String(n).replace(/\d/g,d=>'০১২৩৪৫৬৭৮৯'[d]),SR=window.SpeechRecognition||window.webkitSpeechRecognition;
 const PERS={f:{N:'Nadia',n:'নাদিয়া',p:1.25,job:['Sono una studentessa.','আমি একজন ছাত্রী।','সোনো উনা স্তুদেন্তেস্সা।']},m:{N:'Rahim',n:'রহিম',p:.8,job:['Sono uno studente.','আমি একজন ছাত্র।','সোনো উনো স্তুদেন্তে।']}};
 const LN=g=>{const P=PERS[g];return[['Ciao! Mi chiamo '+P.N+'.','হ্যালো! আমার নাম '+P.n+'।','চাও! মি কিয়ামো '+P.n+'।'],['Ho venticinque anni.','আমার বয়স পঁচিশ বছর।','ও ভেন্তিচিঙ্কুয়ে আন্নি।'],['Sono del Bangladesh.','আমি বাংলাদেশের।','সোনো দেল বাংলাদেশ।'],['Abito a Venezia.','আমি ভেনিসে থাকি।','আবিতো আ ভেনেৎসিয়া।'],P.job,["Parlo un po' di italiano.",'আমি একটু ইতালিয়ান বলি।','পার্লো উন পো দি ইতালিয়ানো।'],['Piacere di conoscerti!','তোমার সাথে পরিচিত হয়ে খুশি!','পিয়াচেরে দি কোনোশের্তি!']]};
-const NUMW={25:'venticinque'},nz=t=>t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\d+/g,m=>NUMW[m]||m).replace(/[^a-z\s]/g,' ').split(/\s+/).filter(Boolean);
+const NUMW={25:'venticinque'},nz=t=>t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\d+/g,m=>NUMW[m]||m).replace(/[^a-z0-9\s]/g,' ').split(/\s+/).filter(Boolean);
 function align(a,b){const n=a.length,m=b.length,d=Array.from({length:n+1},(_,i)=>[i].concat(Array(m).fill(0)));for(let j=1;j<=m;j++)d[0][j]=j;
 for(let i=1;i<=n;i++)for(let j=1;j<=m;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]==b[j-1]?0:1));
 const o=[];let i=n,j=m;while(i>0||j>0){if(i>0&&j>0&&d[i][j]==d[i-1][j-1]+(a[i-1]==b[j-1]?0:1)){o.push(a[i-1]==b[j-1]?['ok',a[i-1]]:['sub',a[i-1],b[j-1]]);i--;j--}else if(i>0&&d[i][j]==d[i-1][j]+1){o.push(['miss',a[i-1]]);i--}else{o.push(['extra',b[j-1]]);j--}}return o.reverse()}
@@ -1109,11 +1109,11 @@ const avatar=g=>`<svg class='av' viewBox='0 0 120 130'><circle cx='60' cy='60' r
 function tell(){const ln=LN(SEL);PITCH=PERS[SEL].p;const av=document.querySelector('.av'),bb=$('bub'),my=++playing;let k=0;
 const next=()=>{if(my!=playing)return;if(k>=ln.length){av&&av.classList.remove('talk');PITCH=1;return}const L=ln[k++];bb.innerHTML=`<b class='it'>${L[0]}</b><br>${L[1]}`;av&&av.classList.add('talk');say(L[0],.85,'it-IT',()=>{av&&av.classList.remove('talk');setTimeout(next,350)})};next()}
 function updP(){const d=ln=>Object.keys(PR).length;if($('pp'))$('pp').textContent=bnd(Object.keys(PR).length)+'/৭ বাক্য সঠিক';document.querySelectorAll('.lc').forEach(e=>e.classList.toggle('okl',!!PR[e.dataset.i]))}
-function grade(L,alts,box,idx){const exp=nz(L[0]);let best=null;alts.forEach(t=>{const o=align(exp,fixPers(nz(t),idx,exp)),ok=o.filter(x=>x[0]=='ok').length;if(!best||ok>best.ok)best={o,ok,t}});
+function grade(L,alts,box,idx){const exp=nz(L[0]);let best=null;alts.forEach(t=>{const o=align(adapt(nz(t),idx,exp),nz(t)),ok=o.filter(x=>x[0]=='ok').length;if(!best||ok>best.ok)best={o,ok,t}});
 const bad=best.o.filter(x=>x[0]!='ok'),err=bad.filter(x=>x[0]!='extra').length,pass=err==0||(exp.length>=6&&err==1),chips=best.o.filter(x=>x[0]!='extra').map(x=>`<span class='wd ${x[0]=='ok'?'wo':'wx'}'>${x[1]}</span>`).join(' ');
 if(pass){PR[idx]=1;savePR();applause();updP();box.innerHTML=`<div class='fbk g'>👏 শুদ্ধ হয়েছে! সাবাশ!<br>${chips}</div>`;if(Object.keys(PR).length>=7)setTimeout(boom,600)}
-else{bad2();const msg=bad.map(x=>x[0]=='sub'?`• ‘${x[1]}’ বলার কথা, কিন্তু শোনা গেছে ‘${x[2]}’।${hint(x[1])}`:x[0]=='miss'?`• ‘${x[1]}’ বাদ পড়েছে।${hint(x[1])}`:`• বাড়তি শব্দ ‘${x[1]}’ শোনা গেছে।`).join('<br>');
-box.innerHTML=`<div class='fbk r'><b>আবার চেষ্টা করুন।</b><br>আপনি বলেছেন: <i>${best.t}</i><br>${chips}<br>${msg}<br>টিপ: 🐢 চাপলে ধীরে শুনে আবার বলুন।</div>`}}
+else{bad2();const nb=idx==1?badNum(nz(best.t)):null,msg=bad.map(x=>x[0]=='sub'?`• ‘${x[1]}’ বলার কথা, কিন্তু শোনা গেছে ‘${x[2]}’।${hint(x[1])}`:x[0]=='miss'?`• ‘${x[1]}’ বাদ পড়েছে।${hint(x[1])}`:`• বাড়তি শব্দ ‘${x[1]}’ শোনা গেছে।`).join('<br>');
+box.innerHTML=`<div class='fbk r'><b>আবার চেষ্টা করুন।</b><br>আপনি বলেছেন: <i>${best.t}</i><br>${chips}<br>${msg}${nb?'<br>• সংখ্যাটি বুঝতে পারিনি: ‘'+nb+'’। একটি সংখ্যা একসঙ্গে বলুন, যেমন venticinque বা trentasette।':''}<br>টিপ: 🐢 চাপলে ধীরে শুনে আবার বলুন।</div>`}}
 const bad2=()=>bad();
 function practice(L,idx,box){if(!SR){box.innerHTML="<div class='fbk r'>এই ব্রাউজারে মাইক্রোফোন পরীক্ষা চলে না। Android Chrome বা iPhone Safari ব্যবহার করুন।</div>";return}
 try{speechSynthesis.cancel()}catch(e){}playing++;box.innerHTML="<div class='fbk g'>🎙️ শুনছি… এখন ইতালিয়ানে বলুন।</div>";
@@ -1135,8 +1135,8 @@ function addFull(){const ln=LN(SEL),c=document.createElement('div');c.className=
 c.innerHTML=`<div class='ch'><span class='em'>🏆</span><b>পুরোটা একবারে বলুন<br><span class='pr'>Tutto insieme</span></b></div><div class='cb' id='ftx'>${ln.map(L=>L[0]).join(' ')}</div><div class='pr' id='fm' style='margin:6px 0'></div><div class='cp'><button class='sp' id='fl2'>🔊</button><button class='nx' id='fb' style='margin:0'>🎤 শুরু করুন</button></div><div id='fr'></div>`;
 $('ll').after(c);$('fl2').onclick=tell;$('fb').onclick=fullPractice;updP()}
 const _chapter=chapter;chapter=function(){_chapter();addFull()};
-function gradeFull(ln,text,box){const exp=ln.map(L=>nz(L[0])),o=align(exp.flat(),fixPers(nz(text),-1,exp.flat())),per=exp.map(()=>[]);let li=0,used=0;
-o.forEach(x=>{if(x[0]=='extra'){per[li].push(x);return}per[li].push(x);used++;if(used==exp[li].length&&li<exp.length-1){li++;used=0}});
+function gradeFull(ln,text,box){const exp=ln.map(L=>nz(L[0])),EF=adapt(nz(text),-1,exp.flat()),o=align(EF,nz(text)),per=exp.map(()=>[]),lens=exp.map(x=>x.length);lens[1]+=EF.length-exp.flat().length;let li=0,used=0;
+o.forEach(x=>{if(x[0]=='extra'){per[li].push(x);return}per[li].push(x);used++;if(used==lens[li]&&li<exp.length-1){li++;used=0}});
 const oks=per.map((p,i)=>lineOk(p,exp[i].length)),n=oks.filter(Boolean).length,all=n==exp.length;
 box.innerHTML=`<div class='fbk ${all?'g':'r'}'><b>${all?'🏆 অসাধারণ! পুরোটা শুদ্ধ বলেছেন!':'প্রায় হয়ে গেছে: '+bnd(n)+'/৭ লাইন শুদ্ধ।'}</b><br>আপনি বলেছেন: <i>${text}</i></div>`+per.map((p,i)=>`<div class='fbk ${oks[i]?'g':'r'}' style='margin-top:6px'>${oks[i]?'✅':'❌'} লাইন ${bnd(i+1)}: ${p.filter(x=>x[0]!='extra').map(chip).join(' ')}${oks[i]?'':'<br>'+fmsg(p)}</div>`).join('')+(all?'':`<div class='pr' style='margin-top:6px'>টিপ: ❌ লাইনগুলো আলাদা করে আবার অনুশীলন করুন, তারপর পুরোটা বলুন।</div>`);
 if(all){applause();setTimeout(applause,1300);setTimeout(boom,400);FULL=1;try{localStorage.setItem('itFull','1')}catch(e){}}else bad()}
@@ -1151,6 +1151,11 @@ btn.textContent='🎤 আবার বলুন';btn.onclick=fullPractice;const 
 /* ===== নিজের কথা বলুন (free speaking + grammar check) ===== */
 const NU={uno:1,un:1,due:2,tre:3,quattro:4,cinque:5,sei:6,sette:7,otto:8,nove:9,dieci:10,undici:11,dodici:12,tredici:13,quattordici:14,quindici:15,sedici:16,diciassette:17,diciotto:18,diciannove:19,venti:20,trenta:30,quaranta:40,cinquanta:50,sessanta:60,settanta:70,ottanta:80,novanta:90},TENS=['venti','trenta','quaranta','cinquanta','sessanta','settanta','ottanta','novanta'];
 function nval(s){if(s===undefined)return null;if(/^\d+$/.test(s))return +s;if(s in NU)return NU[s];for(const t of TENS){const b=t.slice(0,-1),r=s.slice(t.length),r2=s.slice(b.length);if(s.startsWith(t)&&NU[r]>0&&NU[r]<10)return NU[t]+NU[r];if(s.startsWith(b)&&(r2=='uno'||r2=='otto'))return NU[t]+NU[r2]}return null}
+
+function pnum(a,i){let v=nval(a[i]);if(v==null)return null;let l=1;if(v>=20&&v%10==0){let j=i+1;if(a[j]=='e')j++;const u=nval(a[j]);if(u>0&&u<10){v+=u;l=j-i+1}}return[v,l]}
+function adapt(a,idx,exp){exp=exp.slice();if(idx<=0){const c=a.indexOf('chiamo');if(c>=0&&a[c+1]&&exp[3])exp[3]=a[c+1]}
+if(idx==1||idx<0){const ai=exp.indexOf('anni'),h=a.indexOf('ho')>=0?a.indexOf('ho'):a.indexOf('sono'),j=a.indexOf('anni');if(ai>0&&h>=0&&j>h+1){const p=pnum(a,h+1);if(p&&h+1+p[1]==j)exp.splice(ai-1,1,...a.slice(h+1,j))}}return exp}
+function badNum(a){const h=a.indexOf('ho'),j=a.indexOf('anni');if(h<0||j<h+2)return null;const p=pnum(a,h+1);return(p&&h+1+p[1]==j)?null:a.slice(h+1,j).join(' ')}
 function fixPers(a,idx,exp){a=a.slice();const nm=idx<=0?exp[3]:null,nu=idx==1?exp[1]:idx<0?exp[5]:null;
 if(nm&&idx<=0){const i=a.indexOf('chiamo');if(i>=0&&a[i+1])a[i+1]=nm}
 if(nu){const i=a.indexOf('ho'),j=a.indexOf('anni');if(i>=0&&j>i+1){const g=a.slice(i+1,j);if(g.length<=2&&g.every(x=>nval(x)!=null))a.splice(i+1,j-i-1,nu)}}return a}
@@ -1163,8 +1168,8 @@ function analyze(text){const tk=text.toLowerCase().normalize('NFD').replace(/[\u
 let i=tk.indexOf('chiamo');
 if(i>0&&tk[i-1]=='mi'&&tk[i+1])F.name=cap(tk[i+1]);else if(i>=0)E.push({k:'নাম',bn:'নাম বলতে «mi chiamo» + নাম বলতে হয়, শুধু «chiamo» নয়।',it:'Mi chiamo + নাম'});
 else{const j=tk.findIndex((w,x)=>tk[x-1]=='mi'&&/^chiam(a|i|ate|iamo)$/.test(w));if(j>=0)E.push({k:'নাম',bn:'«আমি» বোঝাতে «mi chiamo» বলতে হয়, «'+tk[j-1]+' '+tk[j]+'» নয়।',it:'Mi chiamo + নাম'});else{const n=tk.indexOf('nome');if(n>=0&&tk[n+1]=='e'&&tk[n+2])F.name=cap(tk[n+2])}}
-for(let x=0;x<tk.length;x++){if(tk[x]!='ho'&&tk[x]!='sono')continue;let n=nval(tk[x+1]);if(n==null)continue;let k=x+2;if(n>=20&&n%10==0){const u=nval(tk[k]);if(u>0&&u<10){n+=u;k++}}
-const nx=tk[k];if(!(nx=='anni'||nx=='anno'||(n>=14&&!['figli','fratelli','sorelle','euro','minuti','ore','giorni','libri','figlie'].includes(nx))))continue;
+for(let x=0;x<tk.length;x++){if(tk[x]!='ho'&&tk[x]!='sono')continue;let n=nval(tk[x+1]);if(n==null)continue;let k=x+2;if(n>=20&&n%10==0){let q=k;if(tk[q]=='e')q++;const u=nval(tk[q]);if(u>0&&u<10){n+=u;k=q+1}}
+const nx=tk[k];if(nx=='e'&&nval(tk[k+1])!=null&&n>=20){E.push({k:'বয়স',bn:'সংখ্যাটি ঠিকমতো শোনা যায়নি («'+tk.slice(x+1,k+2).join(' ')+'»)। একটি সংখ্যা একসঙ্গে বলুন।',it:'Ho venticinque anni'});break}if(!(nx=='anni'||nx=='anno'||(n>=14&&!['figli','fratelli','sorelle','euro','minuti','ore','giorni','libri','figlie'].includes(nx))))continue;
 F.age=n;const fx='Ho '+n+' anni';
 if(tk[x]=='sono')E.push({k:'বয়স',bn:'বয়স বলতে «sono» নয়, «ho» বলতে হয়। ইতালিয়ানে বয়স "থাকে" (ho), "হয়" না।',it:fx});
 else if(nx!='anni'&&nx!='anno')E.push({k:'বয়স',bn:'«anni» (বছর) বাদ পড়েছে। বয়সের শেষে «anni» বলতে হয়।',it:fx});
