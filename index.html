@@ -657,7 +657,220 @@ forse|হয়তো|ফোরসে|🤔|Forse domani.|হয়তো কা�
 subito|এখনই|সুবিতো|⚡|Vengo subito.|আমি এখনই আসছি।
 insieme|একসাথে|ইনসিয়েমে|👫|Andiamo insieme.|আমরা একসাথে যাই।
 solo|শুধু / একা|সোলো|☝️|Voglio solo un caffè.|আমি শুধু একটি কফি চাই।
-benvenuto|স্বাগত জানাই|বেনভেনুতো|🤗|Benvenuto in Italia!|ইতালিতে স্বাগত!`.split("\n").map(l=>{if(l[0]=="#"){C=l.slice(1);return null}const[a,b,c,e,xi,xb]=l.split("|");return{it:a,bn:b,pr:c,cat:C,em:e,xi,xb}}).filter(Boolean);
+benvenuto|স্বাগত জানাই|বেনভেনুতো|🤗|Benvenuto in Italia!|ইতালিতে স্বাগত!
+#ঘরের জিনিসপত্র
+scopa|ঝাড়ু|স্কোপা|🧹|Ho bisogno di una scopa.|আমার একটি ঝাড়ু দরকার।
+spazzatura|আবর্জনা|স্পাৎসাতুরা|🗑️|Porto fuori la spazzatura.|আমি আবর্জনা বাইরে নিয়ে যাই।
+sapone|সাবান|সাপোনে|🧼|Mi serve il sapone.|আমার সাবান দরকার।
+asciugamano|তোয়ালে|আশিউগামানো|🧻|Dov'è l'asciugamano?|তোয়ালেটা কোথায়?
+dentifricio|টুথপেস্ট|দেন্তিফ্রিচো|🪥|Compro il dentifricio.|আমি টুথপেস্ট কিনি।
+doccia|শাওয়ার|দোচ্চা|🚿|Faccio la doccia.|আমি গোসল করি।
+rubinetto|পানির কল|রুবিনেত্তো|🚰|Il rubinetto perde.|কল দিয়ে পানি পড়ছে।
+pentola|হাঁড়ি|পেন্তোলা|🍲|La pentola è sul fuoco.|হাঁড়িটা চুলায় আছে।
+padella|ফ্রাইপ্যান|পাদেল্লা|🍳|Uso la padella.|আমি ফ্রাইপ্যান ব্যবহার করি।
+tazza|কাপ|তাৎসা|☕|Una tazza di tè.|এক কাপ চা।
+bottiglia|বোতল|বোত্তিলিয়া|🍾|Una bottiglia d'acqua.|এক বোতল পানি।
+ombrello|ছাতা|ওম্ব্রেল্লো|☂️|Prendo l'ombrello.|আমি ছাতা নিই।
+cuscino|বালিশ|কুশিনো|🛏️|Mi serve un cuscino.|আমার একটি বালিশ দরকার।
+lenzuolo|বিছানার চাদর|লেনৎসুওলো|🛌|Cambio il lenzuolo.|আমি চাদর বদলাই।
+muro|দেয়াল|মুরো|🧱|Il muro è bianco.|দেয়ালটা সাদা।
+pavimento|মেঝে|পাভিমেন্তো|🧽|Pulisco il pavimento.|আমি মেঝে পরিষ্কার করি।
+#স্বাস্থ্য ও চিকিৎসা
+compressa|ট্যাবলেট|কম্প্রেস্সা|💊|Una compressa al giorno.|দিনে একটি ট্যাবলেট।
+sciroppo|সিরাপ|শিরোপ্পো|🧴|Prendo lo sciroppo.|আমি সিরাপ খাই।
+cerotto|ব্যান্ডেজ|চেরোত্তো|🩹|Mi serve un cerotto.|আমার একটি ব্যান্ডেজ দরকার।
+vaccino|টিকা|ভাচ্চিনো|💉|Faccio il vaccino.|আমি টিকা নিই।
+pressione|রক্তচাপ|প্রেস্সিওনে|🩺|Misuro la pressione.|আমি রক্তচাপ মাপি।
+raffreddore|সর্দি|রাফ্রেদ্দোরে|🤧|Ho il raffreddore.|আমার সর্দি হয়েছে।
+occhiali|চশমা|ওক্কিয়ালি|👓|Ho perso gli occhiali.|আমি চশমা হারিয়ে ফেলেছি।
+dentista|দন্তচিকিৎসক|দেন্তিস্তা|🦷|Ho un appuntamento dal dentista.|দন্তচিকিৎসকের কাছে আমার অ্যাপয়েন্টমেন্ট আছে।
+pediatra|শিশু চিকিৎসক|পেদিয়াত্রা|👶|Chiamo il pediatra.|আমি শিশু চিকিৎসককে ডাকি।
+ginecologo|স্ত্রীরোগ বিশেষজ্ঞ|জিনেকোলোগো|👩‍⚕️|Vado dal ginecologo.|আমি স্ত্রীরোগ বিশেষজ্ঞের কাছে যাই।
+incinta|গর্ভবতী|ইনচিন্তা|🤰|Mia moglie è incinta.|আমার স্ত্রী গর্ভবতী।
+analisi|ল্যাব পরীক্ষা|আনালিজি|🧪|Devo fare le analisi.|আমাকে ল্যাব পরীক্ষা করাতে হবে।
+referto|পরীক্ষার রিপোর্ট|রেফের্তো|📑|Ritiro il referto.|আমি রিপোর্ট সংগ্রহ করি।
+tessera sanitaria|স্বাস্থ্য কার্ড|তেস্সেরা সানিতারিয়া|🪪|Ecco la mia tessera sanitaria.|এই যে আমার স্বাস্থ্য কার্ড।
+medico di base|পারিবারিক ডাক্তার|মেদিকো দি বাজে|🧑‍⚕️|Chiamo il medico di base.|আমি পারিবারিক ডাক্তারকে ডাকি।
+pelle|ত্বক|পেল্লে|🧴|Ho la pelle secca.|আমার ত্বক শুষ্ক।
+#নথি ও সরকারি কাজ
+permesso di soggiorno|বসবাসের অনুমতিপত্র|পের্মেস্সো দি সোজ্জোর্নো|📄|Devo rinnovare il permesso di soggiorno.|আমাকে বসবাসের অনুমতিপত্র নবায়ন করতে হবে।
+cittadinanza|নাগরিকত্ব|চিত্তাদিনান্ৎসা|🛂|Chiedo la cittadinanza.|আমি নাগরিকত্বের জন্য আবেদন করছি।
+questura|পুলিশ সদর দপ্তর|কুয়েস্তুরা|🏛️|Vado in questura.|আমি পুলিশ সদর দপ্তরে যাই।
+rinnovo|নবায়ন|রিন্নোভো|🔄|Il rinnovo è in corso.|নবায়ন চলছে।
+ricevuta|প্রাপ্তিস্বীকার রসিদ|রিচেভুতা|🧾|Tengo la ricevuta.|আমি রসিদটা রাখি।
+marca da bollo|স্ট্যাম্প ফি|মার্কা দা বোল্লো|🏷️|Serve una marca da bollo.|একটি স্ট্যাম্প ফি লাগবে।
+certificato|সনদ|চের্তিফিকাতো|📜|Ho bisogno di un certificato.|আমার একটি সনদ দরকার।
+atto di nascita|জন্মসনদ|আত্তো দি নাশিতা|📃|Porto l'atto di nascita.|আমি জন্মসনদ নিয়ে আসি।
+traduzione|অনুবাদ|ত্রাদুৎসিওনে|🌐|Serve la traduzione.|অনুবাদ লাগবে।
+avvocato|আইনজীবী|আভ্ভোকাতো|⚖️|Chiamo un avvocato.|আমি একজন আইনজীবীকে ডাকি।
+tribunale|আদালত|ত্রিবুনালে|🏛️|Il tribunale apre alle nove.|আদালত নয়টায় খোলে।
+patronato|শ্রমিক সহায়তা কেন্দ্র|পাত্রোনাতো|🤝|Vado al patronato.|আমি শ্রমিক সহায়তা কেন্দ্রে যাই।
+sindacato|শ্রমিক সংগঠন|সিন্দাকাতো|✊|Il sindacato mi aiuta.|শ্রমিক সংগঠন আমাকে সাহায্য করে।
+codice|কোড|কোদিচে|🔢|Ho il codice.|আমার কাছে কোডটা আছে।
+#কর্মক্ষেত্র
+lavoratore|কর্মী|লাভোরাতোরে|👷|Sono un lavoratore.|আমি একজন কর্মী।
+straordinario|ওভারটাইম|স্ত্রাওর্দিনারিও|⏱️|Faccio lo straordinario.|আমি ওভারটাইম করি।
+busta paga|বেতনের স্লিপ|বুস্তা পাগা|💵|Ricevo la busta paga.|আমি বেতনের স্লিপ পাই।
+licenziamento|চাকরিচ্যুতি|লিচেন্ৎসিয়ামেন্তো|📤|Ho paura del licenziamento.|চাকরিচ্যুতির ভয় আছে।
+assunzione|নিয়োগ|আস্সুন্ৎসিওনে|📝|L'assunzione è domani.|নিয়োগ কাল।
+cantiere|নির্মাণস্থল|কান্তিয়েরে|🏗️|Lavoro in cantiere.|আমি নির্মাণস্থলে কাজ করি।
+fabbrica|কারখানা|ফাব্ব্রিকা|🏭|Lavoro in una fabbrica.|আমি একটি কারখানায় কাজ করি।
+capo|বস|কাপো|👔|Il mio capo è gentile.|আমার বস ভদ্র।
+azienda|কোম্পানি|আৎসিয়েন্দা|🏢|L'azienda è grande.|কোম্পানিটা বড়।
+cooperativa|সমবায়|কোওপেরাতিভা|🤝|Lavoro per una cooperativa.|আমি একটি সমবায়ে কাজ করি।
+tirocinio|ইন্টার্নশিপ|তিরোচিনিও|🎓|Faccio un tirocinio.|আমি ইন্টার্নশিপ করছি।
+curriculum|সিভি|কুরিকুলুম|📄|Preparo il curriculum.|আমি সিভি তৈরি করছি।
+disoccupazione|বেকারত্ব|দিসোক্কুপাৎসিওনে|📉|Ho paura della disoccupazione.|বেকারত্বের ভয় আছে।
+turno di notte|রাতের শিফট|তুর্নো দি নোত্তে|🌙|Faccio il turno di notte.|আমি রাতের শিফট করি।
+#টাকা-পয়সা
+euro|ইউরো|এউরো|💶|Costa un euro.|এর দাম এক ইউরো।
+centesimo|সেন্ট|চেন্তেজিমো|🪙|Cinquanta centesimi.|পঞ্চাশ সেন্ট।
+spesa|বাজার করা|স্পেজা|🛒|Faccio la spesa il sabato.|আমি শনিবার বাজার করি।
+risparmiare|সঞ্চয় করা|রিস্পারমিয়ারে|🐷|Voglio risparmiare.|আমি সঞ্চয় করতে চাই।
+prestito|ঋণ|প্রেস্তিতো|🏦|Chiedo un prestito.|আমি ঋণ চাই।
+tasse|কর|তাস্সে|📊|Pago le tasse.|আমি কর দিই।
+fattura|ইনভয়েস|ফাত্তুরা|🧾|Mi serve la fattura.|আমার ইনভয়েস লাগবে।
+pagamento|পেমেন্ট|পাগামেন্তো|💳|Il pagamento è domani.|পেমেন্ট কাল।
+rata|কিস্তি|রাতা|📆|Pago a rate.|আমি কিস্তিতে টাকা দিই।
+saldo|ব্যালেন্স|সাল্দো|💰|Controllo il saldo.|আমি ব্যালেন্স দেখি।
+assegno|চেক|আস্সেন্যো|🧾|Un assegno di cento euro.|একশো ইউরোর একটি চেক।
+rimborso|টাকা ফেরত|রিম্বোর্সো|↩️|Chiedo il rimborso.|আমি টাকা ফেরত চাই।
+#ডিজিটাল জীবন
+email|ইমেইল|ইমেইল|📧|Mando una email.|আমি একটি ইমেইল পাঠাই।
+app|অ্যাপ|আপ্প|📲|Scarico l'app.|আমি অ্যাপ ডাউনলোড করি।
+schermo|পর্দা|স্কেরমো|🖥️|Lo schermo è rotto.|পর্দাটা ভাঙা।
+tastiera|কিবোর্ড|তাস্তিয়েরা|⌨️|La tastiera non funziona.|কিবোর্ড কাজ করছে না।
+caricatore|চার্জার|কারিকাতোরে|🔌|Ho dimenticato il caricatore.|আমি চার্জার ভুলে গেছি।
+batteria|ব্যাটারি|বাত্তেরিয়া|🔋|La batteria è scarica.|ব্যাটারির চার্জ শেষ।
+scaricare|ডাউনলোড করা|স্কারিকারে|⬇️|Devo scaricare il documento.|আমাকে নথিটা ডাউনলোড করতে হবে।
+sito|ওয়েবসাইট|সিতো|🌐|Vado sul sito.|আমি ওয়েবসাইটে যাই।
+SPID|ডিজিটাল পরিচয় (SPID)|স্পিদ|🆔|Mi serve lo SPID.|আমার SPID দরকার।
+connessione|সংযোগ|কন্নেস্সিওনে|📡|Non c'è connessione.|সংযোগ নেই।
+#পরিমাণ ও সর্বনাম
+metà|অর্ধেক|মেতা|➗|Metà del lavoro.|কাজের অর্ধেক।
+doppio|দ্বিগুণ|দোপ্পিও|✌️|Il doppio del prezzo.|দামের দ্বিগুণ।
+abbastanza|যথেষ্ট|আব্বাস্তান্ৎসা|👌|Ho abbastanza tempo.|আমার যথেষ্ট সময় আছে।
+troppo|অতিরিক্ত|ত্রোপ্পো|🚫|Costa troppo.|এটা অনেক বেশি দামি।
+niente|কিছু না|নিয়েন্তে|🙅|Non ho niente.|আমার কিছুই নেই।
+qualcosa|কিছু|কুয়ালকোজা|🎁|Vorrei qualcosa di caldo.|আমি গরম কিছু চাই।
+qualcuno|কেউ|কুয়ালকুনো|🧑|C'è qualcuno?|কেউ আছেন?
+nessuno|কেউ না|নেস্সুনো|🚷|Non c'è nessuno.|কেউ নেই।
+ovunque|সব জায়গায়|ওভুনকুয়ে|🌍|Cerco ovunque.|আমি সব জায়গায় খুঁজি।
+ogni|প্রতি|ওন্যি|🔁|Ogni giorno studio.|আমি প্রতিদিন পড়ি।
+ancora|এখনও|আঙ্কোরা|⏳|Non ho ancora finito.|আমি এখনও শেষ করিনি।
+altro|অন্য / আরও|আল্ত্রো|➕|Vorrei un altro caffè.|আমি আরেকটি কফি চাই।
+#খাবার ও রেস্তোরাঁ
+coltello|ছুরি|কোলতেল্লো|🔪|Il coltello è affilato.|ছুরিটা ধারালো।
+fragola|স্ট্রবেরি|ফ্রাগোলা|🍓|Mi piacciono le fragole.|আমি স্ট্রবেরি পছন্দ করি।
+pera|নাশপাতি|পেরা|🍐|Una pera matura.|একটি পাকা নাশপাতি।
+uva|আঙুর|উভা|🍇|Compro l'uva.|আমি আঙুর কিনি।
+aglio|রসুন|আল্যো|🧄|Aggiungo l'aglio.|আমি রসুন দিই।
+carota|গাজর|কারোতা|🥕|Una carota fresca.|একটি তাজা গাজর।
+peperone|ক্যাপসিকাম|পেপেরোনে|🫑|Il peperone è rosso.|ক্যাপসিকামটা লাল।
+melanzana|বেগুন|মেলানজানা|🍆|Cucino la melanzana.|আমি বেগুন রান্না করি।
+zucchina|জুকিনি|জুক্কিনা|🥒|Una zucchina grande.|একটি বড় জুকিনি।
+funghi|মাশরুম|ফুঙ্গি|🍄|Mangio i funghi.|আমি মাশরুম খাই।
+tonno|টুনা মাছ|তোন্নো|🐟|Un panino con il tonno.|টুনা দিয়ে একটি স্যান্ডউইচ।
+gambero|চিংড়ি|গাম্বেরো|🦐|Gli gamberi sono freschi.|চিংড়িগুলো তাজা।
+prosciutto|শূকরের মাংসের হ্যাম|প্রোশুত্তো|🥓|Non mangio il prosciutto.|আমি হ্যাম খাই না।
+mozzarella|মোজারেলা পনির|মোৎসারেল্লা|🧀|La mozzarella è fresca.|মোজারেলা তাজা।
+yogurt|দই|ইয়োগুর্ত|🥣|Uno yogurt, per favore.|একটি দই দিন, দয়া করে।
+marmellata|জ্যাম|মার্মেল্লাতা|🍓|Pane e marmellata.|রুটি আর জ্যাম।
+ordinare|অর্ডার করা|অর্দিনারে|📋|Vorrei ordinare.|আমি অর্ডার করতে চাই।
+prenotare|বুকিং করা|প্রেনোতারে|📅|Voglio prenotare un tavolo.|আমি একটি টেবিল বুক করতে চাই।
+mancia|টিপ|মানচা|💶|La mancia non è obbligatoria.|টিপ বাধ্যতামূলক নয়।
+antipasto|শুরুর খাবার|আন্তিপাস্তো|🥗|Come antipasto prendo l'insalata.|শুরুর খাবার হিসেবে আমি সালাদ নিই।
+dolce|মিষ্টি|দোলচে|🍰|Questo dolce è buono.|এই মিষ্টিটা সুস্বাদু।
+salato|নোনতা|সালাতো|🧂|Il piatto è troppo salato.|খাবারটা অতিরিক্ত নোনতা।
+piccante|ঝাল|পিক্কান্তে|🌶️|È molto piccante.|এটা খুব ঝাল।
+vegetariano|নিরামিষাশী|ভেজেতারিয়ানো|🥬|Sono vegetariano.|আমি নিরামিষাশী।
+ingredienti|উপকরণ|ইনগ্রেদিয়েন্তি|📃|Quali sono gli ingredienti?|উপকরণগুলো কী কী?
+fritto|ভাজা|ফ্রিত্তো|🍟|Il pesce fritto.|ভাজা মাছ।
+menu|মেনু|মেনু|📖|Il menu, per favore.|মেনুটা দিন, দয়া করে।
+#যাতায়াত ও ভ্রমণ
+aereo|বিমান|আয়েরেও|✈️|L'aereo parte alle dieci.|বিমান দশটায় ছাড়ে।
+volo|ফ্লাইট|ভোলো|🛫|Il volo è in ritardo.|ফ্লাইট দেরিতে।
+valigia|সুটকেস|ভালিজিয়া|🧳|La valigia è pesante.|সুটকেসটা ভারী।
+dogana|শুল্ক দপ্তর|দোগানা|🛃|Passo la dogana.|আমি শুল্ক দপ্তর পার হই।
+metropolitana|মেট্রো|মেত্রোপোলিতানা|🚇|Prendo la metropolitana.|আমি মেট্রো নিই।
+tram|ট্রাম|ত্রাম|🚋|Il tram arriva presto.|ট্রাম তাড়াতাড়ি আসে।
+noleggio|ভাড়া নেওয়া|নোলেজ্জো|🔑|Faccio il noleggio di una bici.|আমি একটি সাইকেল ভাড়া নিই।
+incrocio|মোড়|ইনক্রোচো|➕|All'incrocio giri a destra.|মোড়ে ডানে ঘুরুন।
+marciapiede|ফুটপাথ|মারচাপিয়েদে|🚶|Cammino sul marciapiede.|আমি ফুটপাথে হাঁটি।
+museo|জাদুঘর|মুজেও|🏛️|Il museo è aperto.|জাদুঘর খোলা।
+castello|দুর্গ|কাস্তেল্লো|🏰|Visito il castello.|আমি দুর্গ দেখতে যাই।
+turista|পর্যটক|তুরিস্তা|📸|Sono un turista.|আমি একজন পর্যটক।
+guida|গাইড|গুইদা|🧭|La guida parla italiano.|গাইড ইতালিয়ান বলেন।
+cartina|ছোট মানচিত্র|কার্তিনা|🗺️|Ho una cartina della città.|আমার কাছে শহরের একটি ছোট মানচিত্র আছে।
+ascensore|লিফট|আশেনসোরে|🛗|L'ascensore non funziona.|লিফট কাজ করছে না।
+ostello|হোস্টেল|অস্তেল্লো|🏨|Dormo in un ostello.|আমি একটি হোস্টেলে ঘুমাই।
+sentiero|পায়ে চলা পথ|সেন্তিয়েরো|🥾|Seguo il sentiero.|আমি পায়ে চলা পথ ধরে যাই।
+coincidenza|ট্রেনের সংযোগ|কোইনচিদেন্ৎসা|🔄|Perdo la coincidenza.|আমার সংযোগ ট্রেন ফসকে গেল।
+posto|আসন / জায়গা|পোস্তো|💺|Questo posto è occupato.|এই আসনটা ভরা।
+finestrino|গাড়ির জানালা|ফিনেস্ত্রিনো|🪟|Preferisco il finestrino.|আমি জানালার পাশে বসতে চাই।
+prenotazione|বুকিং|প্রেনোতাৎসিওনে|📆|Ho una prenotazione.|আমার একটি বুকিং আছে।
+deposito bagagli|লাগেজ রাখার জায়গা|দেপোজিতো বাগাল্যি|🧳|Dov'è il deposito bagagli?|লাগেজ রাখার জায়গা কোথায়?
+#পরিবার ও আত্মীয়
+cugino|চাচাতো-মামাতো ভাই|কুজিনো|👦|Mio cugino vive a Milano.|আমার চাচাতো ভাই মিলানে থাকে।
+cognato|ভগ্নিপতি / শ্যালক|কন্যাতো|👨|Mio cognato lavora qui.|আমার ভগ্নিপতি এখানে কাজ করে।
+suocero|শ্বশুর|সুওচেরো|👴|Mio suocero è anziano.|আমার শ্বশুর বয়স্ক।
+suocera|শাশুড়ি|সুওচেরা|👵|Mia suocera cucina bene.|আমার শাশুড়ি ভালো রান্না করেন।
+genero|জামাই|জেনেরো|🤵|Mio genero è gentile.|আমার জামাই ভদ্র।
+nuora|পুত্রবধূ|নুওরা|👰|Mia nuora lavora in banca.|আমার পুত্রবধূ ব্যাংকে কাজ করে।
+gemelli|যমজ|জেমেল্লি|👯|Hanno due gemelli.|তাদের দুটি যমজ সন্তান আছে।
+fidanzato|বাগদত্ত / প্রেমিক|ফিদান্ৎসাতো|💑|Il suo fidanzato è italiano.|তার বাগদত্ত ইতালিয়ান।
+sposato|বিবাহিত|স্পোজাতো|💍|Sono sposato.|আমি বিবাহিত।
+genitori|বাবা-মা|জেনিতোরি|👨‍👩‍👧|I miei genitori vivono in Bangladesh.|আমার বাবা-মা বাংলাদেশে থাকেন।
+parenti|আত্মীয়স্বজন|পারেন্তি|👪|Ho molti parenti.|আমার অনেক আত্মীয় আছে।
+ragazzi|ছেলেমেয়েরা|রাগাজ্জি|🧒|I ragazzi giocano.|ছেলেমেয়েরা খেলছে।
+vicino di casa|প্রতিবেশী|ভিচিনো দি কাজা|🏘️|Il mio vicino di casa è gentile.|আমার প্রতিবেশী ভদ্র।
+ospite|অতিথি|অস্পিতে|🛎️|Siamo ospiti.|আমরা অতিথি।
+matrimonio|বিয়ে|মাত্রিমোনিও|💒|Il matrimonio è sabato.|বিয়ে শনিবার।
+#অনুষ্ঠান ও ছুটি
+Capodanno|নববর্ষ|কাপোদান্নো|🎆|Buon Capodanno!|শুভ নববর্ষ!
+Ferragosto|আগস্টের মধ্য-ছুটি|ফেররাগোস্তো|☀️|A Ferragosto i negozi sono chiusi.|ফেররাগোস্তোতে দোকান বন্ধ থাকে।
+Carnevale|কার্নিভাল|কার্নেভালে|🎭|Il Carnevale di Venezia è famoso.|ভেনিসের কার্নিভাল বিখ্যাত।
+Ramadan|রমজান|রামাদান|🌙|Il Ramadan inizia domani.|রমজান কাল শুরু হয়।
+Eid|ঈদ|এইদ|🌙|Domani è Eid.|কাল ঈদ।
+auguri|শুভেচ্ছা|আউগুরি|🎊|Tanti auguri!|অনেক শুভেচ্ছা!
+brindisi|টোস্ট|ব্রিন্দিজি|🥂|Facciamo un brindisi.|আমরা একটি টোস্ট করি।
+candela|মোমবাতি|কান্দেলা|🕯️|Accendo una candela.|আমি একটি মোমবাতি জ্বালাই।
+fuochi d'artificio|আতশবাজি|ফুওকি দার্তিফিচো|🎇|Guardiamo i fuochi d'artificio.|আমরা আতশবাজি দেখি।
+sfilata|শোভাযাত্রা|স্ফিলাতা|🎉|La sfilata inizia alle tre.|শোভাযাত্রা তিনটায় শুরু।
+festivo|সরকারি ছুটির দিন|ফেস্তিভো|📅|Oggi è giorno festivo.|আজ সরকারি ছুটির দিন।
+invitato|আমন্ত্রিত|ইনভিতাতো|💌|Sono invitato alla festa.|আমি অনুষ্ঠানে আমন্ত্রিত।
+#অনুভূতি ও শরীর
+spalla|কাঁধ|স্পাল্লা|🤷|Mi fa male la spalla.|আমার কাঁধে ব্যথা।
+sorriso|হাসি|সোরিজো|😊|Hai un bel sorriso.|তোমার হাসি সুন্দর।
+lacrime|অশ্রু|লাক্রিমে|😢|Ho le lacrime agli occhi.|আমার চোখে অশ্রু।
+paura|ভয়|পাউরা|😨|Ho paura.|আমার ভয় লাগছে।
+rabbia|রাগ|রাব্বিয়া|😡|Sono pieno di rabbia.|আমি রাগে ভরা।
+gioia|আনন্দ|জোইয়া|🥳|Che gioia!|কী আনন্দ!
+speranza|আশা|স্পেরান্ৎসা|🌈|Ho speranza.|আমার আশা আছে।
+solitudine|একাকীত্ব|সোলিতুদিনে|🧍|Sento la solitudine.|আমি একাকীত্ব অনুভব করি।
+nostalgia|দেশের জন্য মন কেমন|নস্তালজিয়া|🏠|Ho nostalgia di casa.|আমার বাড়ির জন্য মন কেমন করছে।
+stress|চাপ|স্ত্রেস|😵|Ho molto stress.|আমার অনেক চাপ।
+riposo|বিশ্রাম|রিপোজো|🛋️|Ho bisogno di riposo.|আমার বিশ্রাম দরকার।
+sonno|ঘুম|সোন্নো|😴|Ho sonno.|আমার ঘুম পাচ্ছে।
+sogno|স্বপ্ন|সোন্যো|💭|Ho un sogno.|আমার একটি স্বপ্ন আছে।
+coraggio|সাহস|কোরাজ্জো|🦁|Ci vuole coraggio.|সাহস লাগে।
+pazienza|ধৈর্য|পাৎসিয়েন্ৎসা|⏳|Abbi pazienza.|ধৈর্য ধরো।
+fiducia|বিশ্বাস|ফিদুচিয়া|🤝|Ho fiducia in te.|আমি তোমাকে বিশ্বাস করি।
+amicizia|বন্ধুত্ব|আমিচিৎসিয়া|🫶|L'amicizia è importante.|বন্ধুত্ব গুরুত্বপূর্ণ।
+rispetto|সম্মান|রিস্পেত্তো|🙏|Ho rispetto per te.|আমি তোমাকে সম্মান করি।
+problema|সমস্যা|প্রোব্লেমা|⚠️|Ho un problema.|আমার একটি সমস্যা আছে।
+soluzione|সমাধান|সোলুৎসিওনে|💡|Cerco una soluzione.|আমি একটি সমাধান খুঁজছি।
+favore|উপকার|ফাভোরে|🙋|Mi fai un favore?|তুমি কি আমার একটি উপকার করবে?
+#আবহাওয়া ও পোশাক
+temporale|ঝড়|তেম্পোরালে|⛈️|Arriva un temporale.|ঝড় আসছে।
+nebbia|কুয়াশা|নেব্বিয়া|🌫️|C'è molta nebbia.|অনেক কুয়াশা।
+grandine|শিলাবৃষ্টি|গ্রান্দিনে|🌨️|Cade la grandine.|শিলাবৃষ্টি হচ্ছে।
+fulmine|বজ্রপাত|ফুলমিনে|⚡|Un fulmine nel cielo.|আকাশে বজ্রপাত।
+tuono|মেঘের গর্জন|তুওনো|🌩️|Sento il tuono.|আমি মেঘের গর্জন শুনি।
+umidità|আর্দ্রতা|উমিদিতা|💧|C'è molta umidità.|অনেক আর্দ্রতা।
+temperatura|তাপমাত্রা|তেম্পেরাতুরা|🌡️|Qual è la temperatura?|তাপমাত্রা কত?
+previsioni|আবহাওয়ার পূর্বাভাস|প্রেভিজিওনি|📺|Guardo le previsioni.|আমি পূর্বাভাস দেখি।
+arcobaleno|রংধনু|আর্কোবালেনো|🌈|Un arcobaleno bellissimo.|একটি অসাধারণ সুন্দর রংধনু।`.split("\n").map(l=>{if(l[0]=="#"){C=l.slice(1);return null}const[a,b,c,e,xi,xb]=l.split("|");return{it:a,bn:b,pr:c,cat:C,em:e,xi,xb}}).filter(Boolean);
 const CE={"মৌলিক":"💬","খাবার ও পানীয়":"🍽️","ভ্রমণ":"✈️","সংখ্যা ও সময়":"⏰","রং ও বিশেষণ":"🎨","ক্রিয়া":"🏃","শরীর ও অনুভূতি":"🧍"},EX=Object.fromEntries("ciao=👋,grazie=🙏,prego=😊,per favore=🥺,scusi=🙇,sì=✅,no=❌,buongiorno=🌅,buonasera=🌇,buonanotte=🌜,arrivederci=🚶,come stai=🤗,bene=👍,male=👎,acqua=💧,pane=🍞,latte=🥛,caffè=☕,cibo=🍲,mangiare=🍽️,bere=🥤,casa=🏠,famiglia=👨‍👩‍👧,madre=👩,padre=👨,fratello=👦,sorella=👧,amico=🧑‍🤝‍🧑,uomo=🧔,donna=👩‍🦰,bambino=👶,io=🙋,tu=🫵,noi=👫,essere=🧍,avere=🤲,andare=🚶‍♂️,venire=🏃,vedere=👀,parlare=💬,amore=💕,oggi=📅,domani=🔜,ieri=🔙,tempo=⏳,giorno=🌞,notte=🌃,uno=1️⃣,due=2️⃣,tre=3️⃣,quattro=4️⃣,cinque=5️⃣,dieci=🔟,grande=🏔️,piccolo=🐜,bello=😍,dove=📍,quanto costa=💶,aiuto=🆘,non capisco=😕,mi chiamo=🪪,scuola=🏫,lavoro=💼,riso=🍚,pasta=🍝,pizza=🍕,carne=🥩,pesce=🐟,pollo=🍗,uovo=🥚,formaggio=🧀,frutta=🍎,verdura=🥦,mela=🍏,zucchero=🍬,sale=🧂,vino=🍷,tè=🍵,conto=🧾,aeroporto=🛫,treno=🚆,autobus=🚌,taxi=🚕,stazione=🚉,biglietto=🎫,hotel=🏨,camera=🛌,passaporto=🛂,strada=🛣️,città=🏙️,destra=➡️,sinistra=⬅️,dritto=⬆️,vicino=🤏,lontano=🔭,bagno=🚽,sei=6️⃣,sette=7️⃣,otto=8️⃣,nove=9️⃣,venti=🧮,cento=💯,mille=🔢,mattina=🌄,sera=🌆,settimana=🗓️,mese=📆,anno=🎆,adesso=⏰,presto=🐇,tardi=🐌,rosso=🔴,blu=🔵,verde=🟢,giallo=🟡,bianco=⚪,nero=⚫,caldo=🥵,freddo=🥶,nuovo=✨,vecchio=👴,volere=🤩,potere=💪,sapere=🧠,fare=🔨,dare=🫴,prendere=🧲,comprare=🛍️,pagare=💳,dormire=😴,lavorare=👷,studiare=📚,capire=🧐,aspettare=⌛,ascoltare=👂,testa=🧑,mano=✋,occhio=👁️,cuore=🫀,felice=😄,triste=😢,stanco=😫,fame=🤤,sete=🚰,medico=🩺".split(",").map(s=>s.split("="))),EM=w=>w.em||EX[w.it]||CE[w.cat]||"🇮🇹";
 const app=document.getElementById("app");let voice=null;
 function note(m){document.getElementById("nt").textContent=m}
