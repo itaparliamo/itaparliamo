@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="bn"><head><meta charset="utf-8">
 <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#0e7a54">
+<meta name="theme-color" content="#0e8f68">
 <link rel="apple-touch-icon" href="icon-192.png">
 <meta name="mobile-web-app-capable" content="yes"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>ItaParliamo – চলুন ইতালিয়ান বলি</title>
 <style>
@@ -115,8 +115,46 @@ h1::after{content:'';display:block;height:4px;width:110px;margin:8px auto 0;bord
 .sel{display:flex;gap:8px;margin:6px 0}.sel .nx{flex:1;margin:0}.nx.gh{background:var(--card);color:var(--tx);border:1.5px solid var(--bd);box-shadow:none}
 .lc.okl{border-top-color:var(--ac)}.lc.okl::after{content:'✓ শুদ্ধ';float:right;color:var(--ac);font-weight:700;font-size:13px}.rb .fbk{font-size:14px}
 .tab{padding:8px 1px;font-size:11.5px}
+
+/* ===== v10: clean modern theme ===== */
+:root{--bg:#f3f7f4;--card:#fff;--tx:#17302a;--mu:#6b7f78;--ac:#0e8f68;--ac2:#0a6f52;--bd:#e3ece7;--bad:#e5533d;--gold:#f2b84b;--sh:0 2px 10px rgba(16,48,40,.07);--g1:#e3f3ea;--g2:#fdebe5}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0e1714;--card:#16231f;--tx:#e8f2ee;--mu:#93a9a1;--ac:#2fc08d;--ac2:#1f9a70;--bd:#233630;--bad:#ef7a6c;--gold:#f0bf5a;--sh:0 2px 10px rgba(0,0,0,.35);--g1:#12302a;--g2:#33201d}}
+body{background:var(--bg)!important;background-image:none!important;padding:8px 16px 120px!important;font-size:16px}
+.hd{display:flex;align-items:center;gap:12px;padding:6px 52px 14px 2px}.hd .lg{width:46px;height:46px;flex:none;border-radius:13px;box-shadow:0 4px 12px rgba(14,143,104,.3)}
+.hd b{display:block;font-size:21px;letter-spacing:.2px}.hd span{font-size:13px;color:var(--mu)}
+.hb{top:calc(env(safe-area-inset-top,0px) + 14px)!important;width:40px;height:40px;box-shadow:var(--sh)}
+/* bottom navigation */
+.tabs{position:fixed!important;left:0;right:0;bottom:0;margin:0!important;z-index:60;max-width:none!important;border:0!important;border-radius:22px 22px 0 0!important;background:var(--card)!important;box-shadow:0 -6px 24px rgba(16,48,40,.12)!important;padding:8px 6px calc(8px + env(safe-area-inset-bottom,0px))!important;display:flex!important;flex-wrap:nowrap!important;gap:0!important;justify-content:space-around}
+.tab{flex:1;display:flex!important;flex-direction:column;align-items:center;gap:3px;padding:4px 0!important;font-size:11.5px!important;font-weight:600;background:transparent!important;color:var(--mu)!important;box-shadow:none!important;border-radius:12px!important}
+.tab i{font-style:normal;font-size:23px;line-height:1;filter:grayscale(1);opacity:.65;transition:.2s}
+.tab.on{color:var(--ac)!important}.tab.on i{filter:none;opacity:1;transform:translateY(-2px) scale(1.12)}
+#t4{display:none!important}#t1{order:1}#t6{order:2}#t2{order:3}#t3{order:4}#t5{order:5}
+/* surfaces */
+.w,.cc,.stage,.q,.mc,.fc .ff,.ms .bb{border:1px solid var(--bd)!important;border-top:1px solid var(--bd)!important;border-left:1px solid var(--bd)!important;box-shadow:var(--sh)!important;background:var(--card)!important;outline:none!important}
+.q::before{display:none}.q{border-radius:22px}.cc,.w{border-radius:18px}
+.it,.q .it,.mc .it,b.it,.nd i{font-family:inherit!important}.it{font-weight:800}
+.q .it{font-size:30px}.w>.em,.ch .em{background:var(--g1)!important}
+.nx{background:linear-gradient(135deg,var(--ac),var(--ac2));border-radius:14px;box-shadow:0 4px 12px rgba(14,143,104,.25);font-weight:700}
+.sp{border:0;background:var(--g1);color:var(--ac);box-shadow:none}
+.ms .em{width:52px;height:52px;border:0!important;background:var(--g1)!important;border-radius:50%}
+.pg{height:8px;background:var(--bd)}.sc{font-size:14px}
+/* levels */
+.pt{padding:4px 0!important;gap:10px!important}.pt::before{content:none!important}
+.nd{display:flex!important;flex-direction:row!important;align-items:center!important;gap:14px;left:0!important;width:auto!important;height:auto!important;min-height:70px;padding:12px 14px!important;border-radius:18px!important;border:1px solid var(--bd)!important;background:var(--card)!important;box-shadow:var(--sh)!important;color:var(--tx)!important;text-align:left;font-size:16px!important}
+.nd::before,.nd::after{content:none!important}
+.nd .bd{flex:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-weight:800;font-size:18px;background:var(--bd);color:var(--mu)}
+.nd.dn .bd{background:var(--ac);color:#fff}.nd.cur .bd{background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff}
+.nd.cur{border-color:var(--ac)!important;box-shadow:0 0 0 2px rgba(14,143,104,.22),var(--sh)!important;animation:none}
+.nd span{flex:1;font-size:16.5px;font-weight:700}.nd i{display:block;font:400 12.5px/1.2 system-ui;color:var(--mu);margin-top:3px}
+.nd small{width:auto!important;color:var(--gold)!important;font-size:15px!important;letter-spacing:1px;margin:0!important}
+.nd:disabled{opacity:.5!important;filter:none!important}
+.seg{display:flex;background:var(--bd);border-radius:14px;padding:4px;margin-bottom:12px}.seg button{flex:1;border:0;background:transparent;padding:10px;border-radius:11px;font-weight:600;color:var(--mu)}.seg button.on{background:var(--card);color:var(--ac);box-shadow:var(--sh)}
+.o{border-radius:16px;font-size:16.5px}
+.q .pr{margin:12px 0 8px}.q .sp{margin:4px 3px}.q #o{margin-top:6px}
+.upd{position:fixed;top:calc(env(safe-area-inset-top,0px) + 8px);left:12px;right:12px;z-index:99;background:#17302a;color:#fff;border-radius:14px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;gap:10px;box-shadow:0 6px 20px rgba(0,0,0,.3)}.upd button{background:#19b886;color:#fff;border:0;border-radius:10px;padding:8px 12px;font-weight:700}
 </style></head><body>
-<h1>🇮🇹 ItaParliamo</h1><div class="sc" style="text-align:center;margin:-8px 0 12px">চলুন ইতালিয়ান বলি</div>
+<header class='hd'><svg class="lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#19b886"/><stop offset="1" stop-color="#096b50"/></linearGradient></defs><rect width="120" height="120" rx="28" fill="url(#g)"/><path d="M28 29h64a13 13 0 0 1 13 13v31a13 13 0 0 1-13 13H64L42 104V86H28A13 13 0 0 1 15 73V42a13 13 0 0 1 13-13z" fill="#fff"/><g stroke-linecap="round" stroke-width="7"><path d="M36 52v12" stroke="#0e8f68"/><path d="M48 44v28" stroke="#0e8f68"/><path d="M60 37v42" stroke="#e5533d"/><path d="M72 44v28" stroke="#0e8f68"/><path d="M84 52v12" stroke="#0e8f68"/></g></svg>
+<div><b>ItaParliamo</b><span>চলুন ইতালিয়ান বলি · সংস্করণ 10b</span></div></header>
 <div class="tabs"><button class="tab on" id="t1">শিখুন</button><button class="tab" id="t2">কুইজ</button></div>
 <div id="nt" class="sc" style="margin-bottom:8px"></div><div id="app"></div>
 <script>
@@ -926,7 +964,7 @@ function boom(){const es=['🎉','⭐','🍕','🇮🇹','✨','🎊'];for(let j
 function levels(){note('');const L=Math.min(D.length,U*SZ);
 app.innerHTML=`${mas(rnd(['স্বাগতম! আজ কয়টি শব্দ শিখবেন?','চলুন, আরেকটি লেভেল জয় করি! 💪','ইতালিয়ান শেখা আপনার জন্য সহজ!']))}<div class='sc'>${L}/${D.length} শব্দ শিখেছেন · 🔥 ${ST.n} দিন</div><div class='pg'><i style='width:${L/D.length*100}%'></i></div>${W.length>=4?`<button class='nx' id='rv' style='width:100%'>🔁 ভুল শব্দের অনুশীলন (${W.length})</button>`:''}<div class='pt' id='pt'></div>`;
 if($('rv'))$('rv').onclick=()=>startQ(0,1);
-for(let i=0;i<NS;i++){const lock=i>U,b=document.createElement('button'),s=best[i]>=15?3:best[i]>=14?2:best[i]>=12?1:0;b.className='nd'+(i==U?' cur':'');b.disabled=lock;b.style.left=Math.round(Math.sin(i*1.2)*50)+'px';b.innerHTML=`<span>${lock?'🔒 ':i<U?'✓ ':'▶ '}লেভেল ${String(i+1).replace(/\d/g,d=>'০১২৩৪৫৬৭৮৯'[d])}<i>Livello ${i+1}</i></span><small>${lock?'':'★'.repeat(s)+'☆'.repeat(3-s)}</small>`;b.onclick=()=>stage(i);$('pt').appendChild(b)}}
+for(let i=0;i<NS;i++){const lock=i>U,b=document.createElement('button'),s=best[i]>=15?3:best[i]>=14?2:best[i]>=12?1:0;b.className='nd'+(i==U?' cur':'')+(i<U?' dn':'');b.disabled=lock;b.style.left=Math.round(Math.sin(i*1.2)*50)+'px';b.innerHTML=`<em class='bd'>${lock?'🔒':String(i+1).replace(/\d/g,d=>'০১২৩৪৫৬৭৮৯'[d])}</em><span>লেভেল ${String(i+1).replace(/\d/g,d=>'০১২৩৪৫৬৭৮৯'[d])}<i>Livello ${i+1}</i></span><small>${lock?'':'★'.repeat(s)+'☆'.repeat(3-s)}</small>`;b.onclick=()=>stage(i);$('pt').appendChild(b)}}
 function stage(i){app.innerHTML=`<button class='nx' id='bk' style='${GH}'>← পথ <small class=it2>Indietro</small></button><div class='it'>লেভেল ${i+1} <span class='pr'>· Livello ${i+1}</span></div><div class='sc' style='margin:4px 0 10px'>কার্ডে চাপ দিয়ে উল্টান · 🔊 শুনুন · 🐢 ধীরে শুনুন</div><div class='fg' id='l'></div><button class='nx' id='go' style='width:100%;margin-top:14px'>কুইজ শুরু করুন → <small class=it2>Inizia il quiz</small></button>`;
 D.slice(i*SZ,i*SZ+SZ).forEach(w=>{const c=document.createElement('div');c.className='fc';c.innerHTML=`<div class='ff'><span class='em'>${EM(w)}</span><b class='it'>${w.it}</b><span><button class='sp s1'>🔊</button> <button class='sp s2'>🐢</button></span></div><div class='ff fb'><b>${w.bn}</b><span class='pr'>${w.pr}</span></div>`;
 c.onclick=()=>{c.classList.toggle('fl');say(w.it)};c.querySelector('.s1').onclick=e=>{e.stopPropagation();say(w.it)};c.querySelector('.s2').onclick=e=>{e.stopPropagation();say(w.it,.4)};$('l').appendChild(c)});
@@ -1419,6 +1457,10 @@ function freePage(){note('');playing++;app.innerHTML=`<button class='nx' id='bk'
 <div class='cp' style='margin:10px 0'><span class='pr'>🎤 চেপে বলা শুরু করুন</span><button class='nx' id='fgb' style='margin:0'>🎤 বলি</button></div><div id='fgr'></div>`;$('bk').onclick=frasi;$('fgb').onclick=freeListen}
 const _fr=frasi;frasi=function(){_fr();const c=document.createElement('div');c.className='cc';c.style.cursor='pointer';c.innerHTML="<div class='ch'><span class='em'>🗣️</span><b>নিজের কথা বলুন<br><span class='pr'>Parla di te</span></b></div><div class='cb'>নিজের নাম, বয়স, দেশ, পেশা নিজের মতো করে বলুন। ব্যাকরণ ঠিক আছে কি না দেখে বলে দেব।</div>";c.onclick=freePage;$('c1').after(c)};
 
+const _lrn=learn,_fv=favs,seg=k=>`<div class='seg'><button id='sg1' class='${k=='a'?'on':''}'>সব শব্দ</button><button id='sg2' class='${k=='f'?'on':''}'>⭐ প্রিয়</button></div>`;
+learn=function(){_lrn();app.insertAdjacentHTML('afterbegin',seg('a'));$('sg1').onclick=learn;$('sg2').onclick=favs};
+favs=function(){_fv();app.insertAdjacentHTML('afterbegin',seg('f'));$('sg1').onclick=learn;$('sg2').onclick=favs};
+
 const tb=document.querySelector('.tabs'),mk=(id,tx)=>{const b=document.createElement('button');b.className='tab';b.id=id;b.textContent=tx;tb.appendChild(b);return b},tabs=[t1,t2,mk('t3','রিভিশন'),mk('t4','⭐ প্রিয়'),mk('t5','🇮🇹 সংস্কৃতি'),mk('t6','💬 বাক্য')],fns=[levels,learn,revTab,favs,cult,frasi];
 tabs.forEach((b,j)=>b.onclick=()=>{tabs.forEach(x=>x.classList.remove('on'));b.classList.add('on');fns[j]()});
 function welcome(f){let seen=0;try{seen=localStorage.getItem('itWel')}catch(e){}if(seen&&!f)return;document.querySelectorAll('.md').forEach(x=>x.remove());
@@ -1433,7 +1475,10 @@ const el=t.closest('.w,.fc,.mc,.q,.cp');if(!el)return;
 if(el.matches('.cp')){const b=el.querySelector('.sp');if(b)b.click();return}
 if(el.matches('.q')){if(t.closest('.it')){const p=$('p');if(p)p.click()}return}
 const it=el.querySelector('.it'),w=it&&D.find(x=>x.it===it.textContent.trim());if(w)sayBoth(w)});
-const ITT=['Livelli','Parole','Ripasso','Preferiti','Cultura','Frasi'];tabs.forEach((b,j)=>b.innerHTML=b.textContent+'<small>'+ITT[j]+'</small>');
+const TI=['🏠','📚','🔁','⭐','🇮🇹','💬'],TL=['লেভেল','শব্দ','রিভিশন','প্রিয়','সংস্কৃতি','বাক্য'];tabs.forEach((b,j)=>b.innerHTML='<i>'+TI[j]+'</i><span>'+TL[j]+'</span>');
+const APP_V='10b';
+(function(){fetch('index.html?cb='+Date.now(),{cache:'no-store'}).then(r=>r.text()).then(t=>{const m=t.match(/const APP_V='([^']+)'/);if(m&&m[1]!==APP_V&&!document.querySelector('.upd')){const d=document.createElement('div');d.className='upd';d.innerHTML='🔄 নতুন সংস্করণ এসেছে <button>আপডেট করুন</button>';d.querySelector('button').onclick=async()=>{try{const rg=await navigator.serviceWorker.getRegistrations();for(const x of rg)await x.unregister();const ks=await caches.keys();for(const k of ks)await caches.delete(k)}catch(e){}location.reload()};document.body.appendChild(d)}}).catch(()=>{})})();
+
 setTab(1);levels();welcome();
 if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
 </script></body></html>
